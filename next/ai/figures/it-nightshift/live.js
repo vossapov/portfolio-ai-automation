@@ -917,7 +917,7 @@ function tongueSvg(K, P, w) {
  return K.solidSvg(K.extrude(tonguePoints(w), DECK, 4, P, { convex: false }), { tone: 'mid' });
 }
 
-const P={"origin":[374.97700999290487,189.36158508937126],"scale":1.026623670274722,"azimuth":68,"elevation":42},TEXT={"en":{"fig":"Fig 1","title":"Night shift","hint":"Tap or Space · add a task","keys":["Task on the loop","Bug reproduced · test failed","Tests green → review"],"caption":"Isometric machine: tasks loop through reproduction, repair and tests until they turn green, then wait for review.","aria":"Night shift machine: identical task cards go round a ring past reproduction, repair and test stops. A red lamp sends a card round again; a green one sends it to the review tray in front of an accept lever the machine never pulls. Click, Space or Enter adds a task.","label":"A raised bench with a ring track, an intake magazine, a gear-train mechanism with a red and a green lamp, a pick-and-place arm, a review tray with an accept lever and a day/night dial."},"ua":{"fig":"Рис 1","title":"Нічна зміна","hint":"Дотик або пробіл · ще задача","keys":["Задача на колі","Баг відтворено · тест не пройшов","Тести зелені → рев’ю"],"caption":"Ізометрична машина: задачі йдуть по колу через відтворення, ремонт і тести, поки не стануть зеленими, і чекають на рев’ю.","aria":"Машина «Нічна зміна»: однакові картки задач їдуть по колу повз відтворення, ремонт і тести. Червона лампа відправляє картку на ще одне коло, зелена — до лотка рев’ю перед важелем «прийняти», якого машина не торкається. Дотик, пробіл або Enter додає задачу.","label":"Стіл із кільцевою доріжкою, магазином задач, зубчастим механізмом з червоною й зеленою лампами, маніпулятором, лотком рев’ю з важелем і циферблатом дня й ночі."}},ID="it-nightshift",GZ=26.5,GH=3,IZ=15.5,BZ=73.5,SPH=1.8,SP=10,AX=-15,MAG=[-15,-31],LX=40,LY=35,DC=[-176,105],DR=16,DT=12,QUEUE_MAX=12,REVIEW_MAX=12;
+const P={"origin":[374.97700999290487,189.36158508937126],"scale":1.026623670274722,"azimuth":68,"elevation":42},TEXT={"en":{"label":"Isometric night-shift bench: identical task cards ride a ring track past reproduction, repair and test stops until a green lamp sends them to a review tray in front of an accept lever the machine never pulls; a day/night dial turns in the corner."},"ua":{"label":"Ізометричний стіл «Нічна зміна»: однакові картки задач їдуть кільцем повз відтворення, ремонт і тести, поки зелена лампа не відправить їх до лотка рев’ю перед важелем «прийняти», якого машина не торкається; у куті обертається циферблат дня й ночі."}},ID="it-nightshift",GZ=26.5,GH=3,IZ=15.5,BZ=73.5,SPH=1.8,SP=10,AX=-15,MAG=[-15,-31],LX=40,LY=35,DC=[-176,105],DR=16,DT=12,QUEUE_MAX=12,REVIEW_MAX=12;
 const k={extrude,solidSvg,lineSvg,dotsSvg,onTop,ring,iso,slabOf,cylinder,lineOnTop,translateAlong,depthOf},Q={gearSvg,cardSvg,tongueSvg,gearAngles},M={ARM,GEAR,CARD,SPARES,DECK},S=(p,o)=>solidSvg(p,o),D=(pts,o={})=>dotsSvg(pts,{size:.5,...o}),at=p=>iso(p,P);
 const crankAt=a => { const c = [M.GEAR.a.x, M.GEAR.y], e = [c[0] + 12 * Math.cos(a), c[1] + 12 * Math.sin(a)], n = [-Math.sin(a) * 2, Math.cos(a) * 2]; const arm = [[c[0] + n[0], c[1] + n[1]], [e[0] + n[0], e[1] + n[1]], [e[0] - n[0], e[1] - n[1]], [c[0] - n[0], c[1] - n[1]]]; return S(k.extrude(arm, GZ + GH + 2.4, 1.6, P), { tone: 'mid' }) + S(k.cylinder(e[0], e[1], 2.4, GZ + GH + 4, 6, P, 20), { tone: 'mid' }); };
 const handAt=a => k.lineOnTop([DC[0] - Math.sin(a) * 3, DC[1] + Math.cos(a) * 3], [DC[0] + Math.sin(a) * (DR - 4), DC[1] - Math.cos(a) * (DR - 4)], DT + 0.2, P);
@@ -937,15 +937,15 @@ const armSvg=(y, down, carry) => {
 function mount(figure) {
  if (figure.dataset.mounted) return; figure.dataset.mounted = 'true';
  const q = s => figure.querySelector(s), part = n => q('[data-part="' + n + '"]');
- const stage = q('.iso-stage'), svg = q('svg'), layer = q('[data-layer="sort"]'), readEl = q('[data-readout]');
+ const stage = q('.iso-stage'), svg = q('svg'), layer = q('[data-layer="sort"]');
  const ref = Object.fromEntries(['card', 'falling', 'pusher', 'gear-a', 'gear-b', 'gear-c', 'crank', 'arm', 'tongue', 'review', 'hand'].map(n => [n, part(n)]));
  const queueCards = [...figure.querySelectorAll('[data-q]')], reviewCards = [...figure.querySelectorAll('[data-r]')], spareGears = [...figure.querySelectorAll('[data-s]')];
  const glow = { red: q('[data-glow="red"]'), green: q('[data-glow="green"]') };
  const statics = [...layer.children].filter(el => el !== ref.card);
  const keys = statics.map(el => +el.getAttribute('data-k'));
  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
- let tasks = night(), time = 0, carried = 0, served = 0, lang = 'en', textKey = '', cache = {};
- let visible = false, hover = false, focus = false, resumeAt = Infinity, manualUntil = 0, held = false, frame = 0, last = 0, dialShown = null;
+ let tasks = night(), time = 0, carried = 0, served = 0, cache = {};
+ let visible = false, resumeAt = Infinity, held = false, frame = 0, last = 0, dialShown = null;
  const now = () => performance.now() / 1000;
  function language() {
   const d = document.documentElement, a = d.getAttribute('data-lang');
@@ -954,14 +954,8 @@ function mount(figure) {
   if (u === 'en' || u === 'ua') return u;
   return /^uk/i.test(d.lang || '') ? 'ua' : 'en';
  }
- function words() {
-  lang = language(); const t = TEXT[lang];
-  q('[data-corner="hint"]').textContent = t.hint;
-  if (!window.VI_AI) { q('[data-corner="fig"]').textContent = t.fig; q('[data-corner="title"]').textContent = t.title; q('.iso-caption').textContent = t.caption; }
-  figure.querySelectorAll('.iso-key').forEach((el, i) => { for (const n of [...el.childNodes]) if (n.nodeType === 3) n.remove(); el.append(document.createTextNode(t.keys[i])); });
-  stage.setAttribute('aria-label', t.aria); svg.setAttribute('aria-label', t.label);
-  textKey = ''; draw();
- }
+ // On the site the description comes from content.js (anatomy.js); standalone, from TEXT.
+ function words() { if (!figure.closest('[data-anatomy-host]')) svg.setAttribute('aria-label', TEXT[language()].label); draw(); }
  // Slot a moving group among the static items by its depth key.
  function slot(el, k0) {
   let lo = 0, hi = keys.length;
@@ -1005,12 +999,9 @@ function mount(figure) {
   // Day/night hand: never steps back when a task is added mid-night.
   if (dialShown === null || s.dial >= dialShown || dialShown - s.dial > Math.PI || reduced.matches) dialShown = s.dial;
   ref.hand.setAttribute('d', handAt(dialShown - Math.PI / 2));
-  const text = readout(s, lang);
-  if (readEl.textContent !== text) readEl.textContent = text;
-  const w = WORDS[lang], desc = text + (s.green > 0.5 ? ' · ' + w.green : s.red > 0.5 ? ' · ' + w.red : '');
-  if (desc !== textKey) { stage.setAttribute('aria-valuetext', desc); textKey = desc; }
  }
- function running(t) { if (held || reduced.matches || !visible) return false; if (t < manualUntil) return true; if (hover || focus) return false; return t >= resumeAt; }
+ // A calm automatic loop: it never reacts to pointer, touch, focus or keys.
+ function running(t) { if (held || reduced.matches || !visible) return false; return t >= resumeAt; }
  function tick(ms) {
   const dt = last ? Math.min((ms - last) / 1000, 1 / 30) : 0; last = ms;
   if (!visible || reduced.matches) { frame = 0; return; }
@@ -1023,21 +1014,6 @@ function mount(figure) {
   frame = requestAnimationFrame(tick);
  }
  function run() { if (!frame && visible && !reduced.matches) { last = 0; frame = requestAnimationFrame(tick); } }
- function add() {
-  const t = now(); manualUntil = t + 3.6; resumeAt = Math.min(resumeAt, t + 3.6); held = false;
-  if (reduced.matches) { const st = still(); if (tasks === null) tasks = st.tasks.map(x => ({ ...x })); tasks.push({ laps: STREAM[tasks.length % STREAM.length], dropAt: -1 }); draw(); return; }
-  const sc = schedule(tasks), laps = STREAM[(served + tasks.length) % STREAM.length];
-  const lastDrop = Math.max(...tasks.map(x => x.dropAt));
-  if (time < sc.procEnd) tasks.push({ laps, dropAt: Math.max(time, lastDrop + FILL.every) });
-  else { carried++; tasks.push({ laps, dropAt: Math.max(time, lastDrop + FILL.every), next: true }); }
-  run();
- }
- stage.addEventListener('click', add);
- stage.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); add(); } });
- stage.addEventListener('pointerenter', () => { hover = true; });
- stage.addEventListener('pointerleave', () => { hover = false; resumeAt = now() + 3.6; run(); });
- stage.addEventListener('focus', () => { focus = true; });
- stage.addEventListener('blur', () => { focus = false; resumeAt = now() + 3.6; run(); });
  new IntersectionObserver(entries => {
   visible = entries[entries.length - 1].isIntersecting; figure.dataset.visible = String(visible);
   if (visible) { if (resumeAt === Infinity) resumeAt = now() + 1.4; run(); } else { cancelAnimationFrame(frame); frame = 0; last = 0; }
@@ -1045,7 +1021,7 @@ function mount(figure) {
  new MutationObserver(words).observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang', 'lang'] });
  reduced.addEventListener('change', () => { if (reduced.matches) { tasks = null; cancelAnimationFrame(frame); frame = 0; } else { tasks = night(); time = 0; resumeAt = now() + 1.4; run(); } draw(); });
  if (reduced.matches) tasks = null;
- // Deterministic hook for local checks: seek the production model to a time of the demo night.
+ // Test hook only (a custom event, never user input): seek the model to a time of the demo night.
  figure.addEventListener('nightshift:seek', e => { const d = e.detail || {}; tasks = night(); carried = 0; served = 0; time = Math.max(0, d.time || 0); held = d.hold !== false; dialShown = null; draw(); run(); });
  words();
 }

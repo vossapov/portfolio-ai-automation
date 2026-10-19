@@ -940,9 +940,11 @@ function poseOf(S, P) {
   return { move, html };
 }
 
-const P={"origin":[348.98169582699705,269.22932795856167],"scale":1.226106129282434,"azimuth":60,"elevation":40},TEXT={"en":{"fig":"Fig 1","title":"Personal robot","hint":"Tap or Space · next job","aria":"Household robot. Click, tap, Space or Enter sends it to the next job.","label":"Isometric household robot on a floor rail: it files receipts into a ledger, diagnoses an opened appliance with a probe and waters three pots.","caption":"A household robot on one rail does three jobs in turn: it files receipts into the ledger, probes an opened appliance until it finds the faulty part, and waters the plants. The counts show only what this demo has done.","keys":["Robot hand at work","Faulty part found","Wet soil"]},"ua":{"fig":"Рис 1","title":"Особистий робот","hint":"Дотик або пробіл · наступна справа","aria":"Побутовий робот. Дотик, пробіл або Enter відправляє його до наступної справи.","label":"Ізометричний побутовий робот на рейці: вносить чеки до книги обліку, шукає несправність у відкритому приладі щупом і поливає три вазони.","caption":"Побутовий робот на одній рейці по черзі робить три справи: вносить чеки до книги обліку, перевіряє щупом відкритий прилад і знаходить несправну деталь, поливає квіти. Лічильники показують лише те, що зробила ця демонстрація.","keys":["Рука робота в роботі","Знайдена несправність","Волога земля"]}};
+const P={"origin":[348.98169582699705,269.22932795856167],"scale":1.226106129282434,"azimuth":60,"elevation":40},TEXT={"en":{"label":"Isometric household robot on a floor rail: it files receipts into a ledger, diagnoses an opened appliance with a probe and waters three pots."},"ua":{"label":"Ізометричний побутовий робот на рейці: вносить чеки до книги обліку, шукає несправність у відкритому приладі щупом і поливає три вазони."}};
 // Live code for the personal robot. Inlined by build.mjs after the kit, model.mjs and pose.mjs,
 // inside one IIFE: no globals leak, nothing is fetched or evaluated.
+// A calm automatic loop: it never reacts to pointer, touch, focus or keys. It pauses offscreen
+// and shows one still frame under prefers-reduced-motion.
 function mount(figure) {
   if (figure.dataset.mounted) return;
   figure.dataset.mounted = 'true';
@@ -950,7 +952,7 @@ function mount(figure) {
   const parts = {}, shown = {};
   figure.querySelectorAll('[data-part]').forEach((el) => { parts[el.dataset.part] = el; });
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let t = 0, rushTo = -1, stillAt = STILL_T, visible = false, hover = false, wait = 1.4, last = 0, frame = 0, lang = 'en', described = '';
+  let t = 0, visible = false, wait = 1.4, last = 0, frame = 0;
 
   function language() {
     const d = document.documentElement, a = d.getAttribute('data-lang');
@@ -958,69 +960,36 @@ function mount(figure) {
     if (/^uk/i.test(d.lang || '')) return 'ua';
     return new URLSearchParams(location.search).get('lang') === 'ua' ? 'ua' : 'en';
   }
-  function words() {
-    lang = language();
-    const X = TEXT[lang], onSite = !!figure.closest('[data-anatomy-host]');
-    q('[data-corner="hint"]').textContent = X.hint;
-    if (!onSite) {               // on the site, fig, title and caption come from content.js
-      q('[data-corner="fig"]').textContent = X.fig;
-      q('[data-corner="title"]').textContent = X.title;
-      q('.iso-caption').textContent = X.caption;
-    }
-    figure.querySelectorAll('.iso-key').forEach((el, i) => {
-      for (const n of [...el.childNodes]) if (n.nodeType === 3) n.remove();
-      el.append(document.createTextNode(X.keys[i]));
-    });
-    stage.setAttribute('aria-label', X.aria);
-    svg.setAttribute('aria-label', X.label);
-    described = '';
-    draw();
-  }
+  // On the site the description comes from content.js (anatomy.js); standalone, from TEXT.
+  function words() { if (!figure.closest('[data-anatomy-host]')) svg.setAttribute('aria-label', TEXT[language()].label); }
   function draw() {
     const S = stateAt(t), Q = poseOf(S, P);
     for (const [name, v] of Object.entries(Q.move)) if (parts[name]) parts[name].setAttribute('transform', translateAlong(P, v));
     for (const [name, html] of Object.entries(Q.html)) if (parts[name] && shown[name] !== html) { parts[name].innerHTML = html; shown[name] = html; }
     figure.dataset.time = t.toFixed(2);
     figure.dataset.station = S.station;
-    q('[data-readout]').textContent = readout(S, lang);
-    const text = describe(S, lang);   // changes with the counts and the job, not every frame
-    if (text !== described) { stage.setAttribute('aria-valuetext', text); described = text; }
-  }
-  // Space, Enter, click or tap: hurry on to the next job (time runs fast until it starts).
-  function next() {
-    if (reduced.matches) { stillAt += CYCLE; t = stillAt; draw(); return; }
-    const { v } = visitAt(t);
-    rushTo = visitStart(v + 1);
-    wait = 0;
-    run();
   }
   function tick(now) {
     const dt = last ? Math.min((now - last) / 1000, 1 / 30) : 0;
     last = now;
     frame = 0;
     if (!visible || reduced.matches) return;
-    if (rushTo >= 0) { t = Math.min(rushTo, t + dt * 5); if (t >= rushTo) rushTo = -1; }
-    else if (!hover) { if (wait > 0) wait -= dt; else t += dt; }
+    if (wait > 0) wait -= dt; else t += dt;
     draw();
     frame = requestAnimationFrame(tick);
   }
   function run() { if (!frame && visible && !reduced.matches) { last = 0; frame = requestAnimationFrame(tick); } }
-  stage.addEventListener('click', next);
-  stage.addEventListener('keydown', (e) => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); next(); } else wait = 3.6; });
-  // Hover pauses the tour until the pointer leaves; it resumes 3.6 s after the last input.
-  stage.addEventListener('pointerenter', () => { hover = true; wait = 3.6; });
-  stage.addEventListener('pointerleave', () => { hover = false; wait = 3.6; run(); });
-  stage.addEventListener('focus', () => { wait = 3.6; });
   new IntersectionObserver((entries) => {
     visible = entries[entries.length - 1].isIntersecting;
     figure.dataset.visible = String(visible);
     if (visible) run(); else { cancelAnimationFrame(frame); frame = 0; last = 0; }
   }, { rootMargin: '120px 0px' }).observe(stage);
   new MutationObserver(words).observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang', 'lang'] });
-  reduced.addEventListener('change', () => { if (reduced.matches) { cancelAnimationFrame(frame); frame = 0; t = stillAt; draw(); } else { wait = 1.4; run(); } });
-  // Deterministic checks: jump to time `t` and hold there.
-  figure.addEventListener('robot:seek', (e) => { t = e.detail.t; rushTo = -1; hover = true; draw(); });
-  if (reduced.matches) t = stillAt;
+  reduced.addEventListener('change', () => { if (reduced.matches) { cancelAnimationFrame(frame); frame = 0; t = STILL_T; draw(); } else { wait = 1.4; run(); } });
+  // Test hook only (a custom event, never user input): jump to time `t` and hold there.
+  figure.addEventListener('robot:seek', (e) => { t = e.detail.t; wait = 1e9; draw(); });
+  if (reduced.matches) t = STILL_T;
+  draw();
   words();
 }
 function find() { document.querySelectorAll('.iso-figure[data-figure="personal-assistant"]').forEach(mount); }

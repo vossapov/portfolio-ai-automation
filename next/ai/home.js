@@ -36,6 +36,16 @@
   }
   function arrowRight() { return svgEl('M2.5 8h10M8.7 4.2 12.5 8l-3.8 3.8', 16); }
   function setText(n, s) { if (s && n.textContent !== s) n.textContent = s; }
+  /* "*phrase*" → <mark class="hl">phrase</mark>, same convention as page.js */
+  function setRich(n, s) {
+    if (!s) return;
+    n.textContent = '';
+    String(s).split('*').forEach(function (part, i) {
+      if (!part) return;
+      if (i % 2) { var m = doc.createElement('mark'); m.className = 'hl'; m.textContent = part; n.appendChild(m); }
+      else n.appendChild(doc.createTextNode(part));
+    });
+  }
 
   function lang() {
     var l = root.getAttribute('data-lang');
@@ -167,6 +177,52 @@
 
     box.innerHTML = '';
 
+    /* 0 — what this branch is: one promise, then the three shared steps */
+    if (t.aiTitle) {
+      var introSec = h('section', 'vh-ai-head', { 'aria-labelledby': 'vhAiTitle' });
+      var introWrap = h('div', 'vh-wrap');
+      var introHead = h('h2', null, { id: 'vhAiTitle', tabindex: '-1' });
+      setRich(introHead, t.aiTitle);
+      introWrap.appendChild(introHead);
+      if (t.aiLead) {
+        var introLead = h('p', 'vh-ai-lead');
+        setText(introLead, t.aiLead);
+        introWrap.appendChild(introLead);
+      }
+      introSec.appendChild(introWrap);
+      box.appendChild(introSec);
+
+      if (t.howSteps && t.howSteps.length) {
+        var howSec = h('section', 'vh-how', { 'aria-labelledby': 'vhHowTitle' });
+        var howWrap = h('div', 'vh-wrap');
+        var howHead = h('h2', 'vh-how-title', { id: 'vhHowTitle', tabindex: '-1' });
+        setText(howHead, t.howTitle || t.how);
+        howWrap.appendChild(howHead);
+        if (t.howLead) {
+          var howLead = h('p', 'vh-how-lead');
+          setText(howLead, t.howLead);
+          howWrap.appendChild(howLead);
+        }
+        var howList = h('ol', 'vh-how-steps');
+        t.howSteps.forEach(function (step, i) {
+          var li = h('li', 'vh-how-step');
+          var num = h('span', 'vh-how-num', { 'aria-hidden': 'true' });
+          setText(num, String(i + 1));
+          li.appendChild(num);
+          var body = h('div');
+          var st = h('h3');
+          setText(st, step.t);
+          var sp = h('p');
+          setText(sp, step.p);
+          body.appendChild(st); body.appendChild(sp); li.appendChild(body);
+          howList.appendChild(li);
+        });
+        howWrap.appendChild(howList);
+        howSec.appendChild(howWrap);
+        box.appendChild(howSec);
+      }
+    }
+
     var forSec = h('section', 'vh-for', { 'aria-labelledby': 'vhForWhom' });
     var forWrap = h('div', 'vh-wrap');
     var forHead = h('h2', null, { id: 'vhForWhom', tabindex: '-1' });
@@ -176,7 +232,7 @@
     AUD.forEach(function (slug) {
       var aud = t.aud && t.aud[slug];
       if (!aud) return;
-      var a = h('a', 'vh-for-btn', { href: '#aud-' + slug, 'data-key': 'for:' + slug });
+      var a = h('a', 'vh-for-btn vh-for-btn--' + slug, { href: '#aud-' + slug, 'data-key': 'for:' + slug });
       var label = h('span', 'vh-for-label');
       setText(label, aud.btn);
       a.appendChild(label);
@@ -197,7 +253,7 @@
       wrap.appendChild(fig);
       var copy = h('div', 'vh-aud-copy');
       var h3 = h('h3', null, { id: 'aud-' + slug + '-title', tabindex: '-1' });
-      setText(h3, aud.title);
+      setRich(h3, aud.title);
       copy.appendChild(h3);
       var lead = h('p', 'vh-aud-lead');
       setText(lead, aud.lead || aud.line);

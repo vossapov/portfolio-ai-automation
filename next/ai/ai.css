@@ -168,7 +168,7 @@ body.vh-light .footer-row .vi-foot-ai { display: none; }
 .vh-for { padding-block: clamp(64px, 9vw, 132px) clamp(40px, 6vw, 88px); scroll-margin-top: calc(var(--vh-hdr) + 12px); }
 .vh-for:focus { outline: none; }
 .vh-for h2 { font-size: clamp(36px, 4.6vw, 64px); font-weight: 300; letter-spacing: -.03em; line-height: 1.02; }
-.vh-for-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(20px, 3vw, 44px); margin-top: clamp(40px, 6vw, 80px); }
+.vh-for-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 3vw, 44px); margin-top: clamp(40px, 6vw, 80px); }
 .vh-for-btn { display: grid; justify-items: center; align-content: start; gap: 14px; text-align: center; text-decoration: none; color: var(--vh-ink); min-width: 0; padding: 18px 12px 22px; border-radius: 28px; transition: background .35s cubic-bezier(.2, .8, .2, 1); }
 .vh-for-btn:hover, .vh-for-btn:focus-visible { background: #fff; }
 .vh-for-btn:focus-visible { outline: 2px solid var(--vh-focus); outline-offset: 3px; }
@@ -195,13 +195,13 @@ body.vh-light .footer-row .vi-foot-ai { display: none; }
 .vh-aud-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 88px); align-items: center; }
 .vh-aud-art { margin: 0; min-width: 0; }
 .vh-aud-art img { width: min(40vw, 520px); height: auto; }
-.vh-aud--costs .vh-aud-art, .vh-aud--personal .vh-aud-art { order: 2; }
+.vh-aud--nonprofit .vh-aud-art, .vh-aud--it .vh-aud-art { order: 2; }
 .vh-aud-copy { display: grid; justify-items: start; gap: clamp(14px, 2vw, 24px); }
 .vh-aud-copy h3 { font-size: clamp(32px, 3.6vw, 52px); font-weight: 300; letter-spacing: -.03em; line-height: 1.06; }
 .vh-aud-line { font-size: 18px; line-height: 1.55; color: var(--vh-ink-2); max-width: 46ch; }
 @media (max-width: 860px) {
   .vh-aud-grid { grid-template-columns: 1fr; gap: clamp(24px, 6vw, 40px); }
-  .vh-aud--costs .vh-aud-art, .vh-aud--personal .vh-aud-art { order: 0; }
+  .vh-aud--nonprofit .vh-aud-art, .vh-aud--it .vh-aud-art { order: 0; }
   .vh-aud-art img { width: min(58vw, 380px); }
 }
 
@@ -293,6 +293,8 @@ body.vh-light .footer-row .vi-foot-ai { display: none; }
   .ai-other img { width: 72px; }
   .ai-other span { max-width: none; }
 }
+/* text-only direction cards: no 72px image column on phones */
+@media (max-width: 640px) { .ai-other { grid-template-columns: minmax(0, 1fr); } }
 
 /* ───────── motion preferences ───────── */
 @media (prefers-reduced-motion: reduce) {
@@ -322,14 +324,10 @@ body.vh-light .footer-row .vi-foot-ai { display: none; }
 .ai-page--erp, .ai-page--costs, .ai-page--nonprofit, .ai-page--personal, .ai-page--it { --vh-field: var(--vh-ground); }
 .vh-aud--erp, .vh-aud--costs, .vh-aud--nonprofit, .vh-aud--personal, .vh-aud--it { background: var(--vh-ground); }
 
-/* the drawing sits in a quiet panel; the figure's own paper matches the panel */
-.vh-anatomy .iso-plate {
-  padding: 46px 20px 24px; border-radius: 26px; background: #fff;
-  box-shadow: 0 0 0 1px var(--vh-line);
-}
-.vh-anatomy .iso-plate-corners { inset: 18px 20px; }
-.vh-anatomy .iso-legend { margin-top: 12px; font-size: 13px; color: var(--vh-ink-2); }
-.vh-anatomy .iso-caption { text-wrap: pretty; }
+/* the drawing alone: no panel, corner texts, hint, readout, legend or caption. The figure's own
+   paper equals the page ground, so it sits straight on the section. */
+.vh-anatomy .iso-figure { margin: 0; }
+.vh-anatomy .iso-svg { overflow: hidden; }
 .vh-aud-art--figure, .ai-hero-art--figure { min-width: 0; min-height: 0; }
 
 /* the paragraph and the points: what the company gets */
@@ -381,3 +379,156 @@ body.vh-light .footer-row .vi-foot-ai { display: none; }
   .vh-for-btn { grid-template-columns: 1fr; padding: 16px 18px; }
 }
 
+
+/* ───────── figures: calm automatic loops, full-bleed on phones ───────── */
+/* QA subsection of a detail page (IT: the night-shift loop) */
+.ai-qa { padding-block: clamp(40px, 6vw, 88px) clamp(8px, 2vw, 16px); overflow-x: clip; }
+.ai-qa-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.ai-qa-art { margin: 0; min-width: 0; }
+.ai-qa-copy { display: grid; justify-items: start; gap: clamp(14px, 2vw, 22px); }
+.ai-qa-title { font-size: clamp(28px, 3.2vw, 44px); font-weight: 300; letter-spacing: -.025em; line-height: 1.05; }
+/* the figure host can bleed past the content column; the section clips it, never the page */
+.vh-aud, .ai-hero { overflow-x: clip; }
+@media (max-width: 860px) {
+  .ai-qa-grid { grid-template-columns: 1fr; gap: clamp(20px, 6vw, 36px); }
+  /* Phones: the drawing is larger than the screen, centred in a full-bleed band, and fades in
+     and out of transparency at the left and right edges. Proportions are kept (height: auto). */
+  .vh-aud-art--figure, .ai-hero-art--figure, .ai-qa-art {
+    width: 100vw; max-width: none; margin-inline: calc(50% - 50vw); overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 13%, #000 87%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 13%, #000 87%, transparent 100%);
+  }
+  .vh-aud-art--figure .vh-anatomy, .ai-hero-art--figure .vh-anatomy, .ai-qa-art .vh-anatomy {
+    width: var(--fig-bleed, 150%); margin-left: calc((100% - var(--fig-bleed, 150%)) / 2);
+  }
+}
+
+/* ───────── AI branch: the visual language of the NGO / business case pages ───────── */
+/* Same devices, one system: Fixel Display headings, a highlighter mark on the key phrase,
+   four named accents that own whole fields, a dark band for rhythm, solid tone buttons. */
+@font-face {
+  font-family: "Fixel Display";
+  src: url("/portfolio-ai-automation/next/assets/fonts/FixelDisplay-SemiBold.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Fixel Display";
+  src: url("/portfolio-ai-automation/next/assets/fonts/FixelDisplay-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+#branch-ai {
+  --vhi-display: "Fixel Display", var(--vh-font);
+  --vhi-violet: #6b4ce6; --vhi-violet-ink: #4a2fc4; --vhi-violet-50: #efebff;
+  --vhi-coral: #ff6b4a; --vhi-coral-ink: #c23f1f; --vhi-coral-50: #fff0ea;
+  --vhi-pink: #f0508a; --vhi-pink-ink: #b8235a; --vhi-pink-50: #ffedf3;
+  --vhi-teal: #0fa39b; --vhi-teal-ink: #0a7a74; --vhi-teal-50: #e3f6f3;
+  --vhi-sun: #ffd84d;
+  --vhi-dark: #17152a;
+}
+#branch-ai ::selection { background: var(--vhi-sun); color: var(--vh-ink); }
+#branch-ai mark.hl {
+  color: inherit; padding: 0 .06em; margin: 0 -.06em;
+  background: linear-gradient(transparent 58%, var(--vhi-sun) 58%, var(--vhi-sun) 90%, transparent 90%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+
+/* the promise */
+#branch-ai .vh-ai-head { padding-block: clamp(56px, 8vw, 116px) clamp(10px, 2vw, 22px); scroll-margin-top: calc(var(--vh-hdr) + 12px); }
+#branch-ai .vh-ai-head h2 {
+  font-family: var(--vhi-display); font-weight: 600; letter-spacing: -.035em;
+  font-size: clamp(38px, 5vw, 70px); line-height: 1.02; text-wrap: balance; max-width: 18ch;
+}
+#branch-ai .vh-ai-head h2:focus { outline: none; }
+#branch-ai .vh-ai-lead {
+  margin-top: clamp(18px, 2.4vw, 28px); font-size: clamp(17px, 1.45vw, 21px); line-height: 1.55;
+  color: var(--vh-ink-2); max-width: 62ch; text-wrap: pretty;
+}
+
+/* the shared three steps, on the dark band */
+#branch-ai .vh-how {
+  background: var(--vhi-dark); color: #f4f2ff;
+  padding-block: clamp(44px, 6vw, 84px); margin-top: clamp(32px, 5vw, 64px);
+}
+#branch-ai .vh-how-title {
+  font-family: var(--vhi-display); font-weight: 600; letter-spacing: -.03em;
+  font-size: clamp(26px, 3vw, 40px); line-height: 1.05; color: #fff;
+}
+#branch-ai .vh-how-title:focus { outline: none; }
+#branch-ai .vh-how-lead {
+  margin-top: 14px; font-size: 17px; line-height: 1.55; color: rgba(244, 242, 255, .72); max-width: 58ch;
+}
+#branch-ai .vh-how-steps {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 48px);
+  margin-top: clamp(26px, 4vw, 44px);
+}
+#branch-ai .vh-how-step { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: start; min-width: 0; }
+#branch-ai .vh-how-num {
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--vhi-sun); color: var(--vhi-dark);
+  font-family: var(--vhi-display); font-size: 17px; font-weight: 700;
+}
+#branch-ai .vh-how-step h3 {
+  font-family: var(--vhi-display); font-size: clamp(18px, 1.6vw, 22px); font-weight: 600;
+  letter-spacing: -.015em; line-height: 1.2; color: #fff;
+}
+#branch-ai .vh-how-step p { margin-top: 8px; font-size: 16px; line-height: 1.5; color: rgba(244, 242, 255, .72); text-wrap: pretty; }
+
+/* who it is for: four accent cards instead of four grey boxes */
+#branch-ai .vh-for { padding-block: clamp(52px, 7vw, 104px) clamp(40px, 6vw, 88px); }
+#branch-ai .vh-for h2 {
+  font-family: var(--vhi-display); font-weight: 600; letter-spacing: -.03em;
+  font-size: clamp(30px, 3.8vw, 52px);
+}
+#branch-ai .vh-for-grid { margin-top: clamp(26px, 4vw, 46px); gap: clamp(14px, 2vw, 24px); }
+#branch-ai .vh-for-btn {
+  --tone: var(--vhi-violet); --tone-ink: var(--vhi-violet-ink); --tone-50: var(--vhi-violet-50);
+  background: var(--tone-50); box-shadow: none; border-radius: 24px;
+  padding: 22px 22px 24px; gap: 10px; transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+}
+#branch-ai .vh-for-btn::before {
+  content: ""; width: 26px; height: 4px; border-radius: 2px; background: var(--tone); margin-bottom: 6px;
+}
+#branch-ai .vh-for-btn--erp { --tone: var(--vhi-violet); --tone-ink: var(--vhi-violet-ink); --tone-50: var(--vhi-violet-50); }
+#branch-ai .vh-for-btn--nonprofit { --tone: var(--vhi-coral); --tone-ink: var(--vhi-coral-ink); --tone-50: var(--vhi-coral-50); }
+#branch-ai .vh-for-btn--personal { --tone: var(--vhi-pink); --tone-ink: var(--vhi-pink-ink); --tone-50: var(--vhi-pink-50); }
+#branch-ai .vh-for-btn--it { --tone: var(--vhi-teal); --tone-ink: var(--vhi-teal-ink); --tone-50: var(--vhi-teal-50); }
+#branch-ai .vh-for-btn:hover, #branch-ai .vh-for-btn:focus-visible {
+  background: var(--tone-50); transform: translateY(-3px);
+  box-shadow: 0 16px 30px -20px rgba(29, 27, 43, .45);
+}
+#branch-ai .vh-for-label {
+  font-family: var(--vhi-display); font-size: 19px; font-weight: 600; letter-spacing: -.015em;
+  line-height: 1.25; color: var(--vh-ink); text-wrap: balance;
+}
+
+/* each audience owns a tinted field, its own tone and a solid tone button */
+#branch-ai .vh-aud { --tone: var(--vhi-violet); --tone-ink: var(--vhi-violet-ink); }
+#branch-ai .vh-aud--erp { background: var(--vhi-violet-50); --tone: var(--vhi-violet); --tone-ink: var(--vhi-violet-ink); }
+#branch-ai .vh-aud--nonprofit { background: var(--vhi-coral-50); --tone: var(--vhi-coral); --tone-ink: var(--vhi-coral-ink); }
+#branch-ai .vh-aud--personal { background: var(--vhi-pink-50); --tone: var(--vhi-pink); --tone-ink: var(--vhi-pink-ink); }
+#branch-ai .vh-aud--it { background: var(--vhi-teal-50); --tone: var(--vhi-teal); --tone-ink: var(--vhi-teal-ink); }
+#branch-ai .vh-aud-copy h3 {
+  font-family: var(--vhi-display); font-weight: 600; letter-spacing: -.03em; line-height: 1.06;
+  font-size: clamp(28px, 3.4vw, 48px); text-wrap: balance;
+}
+#branch-ai .vh-aud-copy h3:focus { outline: none; }
+#branch-ai .vh-aud-lead { font-size: clamp(17px, 1.45vw, 20px); max-width: 54ch; }
+#branch-ai .vh-points li { font-size: 17px; }
+#branch-ai .vh-points li::before { background-image: none; background-color: var(--tone); }
+#branch-ai .vh-aud .vh-pill {
+  background: var(--tone-ink); border-color: transparent; color: #fff; font-weight: 600;
+  box-shadow: 0 12px 26px -16px var(--tone-ink);
+}
+#branch-ai .vh-aud .vh-pill:hover { box-shadow: 0 16px 30px -16px var(--tone-ink); }
+#branch-ai .vh-aud .vh-pill:focus-visible { outline: 2px solid var(--tone-ink); }
+
+@media (max-width: 860px) {
+  #branch-ai .vh-how-steps { grid-template-columns: 1fr; gap: 22px; }
+  #branch-ai .vh-for-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #branch-ai .vh-ai-head h2 { max-width: none; }
+}
+@media (max-width: 520px) {
+  #branch-ai .vh-for-grid { grid-template-columns: 1fr; }
+  #branch-ai .vh-for-btn { padding: 18px 18px 20px; }
+}

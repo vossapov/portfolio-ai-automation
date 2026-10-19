@@ -1,0 +1,8 @@
+LUX HALLOWEEN / PRINT / 2026
+A5 148 × 210 mm, 4 pages, original10 goods:05,06,07,10,13,17,22,25,27,28. Sequentialpages, not printerimposition.
+A2 420 × 594 mm, 1 page. Both documents3 mm bleed on each side, explicit TrimBox and BleedBox. Native typography; Noto Sans embedded. ImageGen produced text-free scene, using approved v5 style reference; prices and all factual fields retained from catalog.json with native typesetting.
+All prices, promotion dates and products are demonstrations. AI photos illustrate fictional assortment. This is a visualapproval proof, RGB, not PDF/X. Printer must perform ICC conversion and approve a proof. Original socialprofile logo150px remains unchanged, clipped to its circle: ~181ppi on A5,64ppi on A2. Replace it with official vector before production. Generated hero1054×1492 is approximately180ppi A5 /63ppi A2; large-format print requires higher-resolution approved photography. No claim of pressready quality.
+Each page contains demo disclaimer, phone/address and icons+handles without social descriptors. Final text retains exact sourceprices, units, names, SKU, details. Poster communicates maximum discount50%; catalog minimum is5%.
+Workflow: approvedreference → ImageGen styled scene → native precise data/layout → PDF render → visualQA → data/font/trim checks. scripts/generate_print_final.py is editable layout source.
+
+SOCIAL: 5 concepts × 4 independently composed formats. ImageGen based on approved faucet artwork, with visual verification of every output. Generated images may redraw fine logo/product details; illustrative demo only. Native SVG wrappers normalize exact export dimensions without stretching. Stories keep important content clear of top/bottom interface regions.

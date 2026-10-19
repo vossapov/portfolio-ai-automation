@@ -20,13 +20,13 @@
   /* ───────── i18n ───────── */
   var I18N = {
     en: {
-      skip: 'Skip to the timeline', role: 'Game UI/UX Designer', newtab: ' (opens in a new tab)',
-      'nav.label': 'Primary', 'nav.work': 'Work', 'nav.contact': 'Contact', 'nav.cv': 'CV ↓',
+      skip: 'Skip to the timeline', role: 'UI/UX design · AI automation', newtab: ' (opens in a new tab)',
+      'nav.label': 'Primary', 'nav.work': 'UI/UX design', 'nav.ai': 'AI automation', 'nav.contact': 'Contact', 'nav.cv': 'CV ↓',
       'nav.original': 'Original version', 'nav.originalTitle': 'Open the original portfolio',
       'lang.label': 'Language',
-      'hero.eyebrow': 'Game UI/UX Designer', 'hero.cta': 'Explore the timeline',
-      'hero.lede': 'Game UI/UX designer with 10+ years in design and 5+ in gaming. Full pipeline — UX research, wireframes, art direction and design systems in Figma.',
-      'hero.alt': 'Valentyn Ihnatov, game UI/UX designer, waving, with his dog',
+      'hero.eyebrow': 'UI/UX design · AI automation', 'hero.cta': 'Explore the timeline', 'hero.ctaAi': 'AI automation',
+      'hero.lede': 'I design interfaces for games, apps and the web, and build AI systems that take the routine off people’s hands — with an interface they can actually use. 10+ years in design, 5+ in gaming.',
+      'hero.alt': 'Valentyn Ihnatov, UI/UX designer, waving, with his dog',
       'hero.f.projects': 'Projects', 'hero.f.employers': 'Companies & tracks', 'hero.f.range': 'Design journey',
       'work.eyebrow': 'Work & experience', 'work.title': 'Projects across time',
       'work.note': 'Newest at the top. Company bands share one month scale; personal projects have their own track on the far right. Card height represents project duration.',
@@ -71,13 +71,13 @@
       'store.link': 'Link'
     },
     ua: {
-      skip: 'Перейти до таймлайну', role: 'Game UI/UX дизайнер', newtab: ' (відкриється в новій вкладці)',
-      'nav.label': 'Головна навігація', 'nav.work': 'Роботи', 'nav.contact': 'Контакти', 'nav.cv': 'CV ↓',
+      skip: 'Перейти до таймлайну', role: 'UI/UX дизайн · AI-автоматизація', newtab: ' (відкриється в новій вкладці)',
+      'nav.label': 'Головна навігація', 'nav.work': 'UI/UX дизайн', 'nav.ai': 'AI-автоматизація', 'nav.contact': 'Контакти', 'nav.cv': 'CV ↓',
       'nav.original': 'Оригінальна версія', 'nav.originalTitle': 'Відкрити оригінальне портфоліо',
       'lang.label': 'Мова',
-      'hero.eyebrow': 'Game UI/UX дизайнер', 'hero.cta': 'Дивитись таймлайн',
-      'hero.lede': 'Game UI/UX дизайнер: 10+ років у дизайні, 5+ у геймдеві. Повний цикл — UX-ресерч, вайрфрейми, арт-дірекшн і дизайн-системи у Figma.',
-      'hero.alt': 'Валентин Ігнатов, game UI/UX дизайнер, махає рукою, поруч його пес',
+      'hero.eyebrow': 'UI/UX дизайн · AI-автоматизація', 'hero.cta': 'Дивитись таймлайн', 'hero.ctaAi': 'AI-автоматизація',
+      'hero.lede': 'Проєктую інтерфейси для ігор, застосунків і вебу та будую AI-системи, які беруть рутину на себе — з інтерфейсом, яким справді користуються. 10+ років у дизайні, 5+ у геймдеві.',
+      'hero.alt': 'Валентин Ігнатов, UI/UX дизайнер, махає рукою, поруч його пес',
       'hero.f.projects': 'Проєкти', 'hero.f.employers': 'Компанії та напрями', 'hero.f.range': 'Досвід у дизайні',
       'work.eyebrow': 'Роботи та досвід', 'work.title': 'Проєкти в часі',
       'work.note': 'Найновіше вгорі. Смуги компаній мають спільну шкалу місяців, власні проєкти — окремий стовпчик праворуч. Висота картки дорівнює тривалості проєкту.',

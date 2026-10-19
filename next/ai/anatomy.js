@@ -7,14 +7,15 @@
                                (language switch) the same live node is moved into the new host,
                                so the figure's script keeps its references.
 
-   Corner texts marked data-figure-text="fig|title|caption" are filled from
-   window.VI_AI[lang].aud[slug].figure and re-filled when the page language changes. A live
-   figure translates its own hint and readout. Missing files leave the host empty. */
+   Only the drawing is shown: no corner texts, hint, readout, legend or caption. Its accessible
+   description (svg aria-label) comes from window.VI_AI[lang].aud[slug].figure.caption and is
+   re-set when the page language changes; a nested slug such as 'it.qa' reads aud.it.qa.
+   Live figures run a calm automatic loop and take no input. Missing files leave the host empty. */
 (function () {
   'use strict';
 
   var BASE = '/portfolio-ai-automation/next/ai/figures/';
-  var VERSION = 'anatomy-3';
+  var VERSION = 'anatomy-6';
   var COPY = window.VI_AI;
   var htmlCache = {};
   var liveNodes = {};
@@ -31,20 +32,14 @@
     if (!f) return null;
     return typeof f === 'string' ? { id: f, live: false } : { id: f.id, live: !!f.live };
   }
-  function texts(slug) {
-    var t = COPY && COPY[lang()];
-    var aud = t && t.aud && t.aud[slug];
-    if (!t || !aud) return null;
-    var f = aud.figure || {};
-    return { fig: t.fig || '', title: f.title || '', caption: f.caption || '' };
+  function caption(slug) {
+    var node = COPY && COPY[lang()] && COPY[lang()].aud;
+    slug.split('.').forEach(function (key) { node = node && node[key]; });
+    return node && node.figure && node.figure.caption || '';
   }
   function applyTexts(host, slug) {
-    var t = texts(slug);
-    if (!t) return;
-    Array.prototype.forEach.call(host.querySelectorAll('[data-figure-text]'), function (el) {
-      var v = t[el.getAttribute('data-figure-text')];
-      if (v && el.textContent !== v) el.textContent = v;
-    });
+    var text = caption(slug), svg = host.querySelector('.iso-figure svg');
+    if (text && svg && svg.getAttribute('aria-label') !== text) svg.setAttribute('aria-label', text);
   }
   function fetchHtml(id, file) {
     var key = id + '/' + file;

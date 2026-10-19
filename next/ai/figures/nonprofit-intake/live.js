@@ -707,7 +707,7 @@ const LABELS={en:{photo:'photo',name:'name',birthDate:'birth date',address:'addr
 function readout(s,lang) {const c=s.counts;return lang==='ua'?`перевірено ${c.checked} · схвалено ${c.approved} · повернуто ${c.returned}`:`checked ${c.checked} · approved ${c.approved} · returned ${c.returned}`;}
 function verdictText(s,lang){return !s.verdict?'':s.good?(lang==='ua'?'Усі поля на місці':'All fields present'):(lang==='ua'?'Повернуто: немає ':'Returned: no ')+s.missing.map(f=>LABELS[lang][f]).join(', ');}
 
-const P={"origin":[362.4663052719029,206.13840041628927],"scale":0.8427245268455628,"azimuth":62,"elevation":43},TEXT={"en":{"fig":"Fig 1","title":"Application intake","hint":"Tap or Space · next profile","keys":["Profile being read","Complete → approved pile","Missing fields → return"],"caption":"A fixed demo queue of eight profiles. The gripper picks the top sheet; the rack lifts the stack to meet it. The scanner reads six required fields. Complete profiles join the approved pile; missing fields are marked and the sheet returns to the sender. The demonstration reloads after eight sheets.","aria":"Application intake scanner. Click, Space or Enter processes the next profile."},"ua":{"fig":"Рис 1","title":"Приймання заявок","hint":"Дотик або пробіл · наступна","keys":["Профіль на перевірці","Повна заявка → схвалено","Пропуски → повернення"],"caption":"Демонстраційна черга з восьми профілів. Захват знімає верхній аркуш, а підйомник піднімає стопку. Сканер читає шість обов’язкових полів. Повні заявки потрапляють до схвалених; пропуски позначаються, й аркуш повертається відправнику. Після восьми аркушів демонстрація починається знову.","aria":"Сканер заявок. Дотик, пробіл або Enter подає наступний профіль."}};
+const P={"origin":[362.4663052719029,206.13840041628927],"scale":0.8427245268455628,"azimuth":62,"elevation":43},TEXT={"en":{"label":"Isometric application scanner: a gripper picks the top sheet, a scanner reads its fields, complete profiles are filed and incomplete ones are marked and returned along a U-shaped track."},"ua":{"label":"Ізометричний сканер заявок: захват бере верхній аркуш, сканер читає поля, повні заявки складаються до схвалених, а неповні позначаються й повертаються U-подібною доріжкою."}};
 function mount(figure){
  if(figure.dataset.mounted)return;figure.dataset.mounted='true';
  const q=s=>figure.querySelector(s), part=n=>q('[data-part="'+n+'"]'),stage=q('.iso-stage'),svg=q('svg');
@@ -715,9 +715,10 @@ function mount(figure){
  const sheets=Array.from({length:8},(_,i)=>part('sheet-'+i)), output=Array.from({length:5},(_,i)=>part('approved-'+i));
  const fields=FIELDS.map(f=>({f,ink:q('[data-ink="'+f+'"]'),zone:q('[data-zone="'+f+'"]'),el:q('[data-field="'+f+'"]')}));
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- let index=reduced.matches?1:0,time=reduced.matches?7.5:0,active=reduced.matches,visible=false,hover=false,focus=false,manual=false,wait=1.4,last=0,frame=0,lang='en',textKey='';
+ let index=reduced.matches?1:0,time=reduced.matches?7.5:0,active=reduced.matches,visible=false,held=false,wait=1.4,last=0,frame=0,lang='en';
  function language(){const d=document.documentElement;const a=d.getAttribute('data-lang');return a==='en'||a==='ua'?a:(d.lang.startsWith('uk')||new URLSearchParams(location.search).get('lang')==='ua'?'ua':'en');}
- function words(){lang=language();const t=TEXT[lang];for(const n of ['fig','title','hint'])q('[data-corner="'+n+'"]').textContent=t[n];q('.iso-caption').textContent=t.caption;figure.querySelectorAll('.iso-key').forEach((el,i)=>{for(const n of [...el.childNodes])if(n.nodeType===3)n.remove();el.append(document.createTextNode(t.keys[i]));});stage.setAttribute('aria-label',t.aria);svg.setAttribute('aria-label',t.aria);draw();}
+ // On the site the description comes from content.js (anatomy.js); standalone, from TEXT.
+ function words(){lang=language();if(!figure.closest('[data-anatomy-host]'))svg.setAttribute('aria-label',TEXT[lang].label);draw();}
  const move=(el,v)=>el.setAttribute('transform',translateAlong(P,v));
  function draw(){
   const s=stateAt(index,time);figure.dataset.phase=s.phase;figure.dataset.index=index;figure.dataset.time=time.toFixed(3);figure.dataset.stack=s.stack;figure.dataset.platform=s.platform.toFixed(2);figure.dataset.pile=s.pile;
@@ -736,27 +737,24 @@ function mount(figure){
   refs.beam.style.opacity=s.phase==='scan'?'1':'0';
   fields.forEach(({f,ink,zone,el},i)=>{ink.style.opacity=s.app[f]?'1':'0';el.style.opacity=s.phase==='scan'&&s.scan<[.32,.20,.31,.48,.68,.72][i]?'.32':'1';zone.setAttribute('data-tone',s.verdict&&!s.app[f]?'red':'faint');zone.style.fill=s.verdict&&!s.app[f]?'var(--anatomy-red)':'none';zone.style.fillOpacity='.10';zone.style.strokeWidth=s.verdict&&!s.app[f]?'1.3':'';});
   refs['panel-good'].style.opacity=s.verdict&&s.good?'1':'0';refs['panel-bad'].style.opacity=s.verdict&&!s.good?'1':'0';refs['panel-idle'].style.opacity=s.verdict?'0':'1';
-  const text=readout(s,lang);q('[data-readout]').textContent=text;
-  const description=text+(s.verdict?' · '+verdictText(s,lang):'');if(description!==textKey){stage.setAttribute('aria-valuetext',description);stage.setAttribute('aria-description',description);textKey=description;}
  }
  function tick(now){const dt=last?Math.min((now-last)/1000,1/30):0;last=now;
   if(!visible){frame=0;return;}
   if(!reduced.matches){
-   if(active&&(manual||(!hover&&!focus&&wait<=0))){time+=dt;if(time>=DURATION){time=DURATION;active=false;manual=false;wait=1.2;}}
-   else if(!hover&&!focus){wait-=dt;if(wait<=0&&!active){if(time>=DURATION){index=(index+1)%QUEUE.length;time=0;}active=true;}}
+   // A calm automatic loop: it never reacts to pointer, touch, focus or keys.
+   if(held){}
+   else if(active&&wait<=0){time+=dt;if(time>=DURATION){time=DURATION;active=false;wait=1.2;}}
+   else{wait-=dt;if(wait<=0&&!active){if(time>=DURATION){index=(index+1)%QUEUE.length;time=0;}active=true;}}
    draw();
   }
   frame=!reduced.matches&&visible?requestAnimationFrame(tick):0;
  }
  function run(){if(!frame&&visible&&!reduced.matches){last=0;frame=requestAnimationFrame(tick);}}
- function next(){wait=3.6;manual=true;if(reduced.matches){index=(index+1)%QUEUE.length;time=7.5;active=true;draw();return;}if(time>=DURATION){index=(index+1)%QUEUE.length;time=0;}active=true;run();}
- stage.addEventListener('click',next);stage.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();next();}});
- stage.addEventListener('pointerenter',()=>{hover=true;wait=3.6;});stage.addEventListener('pointerleave',()=>{hover=false;wait=3.6;run();});stage.addEventListener('focus',()=>{focus=true;wait=3.6;});stage.addEventListener('blur',()=>{focus=false;wait=3.6;run();});
  new IntersectionObserver(entries=>{visible=entries[entries.length-1].isIntersecting;figure.dataset.visible=String(visible);if(visible)run();else{cancelAnimationFrame(frame);frame=0;last=0;}}).observe(stage);
  new MutationObserver(words).observe(document.documentElement,{attributes:true,attributeFilter:['data-lang','lang']});
- reduced.addEventListener('change',()=>{if(reduced.matches){index=1;time=7.5;active=true;manual=false;cancelAnimationFrame(frame);frame=0;draw();}else{active=false;wait=1.4;run();}});
- // Custom event is also useful to deterministic local checks; it uses the production model.
- figure.addEventListener('intake:seek',e=>{index=Math.max(0,Math.min(7,e.detail.index));time=Math.max(0,Math.min(DURATION,e.detail.time));active=false;manual=false;hover=true;draw();});
+ reduced.addEventListener('change',()=>{if(reduced.matches){index=1;time=7.5;active=true;cancelAnimationFrame(frame);frame=0;draw();}else{active=false;wait=1.4;run();}});
+ // Test hook only (a custom event, never user input): jump to a state and hold it.
+ figure.addEventListener('intake:seek',e=>{index=Math.max(0,Math.min(7,e.detail.index));time=Math.max(0,Math.min(DURATION,e.detail.time));active=false;held=true;draw();});
  words();
 }
 function find(){const figures=document.querySelectorAll('.iso-figure[data-figure="nonprofit-intake"]');figures.forEach(mount);return figures.length;}

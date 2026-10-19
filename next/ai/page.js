@@ -4,7 +4,7 @@
 
   var doc = document, root = doc.documentElement;
   var COPY = window.VI_AI;
-  var SLUGS = ['erp', 'costs', 'nonprofit', 'personal', 'it'];
+  var SLUGS = ['erp', 'nonprofit', 'personal', 'it'];
   var body = doc.body;
   var main = doc.getElementById('aiMain');
   var slug = body ? body.getAttribute('data-ai-page') : null;
@@ -42,6 +42,17 @@
   function arrowLeft() { return svgEl('M11.5 3.6 7.1 8l4.4 4.4', 16); }
   function arrowRight() { return svgEl('M2.5 8h10M8.7 4.2 12.5 8l-3.8 3.8', 16); }
   function setText(n, s) { if (s && n.textContent !== s) n.textContent = s; }
+  /* "*phrase*" in copy → <mark class="hl">phrase</mark>; everything else stays plain text */
+  function setRich(n, s) {
+    if (!s) return;
+    n.textContent = '';
+    String(s).split('*').forEach(function (part, i) {
+      if (!part) return;
+      if (i % 2) { var m = doc.createElement('mark'); m.className = 'hl'; m.textContent = part; n.appendChild(m); }
+      else n.appendChild(doc.createTextNode(part));
+    });
+  }
+  window.VIRich = setRich;
   function artUrl(path, size) { return path + (size === 480 ? '-480.webp' : '.webp'); }
   function imgEl(path, size, priority) {
     var im = doc.createElement('img');
@@ -126,11 +137,23 @@
     grid.appendChild(art);
     var copy = h('div', 'ai-hero-copy');
     var h1 = h('h1', null, { id: 'aiTitle', tabindex: '-1' });
-    setText(h1, aud.hero);
+    setRich(h1, aud.hero);
     copy.appendChild(h1);
     var lead = h('p', 'ai-hero-lead');
     setText(lead, aud.lead || aud.line);
     copy.appendChild(lead);
+    /* pages with cases and demos (non-profit, business assistants): content object per slug */
+    var RICH = { nonprofit: window.VI_AI_NGO, erp: window.VI_AI_BIZ }[slug];
+    var ngoT = RICH && (RICH[state.lang] || RICH.en);
+    if (ngoT && ngoT.labels && ngoT.labels.heroCta) {
+      var cta = h('div', 'ai-hero-cta');
+      [[ngoT.labels.heroCtaHref || '#case-membership', ngoT.labels.heroCta], ['#ngoHowTitle', ngoT.labels.heroCta2]].forEach(function (c) {
+        var a = h('a', 'vh-pill', { href: c[0] });
+        var sp = h('span'); setText(sp, c[1]); a.appendChild(sp); a.appendChild(arrowRight());
+        cta.appendChild(a);
+      });
+      copy.appendChild(cta);
+    }
     grid.appendChild(copy);
     heroWrap.appendChild(grid);
     main.appendChild(hero);
@@ -149,9 +172,43 @@
         list.appendChild(li);
       });
       gotWrap.appendChild(list);
+      var ctxSpot = RICH && RICH.spots && RICH.spots.context;
+      if (ctxSpot) {
+        var sfig = h('figure', 'ngo-spot', { 'aria-hidden': 'true' });
+        var simg = h('img', null, { src: ctxSpot, alt: '', width: '600', height: '600', loading: 'lazy', decoding: 'async' });
+        simg.addEventListener('error', function () { sfig.hidden = true; });
+        sfig.appendChild(simg);
+        gotWrap.appendChild(sfig);
+      }
       got.appendChild(gotWrap);
       main.appendChild(got);
     }
+
+    /* 3b — a QA subsection with its own drawing (IT page: the night-shift loop) */
+    var qa = aud.qa;
+    if (qa && COPY.figures && COPY.figures[slug + '.qa'] && window.VIAnatomy) {
+      var qaSec = h('section', 'ai-qa', { 'aria-labelledby': 'aiQaTitle' });
+      var qaWrap = h('div', 'vh-wrap');
+      var qaGrid = h('div', 'ai-qa-grid');
+      var qaArt = h('figure', 'ai-qa-art ai-hero-art--figure');
+      window.VIAnatomy.mount(qaArt, slug + '.qa');
+      qaGrid.appendChild(qaArt);
+      var qaCopy = h('div', 'ai-qa-copy');
+      var qaHead = h('h2', 'ai-qa-title', { id: 'aiQaTitle', tabindex: '-1' });
+      setText(qaHead, qa.title);
+      qaCopy.appendChild(qaHead);
+      var qaLead = h('p', 'ai-hero-lead');
+      setText(qaLead, qa.lead);
+      qaCopy.appendChild(qaLead);
+      qaGrid.appendChild(qaCopy);
+      qaWrap.appendChild(qaGrid);
+      qaSec.appendChild(qaWrap);
+      main.appendChild(qaSec);
+    }
+
+    /* 3c — page-specific sections (non-profit and business: how it works, cases, demos — next/ai/ngo/ngo.js) */
+    var extra = window.VIPageExtra && window.VIPageExtra[slug];
+    if (extra) extra(state.lang).forEach(function (n) { main.appendChild(n); });
 
     /* 4 — contact */
     var contact = contactBlock();
