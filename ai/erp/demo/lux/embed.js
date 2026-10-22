@@ -1,4 +1,4 @@
-/* Lux store assistant inside the demo frame. The app (/portfolio-ai-automation/lux/) is loaded unchanged in an iframe from the same
+/* Lux store assistant inside the demo frame. The app (/lux/) is loaded unchanged in an iframe from the same
    origin; this script (a) starts it on the screen the visitor came for, (b) reports its screen to the stage
    so the tips outside the frame follow it, and (c) moves demo notices out of the mock-up: words such as
    «демо», «демопоказ», «тестовий режим» are removed or reworded inside the frame — the stage note and the
@@ -11,7 +11,7 @@
   if (!frame || !S) return;
   var start = (window.location.hash || '#search').replace(/^#/, '') || 'search';
   if (!/^(search|marketing|product\/\d+|brand)$/.test(start)) start = 'search';
-  frame.src = '/portfolio-ai-automation/lux/#' + start;
+  frame.src = '/lux/#' + start;
 
   var win = null, doc = null;
   var DIALOG = { 'voice-dialog': 'voice', 'photo-dialog': 'photo', 'campaign-dialog': 'new', 'publish-dialog': 'publish', 'store-map-dialog': 'map', 'asset-dialog': 'asset' };

@@ -21,9 +21,9 @@ window.VI_DATA = {
    ],
    "e": [
     2026,
-    9
+    11
    ],
-   "ongoing": false,
+   "ongoing": true,
    "ambient": false,
    "url": "https://tatem.games/",
    "logo": null
@@ -48,7 +48,7 @@ window.VI_DATA = {
    "ongoing": true,
    "ambient": false,
    "url": "https://whimsygames.co",
-   "logo": "/portfolio-ai-automation/assets/companies/whimsy-games.svg"
+   "logo": "/assets/companies/whimsy-games.svg"
   },
   {
    "id": "argentics",
@@ -70,7 +70,32 @@ window.VI_DATA = {
    "ongoing": false,
    "ambient": false,
    "url": "https://argentics.io",
-   "logo": "/portfolio-ai-automation/assets/companies/argentics.svg"
+   "logo": "/assets/companies/argentics.svg"
+  },
+  {
+   "id": "ust",
+   "name": [
+    "NGO «United. Strong. Together.»",
+    "ГО «Об’єднані. Сильні. Разом!»"
+   ],
+   "role": [
+    "UI/UX Designer · Systems & Automation",
+    "UI/UX дизайнер · система та автоматизація"
+   ],
+   "color": "#4f7cff",
+   "side": "left",
+   "s": [
+    2025,
+    12
+   ],
+   "e": [
+    2026,
+    5
+   ],
+   "ongoing": false,
+   "ambient": false,
+   "url": null,
+   "logo": null
   },
   {
    "id": "fg",
@@ -92,7 +117,7 @@ window.VI_DATA = {
    "ongoing": false,
    "ambient": false,
    "url": "https://fgfactory.com",
-   "logo": "/portfolio-ai-automation/assets/companies/fg-factory.png"
+   "logo": "/assets/companies/fg-factory.png"
   },
   {
    "id": "room8",
@@ -114,7 +139,7 @@ window.VI_DATA = {
    "ongoing": false,
    "ambient": false,
    "url": "https://room8studio.com",
-   "logo": "/portfolio-ai-automation/assets/companies/room8-studio.svg"
+   "logo": "/assets/companies/room8-studio.svg"
   },
   {
    "id": "soundmagco",
@@ -194,12 +219,12 @@ window.VI_DATA = {
    "id": "audiostore",
    "co": "soundmagco",
    "s": [
-    2018,
+    2017,
     1
    ],
    "e": [
-    2018,
-    4
+    2022,
+    2
    ],
    "ongoing": false,
    "name": [
@@ -225,30 +250,30 @@ window.VI_DATA = {
    "category": "web",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/audiostore.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/audiostore.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/audiostore.png",
+   "cover": "/next/assets/generated-mockups/audiostore.png",
+   "thumb": "/next/assets/generated-mockups/audiostore.png",
+   "mockup": "/next/assets/generated-mockups/audiostore.png",
    "screens": [
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-01.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-02.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-03.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-04.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-05.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-06.png",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-07.png",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-08.png",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-09.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-10.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-11.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-12.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-13.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-14.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-15.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-16.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-17.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-18.jpg",
-    "/portfolio-ai-automation/next/assets/projects/audiostore/banner-19.jpg",
-    "/portfolio-ai-automation/assets/screenshots/audiostore/audiostore-1.jpg"
+    "/next/assets/projects/audiostore/banner-01.jpg",
+    "/next/assets/projects/audiostore/banner-02.jpg",
+    "/next/assets/projects/audiostore/banner-03.jpg",
+    "/next/assets/projects/audiostore/banner-04.jpg",
+    "/next/assets/projects/audiostore/banner-05.jpg",
+    "/next/assets/projects/audiostore/banner-06.png",
+    "/next/assets/projects/audiostore/banner-07.png",
+    "/next/assets/projects/audiostore/banner-08.png",
+    "/next/assets/projects/audiostore/banner-09.jpg",
+    "/next/assets/projects/audiostore/banner-10.jpg",
+    "/next/assets/projects/audiostore/banner-11.jpg",
+    "/next/assets/projects/audiostore/banner-12.jpg",
+    "/next/assets/projects/audiostore/banner-13.jpg",
+    "/next/assets/projects/audiostore/banner-14.jpg",
+    "/next/assets/projects/audiostore/banner-15.jpg",
+    "/next/assets/projects/audiostore/banner-16.jpg",
+    "/next/assets/projects/audiostore/banner-17.jpg",
+    "/next/assets/projects/audiostore/banner-18.jpg",
+    "/next/assets/projects/audiostore/banner-19.jpg",
+    "/assets/screenshots/audiostore/audiostore-1.jpg"
    ],
    "bullets": [
     [
@@ -270,22 +295,22 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/audiostore.jpg",
-    "/portfolio-ai-automation/assets/screenshots/audiostore/audiostore-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/audiostore/audiostore-1.jpg"
+    "/assets/covers/audiostore.jpg",
+    "/assets/screenshots/audiostore/audiostore-1.jpg",
+    "/assets/screenshots/audiostore/audiostore-1.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/audiostore.png"
+   "generatedMockup": "/next/assets/generated-mockups/audiostore.png"
   },
   {
    "id": "soundmag",
    "co": "soundmagco",
    "s": [
     2017,
-    9
+    1
    ],
    "e": [
-    2017,
-    12
+    2022,
+    2
    ],
    "ongoing": false,
    "name": [
@@ -311,17 +336,17 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/soundmag.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/soundmag.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/soundmag.png",
+   "cover": "/next/assets/generated-mockups/soundmag.png",
+   "thumb": "/next/assets/generated-mockups/soundmag.png",
+   "mockup": "/next/assets/generated-mockups/soundmag.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/soundmag/soundmag-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/soundmag/soundmag-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/soundmag/soundmag-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/soundmag/soundmag-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/soundmag/soundmag-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/soundmag/soundmag-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/soundmag/soundmag-7.jpg"
+    "/assets/screenshots/soundmag/soundmag-1.jpg",
+    "/assets/screenshots/soundmag/soundmag-2.jpg",
+    "/assets/screenshots/soundmag/soundmag-3.jpg",
+    "/assets/screenshots/soundmag/soundmag-4.jpg",
+    "/assets/screenshots/soundmag/soundmag-5.jpg",
+    "/assets/screenshots/soundmag/soundmag-6.jpg",
+    "/assets/screenshots/soundmag/soundmag-7.jpg"
    ],
    "bullets": [
     [
@@ -347,11 +372,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/soundmag.jpg",
-    "/portfolio-ai-automation/assets/screenshots/soundmag/soundmag-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/soundmag/soundmag-1.jpg"
+    "/assets/covers/soundmag.jpg",
+    "/assets/screenshots/soundmag/soundmag-1.jpg",
+    "/assets/screenshots/soundmag/soundmag-1.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/soundmag.png"
+   "generatedMockup": "/next/assets/generated-mockups/soundmag.png"
   },
   {
    "id": "mykolaivid",
@@ -388,19 +413,19 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/mykolaivid.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/mykolaivid.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/mykolaivid.png",
+   "cover": "/next/assets/generated-mockups/mykolaivid.png",
+   "thumb": "/next/assets/generated-mockups/mykolaivid.png",
+   "mockup": "/next/assets/generated-mockups/mykolaivid.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-7.jpg",
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-8.jpg",
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-9.jpg"
+    "/assets/screenshots/mykolaivid/mykolaivid-1.jpg",
+    "/assets/screenshots/mykolaivid/mykolaivid-2.jpg",
+    "/assets/screenshots/mykolaivid/mykolaivid-3.jpg",
+    "/assets/screenshots/mykolaivid/mykolaivid-4.jpg",
+    "/assets/screenshots/mykolaivid/mykolaivid-5.jpg",
+    "/assets/screenshots/mykolaivid/mykolaivid-6.jpg",
+    "/assets/screenshots/mykolaivid/mykolaivid-7.jpg",
+    "/assets/screenshots/mykolaivid/mykolaivid-8.jpg",
+    "/assets/screenshots/mykolaivid/mykolaivid-9.jpg"
    ],
    "bullets": [
     [
@@ -426,11 +451,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/mykolaivid.jpg",
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/mykolaivid/mykolaivid-2.jpg"
+    "/assets/covers/mykolaivid.jpg",
+    "/assets/screenshots/mykolaivid/mykolaivid-2.jpg",
+    "/assets/screenshots/mykolaivid/mykolaivid-2.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/mykolaivid.png"
+   "generatedMockup": "/next/assets/generated-mockups/mykolaivid.png"
   },
   {
    "id": "boomerang",
@@ -467,15 +492,15 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/boomerang.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/boomerang.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/boomerang.png",
+   "cover": "/next/assets/generated-mockups/boomerang.png",
+   "thumb": "/next/assets/generated-mockups/boomerang.png",
+   "mockup": "/next/assets/generated-mockups/boomerang.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/boomerang/boomerang-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/boomerang/boomerang-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/boomerang/boomerang-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/boomerang/boomerang-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/boomerang/boomerang-5.jpg"
+    "/assets/screenshots/boomerang/boomerang-1.jpg",
+    "/assets/screenshots/boomerang/boomerang-2.jpg",
+    "/assets/screenshots/boomerang/boomerang-3.jpg",
+    "/assets/screenshots/boomerang/boomerang-4.jpg",
+    "/assets/screenshots/boomerang/boomerang-5.jpg"
    ],
    "bullets": [
     [
@@ -497,11 +522,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/boomerang.jpg",
-    "/portfolio-ai-automation/assets/screenshots/boomerang/boomerang-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/boomerang/boomerang-3.jpg"
+    "/assets/covers/boomerang.jpg",
+    "/assets/screenshots/boomerang/boomerang-3.jpg",
+    "/assets/screenshots/boomerang/boomerang-3.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/boomerang.png"
+   "generatedMockup": "/next/assets/generated-mockups/boomerang.png"
   },
   {
    "id": "woxs",
@@ -538,17 +563,17 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/woxs.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/woxs.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/woxs.png",
+   "cover": "/next/assets/generated-mockups/woxs.png",
+   "thumb": "/next/assets/generated-mockups/woxs.png",
+   "mockup": "/next/assets/generated-mockups/woxs.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/woxs/woxs-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/woxs/woxs-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/woxs/woxs-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/woxs/woxs-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/woxs/woxs-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/woxs/woxs-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/woxs/woxs-7.jpg"
+    "/assets/screenshots/woxs/woxs-1.jpg",
+    "/assets/screenshots/woxs/woxs-2.jpg",
+    "/assets/screenshots/woxs/woxs-3.jpg",
+    "/assets/screenshots/woxs/woxs-4.jpg",
+    "/assets/screenshots/woxs/woxs-5.jpg",
+    "/assets/screenshots/woxs/woxs-6.jpg",
+    "/assets/screenshots/woxs/woxs-7.jpg"
    ],
    "bullets": [
     [
@@ -574,11 +599,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/woxs.jpg",
-    "/portfolio-ai-automation/assets/screenshots/woxs/woxs-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/woxs/woxs-3.jpg"
+    "/assets/covers/woxs.jpg",
+    "/assets/screenshots/woxs/woxs-3.jpg",
+    "/assets/screenshots/woxs/woxs-3.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/woxs.png"
+   "generatedMockup": "/next/assets/generated-mockups/woxs.png"
   },
   {
    "id": "voznesenskcity",
@@ -615,17 +640,17 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/voznesenskcity.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/voznesenskcity.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/voznesenskcity.png",
+   "cover": "/next/assets/generated-mockups/voznesenskcity.png",
+   "thumb": "/next/assets/generated-mockups/voznesenskcity.png",
+   "mockup": "/next/assets/generated-mockups/voznesenskcity.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/voznesenskcity/voznesenskcity-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesenskcity/voznesenskcity-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesenskcity/voznesenskcity-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesenskcity/voznesenskcity-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesenskcity/voznesenskcity-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesenskcity/voznesenskcity-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesenskcity/voznesenskcity-7.jpg"
+    "/assets/screenshots/voznesenskcity/voznesenskcity-1.jpg",
+    "/assets/screenshots/voznesenskcity/voznesenskcity-2.jpg",
+    "/assets/screenshots/voznesenskcity/voznesenskcity-3.jpg",
+    "/assets/screenshots/voznesenskcity/voznesenskcity-4.jpg",
+    "/assets/screenshots/voznesenskcity/voznesenskcity-5.jpg",
+    "/assets/screenshots/voznesenskcity/voznesenskcity-6.jpg",
+    "/assets/screenshots/voznesenskcity/voznesenskcity-7.jpg"
    ],
    "bullets": [
     [
@@ -651,11 +676,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/voznesenskcity.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesenskcity/voznesenskcity-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesenskcity/voznesenskcity-1.jpg"
+    "/assets/covers/voznesenskcity.jpg",
+    "/assets/screenshots/voznesenskcity/voznesenskcity-1.jpg",
+    "/assets/screenshots/voznesenskcity/voznesenskcity-1.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/voznesenskcity.png"
+   "generatedMockup": "/next/assets/generated-mockups/voznesenskcity.png"
   },
   {
    "id": "cargotracker",
@@ -692,13 +717,13 @@ window.VI_DATA = {
    "category": "web",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/cargotracker.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/cargotracker.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/cargotracker.png",
+   "cover": "/next/assets/generated-mockups/cargotracker.png",
+   "thumb": "/next/assets/generated-mockups/cargotracker.png",
+   "mockup": "/next/assets/generated-mockups/cargotracker.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/cargotracker/cargotracker-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/cargotracker/cargotracker-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/cargotracker/cargotracker-3.jpg"
+    "/assets/screenshots/cargotracker/cargotracker-1.jpg",
+    "/assets/screenshots/cargotracker/cargotracker-2.jpg",
+    "/assets/screenshots/cargotracker/cargotracker-3.jpg"
    ],
    "bullets": [
     [
@@ -724,11 +749,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/cargotracker.jpg",
-    "/portfolio-ai-automation/assets/screenshots/cargotracker/cargotracker-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/cargotracker/cargotracker-1.jpg"
+    "/assets/covers/cargotracker.jpg",
+    "/assets/screenshots/cargotracker/cargotracker-1.jpg",
+    "/assets/screenshots/cargotracker/cargotracker-1.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/cargotracker.png"
+   "generatedMockup": "/next/assets/generated-mockups/cargotracker.png"
   },
   {
    "id": "routeschemes",
@@ -765,16 +790,16 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/routeschemes.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/routeschemes.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/routeschemes.png",
+   "cover": "/next/assets/generated-mockups/routeschemes.png",
+   "thumb": "/next/assets/generated-mockups/routeschemes.png",
+   "mockup": "/next/assets/generated-mockups/routeschemes.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/routeschemes/routeschemes-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/routeschemes/routeschemes-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/routeschemes/routeschemes-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/routeschemes/routeschemes-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/routeschemes/routeschemes-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/routeschemes/routeschemes-6.jpg"
+    "/assets/screenshots/routeschemes/routeschemes-1.jpg",
+    "/assets/screenshots/routeschemes/routeschemes-2.jpg",
+    "/assets/screenshots/routeschemes/routeschemes-3.jpg",
+    "/assets/screenshots/routeschemes/routeschemes-4.jpg",
+    "/assets/screenshots/routeschemes/routeschemes-5.jpg",
+    "/assets/screenshots/routeschemes/routeschemes-6.jpg"
    ],
    "bullets": [
     [
@@ -800,11 +825,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/routeschemes.jpg",
-    "/portfolio-ai-automation/assets/screenshots/routeschemes/routeschemes-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/routeschemes/routeschemes-2.jpg"
+    "/assets/covers/routeschemes.jpg",
+    "/assets/screenshots/routeschemes/routeschemes-2.jpg",
+    "/assets/screenshots/routeschemes/routeschemes-2.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/routeschemes.png"
+   "generatedMockup": "/next/assets/generated-mockups/routeschemes.png"
   },
   {
    "id": "anthracite",
@@ -814,8 +839,8 @@ window.VI_DATA = {
     11
    ],
    "e": [
-    2021,
-    12
+    2022,
+    4
    ],
    "ongoing": false,
    "name": [
@@ -841,19 +866,19 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/anthracite.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/anthracite.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/anthracite.png",
+   "cover": "/next/assets/generated-mockups/anthracite.png",
+   "thumb": "/next/assets/generated-mockups/anthracite.png",
+   "mockup": "/next/assets/generated-mockups/anthracite.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-7.jpg",
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-8.jpg",
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-9.jpg"
+    "/assets/screenshots/anthracite/anthracite-1.jpg",
+    "/assets/screenshots/anthracite/anthracite-2.jpg",
+    "/assets/screenshots/anthracite/anthracite-3.jpg",
+    "/assets/screenshots/anthracite/anthracite-4.jpg",
+    "/assets/screenshots/anthracite/anthracite-5.jpg",
+    "/assets/screenshots/anthracite/anthracite-6.jpg",
+    "/assets/screenshots/anthracite/anthracite-7.jpg",
+    "/assets/screenshots/anthracite/anthracite-8.jpg",
+    "/assets/screenshots/anthracite/anthracite-9.jpg"
    ],
    "bullets": [
     [
@@ -875,22 +900,22 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/anthracite.jpg",
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/anthracite/anthracite-1.jpg"
+    "/assets/covers/anthracite.jpg",
+    "/assets/screenshots/anthracite/anthracite-1.jpg",
+    "/assets/screenshots/anthracite/anthracite-1.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/anthracite.png"
+   "generatedMockup": "/next/assets/generated-mockups/anthracite.png"
   },
   {
    "id": "voskresensk",
    "co": "freelance",
    "s": [
     2021,
-    11
+    8
    ],
    "e": [
     2021,
-    12
+    10
    ],
    "ongoing": false,
    "name": [
@@ -916,18 +941,18 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/voskresensk.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/voskresensk.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/voskresensk.png",
+   "cover": "/next/assets/generated-mockups/voskresensk.png",
+   "thumb": "/next/assets/generated-mockups/voskresensk.png",
+   "mockup": "/next/assets/generated-mockups/voskresensk.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/voskresensk/voskresensk-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voskresensk/voskresensk-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voskresensk/voskresensk-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voskresensk/voskresensk-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voskresensk/voskresensk-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voskresensk/voskresensk-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voskresensk/voskresensk-7.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voskresensk/voskresensk-8.jpg"
+    "/assets/screenshots/voskresensk/voskresensk-1.jpg",
+    "/assets/screenshots/voskresensk/voskresensk-2.jpg",
+    "/assets/screenshots/voskresensk/voskresensk-3.jpg",
+    "/assets/screenshots/voskresensk/voskresensk-4.jpg",
+    "/assets/screenshots/voskresensk/voskresensk-5.jpg",
+    "/assets/screenshots/voskresensk/voskresensk-6.jpg",
+    "/assets/screenshots/voskresensk/voskresensk-7.jpg",
+    "/assets/screenshots/voskresensk/voskresensk-8.jpg"
    ],
    "bullets": [
     [
@@ -949,11 +974,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/voskresensk.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voskresensk/voskresensk-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voskresensk/voskresensk-2.jpg"
+    "/assets/covers/voskresensk.jpg",
+    "/assets/screenshots/voskresensk/voskresensk-2.jpg",
+    "/assets/screenshots/voskresensk/voskresensk-2.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/voskresensk.png"
+   "generatedMockup": "/next/assets/generated-mockups/voskresensk.png"
   },
   {
    "id": "blastjam",
@@ -964,7 +989,7 @@ window.VI_DATA = {
    ],
    "e": [
     2026,
-    9
+    10
    ],
    "ongoing": false,
    "name": [
@@ -994,14 +1019,14 @@ window.VI_DATA = {
    "category": "games",
    "family": "casual",
    "style": "cartoon",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/blastjam.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/blastjam.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/blastjam.png",
+   "cover": "/next/assets/generated-mockups/blastjam.png",
+   "thumb": "/next/assets/generated-mockups/blastjam.png",
+   "mockup": "/next/assets/generated-mockups/blastjam.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/blastjam/blastjam-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/blastjam/blastjam-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/blastjam/blastjam-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/blastjam/blastjam-4.jpg"
+    "/assets/screenshots/blastjam/blastjam-1.jpg",
+    "/assets/screenshots/blastjam/blastjam-2.jpg",
+    "/assets/screenshots/blastjam/blastjam-3.jpg",
+    "/assets/screenshots/blastjam/blastjam-4.jpg"
    ],
    "bullets": [
     [
@@ -1028,24 +1053,24 @@ window.VI_DATA = {
      "ua": "Останні роботи · вересень-жовтень 2026"
     },
     "summary": {
-     "en": "I designed the skin and background shop screens, refined offer presentation and prepared the visual assets for handoff. I also worked through the Fortune Wheel flow: reward progression, ad or coin spins, and the Last Chance reminder.",
-     "ua": "Я опрацював екрани магазину скінів і фонів, подачу спеціальних пропозицій та підготовку графіки до передачі в розробку. Окремо пропрацював UX колеса фортуни: прогрес нагород, спіни за рекламу або монети й нагадування Last Chance."
+     "en": "I designed the skin and background shop screens, refined offer presentation and prepared the visual assets for handoff. I also designed the home screen and the Fortune Wheel screen: progress track, resources, High Chance progression and the choice between rewarded video and coins.",
+     "ua": "Я опрацював екрани магазину скінів і фонів, подачу спеціальних пропозицій та підготовку графіки до передачі в розробку. Окремо оформив головний екран і екран колеса фортуни: трек прогресу, ресурси, прогрес High Chance та вибір між рекламою й монетами."
     },
     "images": [
-     "/portfolio-ai-automation/next/assets/recent/blastjam/shooter-skin.png",
-     "/portfolio-ai-automation/next/assets/recent/blastjam/backgrounds.png",
-     "/portfolio-ai-automation/next/assets/recent/blastjam/welcome-pack.png",
-     "/portfolio-ai-automation/next/assets/recent/blastjam/wheel-rv-coins.png",
-     "/portfolio-ai-automation/next/assets/recent/blastjam/last-chance.png"
+     "/next/assets/recent/blastjam/shooter-skin.png",
+     "/next/assets/recent/blastjam/backgrounds.png",
+     "/next/assets/recent/blastjam/welcome-pack.png",
+     "/next/assets/recent/blastjam/home-screen.png",
+     "/next/assets/recent/blastjam/fortune-wheel.png"
     ],
-    "preview": "/portfolio-ai-automation/next/assets/generated-mockups/blastjam.png"
+    "preview": "/next/assets/generated-mockups/blastjam.png"
    },
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/blastjam.jpg",
-    "/portfolio-ai-automation/assets/screenshots/blastjam/blastjam-1.jpg",
-    "/portfolio-ai-automation/assets/mockups/blastjam-mockup.jpg"
+    "/assets/covers/blastjam.jpg",
+    "/assets/screenshots/blastjam/blastjam-1.jpg",
+    "/assets/mockups/blastjam-mockup.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/blastjam.png"
+   "generatedMockup": "/next/assets/generated-mockups/blastjam.png"
   },
   {
    "id": "tilesort",
@@ -1086,19 +1111,19 @@ window.VI_DATA = {
    "category": "games",
    "family": "casual",
    "style": "cartoon",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/tilesort.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/tilesort.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/tilesort.png",
+   "cover": "/next/assets/generated-mockups/tilesort.png",
+   "thumb": "/next/assets/generated-mockups/tilesort.png",
+   "mockup": "/next/assets/generated-mockups/tilesort.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/tilesort/tilesort-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tilesort/tilesort-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tilesort/tilesort-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tilesort/tilesort-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tilesort/tilesort-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tilesort/tilesort-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tilesort/tilesort-7.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tilesort/tilesort-8.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tilesort/tilesort-9.jpg"
+    "/assets/screenshots/tilesort/tilesort-1.jpg",
+    "/assets/screenshots/tilesort/tilesort-2.jpg",
+    "/assets/screenshots/tilesort/tilesort-3.jpg",
+    "/assets/screenshots/tilesort/tilesort-4.jpg",
+    "/assets/screenshots/tilesort/tilesort-5.jpg",
+    "/assets/screenshots/tilesort/tilesort-6.jpg",
+    "/assets/screenshots/tilesort/tilesort-7.jpg",
+    "/assets/screenshots/tilesort/tilesort-8.jpg",
+    "/assets/screenshots/tilesort/tilesort-9.jpg"
    ],
    "bullets": [
     [
@@ -1120,11 +1145,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/tilesort.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tilesort/tilesort-1.jpg",
-    "/portfolio-ai-automation/assets/mockups/tilesort-mockup.jpg"
+    "/assets/covers/tilesort.jpg",
+    "/assets/screenshots/tilesort/tilesort-1.jpg",
+    "/assets/mockups/tilesort-mockup.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/tilesort.png"
+   "generatedMockup": "/next/assets/generated-mockups/tilesort.png"
   },
   {
    "id": "tadafish",
@@ -1156,14 +1181,14 @@ window.VI_DATA = {
    "category": "games",
    "family": "casual",
    "style": "stylized",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/tadafish.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/tadafish.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/tadafish.png",
+   "cover": "/next/assets/generated-mockups/tadafish.png",
+   "thumb": "/next/assets/generated-mockups/tadafish.png",
+   "mockup": "/next/assets/generated-mockups/tadafish.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/tadafish/tadafish-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tadafish/tadafish-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tadafish/tadafish-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/tadafish/tadafish-4.jpg"
+    "/assets/screenshots/tadafish/tadafish-1.jpg",
+    "/assets/screenshots/tadafish/tadafish-2.jpg",
+    "/assets/screenshots/tadafish/tadafish-3.jpg",
+    "/assets/screenshots/tadafish/tadafish-4.jpg"
    ],
    "bullets": [
     [
@@ -1185,10 +1210,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/screenshots/tadafish/tadafish-5.jpg",
-    "/portfolio-ai-automation/assets/mockups/tadafish-mockup.jpg"
+    "/assets/screenshots/tadafish/tadafish-5.jpg",
+    "/assets/mockups/tadafish-mockup.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/tadafish.png"
+   "generatedMockup": "/next/assets/generated-mockups/tadafish.png"
   },
   {
    "id": "undead",
@@ -1225,14 +1250,14 @@ window.VI_DATA = {
    "category": "games",
    "family": "shooter",
    "style": "realistic",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/undead.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/undead.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/undead.png",
+   "cover": "/next/assets/generated-mockups/undead.png",
+   "thumb": "/next/assets/generated-mockups/undead.png",
+   "mockup": "/next/assets/generated-mockups/undead.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/native/undead-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/undead-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/undead-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/undead-4.jpg"
+    "/assets/screenshots/native/undead-1.jpg",
+    "/assets/screenshots/native/undead-2.jpg",
+    "/assets/screenshots/native/undead-3.jpg",
+    "/assets/screenshots/native/undead-4.jpg"
    ],
    "bullets": [
     [
@@ -1263,10 +1288,10 @@ window.VI_DATA = {
     ]
    ],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/projects/undead.png",
-    "/portfolio-ai-automation/assets/mockups/undead-mockup.png"
+    "/assets/projects/undead.png",
+    "/assets/mockups/undead-mockup.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/undead.png"
+   "generatedMockup": "/next/assets/generated-mockups/undead.png"
   },
   {
    "id": "jelly",
@@ -1298,16 +1323,16 @@ window.VI_DATA = {
    "category": "games",
    "family": "casual",
    "style": "cartoon",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/jelly.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/jelly.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/jelly.png",
+   "cover": "/next/assets/generated-mockups/jelly.png",
+   "thumb": "/next/assets/generated-mockups/jelly.png",
+   "mockup": "/next/assets/generated-mockups/jelly.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/native/jelly-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/jelly-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/jelly-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/jelly-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/jelly-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/jelly-6.jpg"
+    "/assets/screenshots/native/jelly-1.jpg",
+    "/assets/screenshots/native/jelly-2.jpg",
+    "/assets/screenshots/native/jelly-3.jpg",
+    "/assets/screenshots/native/jelly-4.jpg",
+    "/assets/screenshots/native/jelly-5.jpg",
+    "/assets/screenshots/native/jelly-6.jpg"
    ],
    "bullets": [
     [
@@ -1329,11 +1354,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/jelly.jpg",
-    "/portfolio-ai-automation/assets/projects/jelly-valley.png",
-    "/portfolio-ai-automation/assets/mockups/jelly-mockup-2.png"
+    "/assets/covers/jelly.jpg",
+    "/assets/projects/jelly-valley.png",
+    "/assets/mockups/jelly-mockup-2.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/jelly.png"
+   "generatedMockup": "/next/assets/generated-mockups/jelly.png"
   },
   {
    "id": "meegos",
@@ -1370,15 +1395,15 @@ window.VI_DATA = {
    "category": "games",
    "family": "casual",
    "style": "cartoon",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/meegos.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/meegos.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/meegos.png",
+   "cover": "/next/assets/generated-mockups/meegos.png",
+   "thumb": "/next/assets/generated-mockups/meegos.png",
+   "mockup": "/next/assets/generated-mockups/meegos.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/native/meegos-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/meegos-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/meegos-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/meegos-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/meegos-5.jpg"
+    "/assets/screenshots/native/meegos-1.jpg",
+    "/assets/screenshots/native/meegos-2.jpg",
+    "/assets/screenshots/native/meegos-3.jpg",
+    "/assets/screenshots/native/meegos-4.jpg",
+    "/assets/screenshots/native/meegos-5.jpg"
    ],
    "bullets": [
     [
@@ -1400,10 +1425,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/projects/meegos.png",
-    "/portfolio-ai-automation/assets/mockups/meegos-mockup-2.png"
+    "/assets/projects/meegos.png",
+    "/assets/mockups/meegos-mockup-2.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/meegos.png"
+   "generatedMockup": "/next/assets/generated-mockups/meegos.png"
   },
   {
    "id": "sweep",
@@ -1435,18 +1460,18 @@ window.VI_DATA = {
    "category": "games",
    "family": "tabletop",
    "style": "stylized",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/sweep.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/sweep.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/sweep.png",
+   "cover": "/next/assets/generated-mockups/sweep.png",
+   "thumb": "/next/assets/generated-mockups/sweep.png",
+   "mockup": "/next/assets/generated-mockups/sweep.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/sweep/lobby.jpg",
-    "/portfolio-ai-automation/assets/screenshots/sweep/providers.jpg",
-    "/portfolio-ai-automation/assets/screenshots/sweep/banner.jpg",
-    "/portfolio-ai-automation/assets/screenshots/sweep/lobby-light.jpg",
-    "/portfolio-ai-automation/assets/screenshots/sweep/tasks-light.jpg",
-    "/portfolio-ai-automation/assets/screenshots/sweep/wallet-light.jpg",
-    "/portfolio-ai-automation/assets/screenshots/sweep/admin.jpg",
-    "/portfolio-ai-automation/assets/screenshots/sweep/admin-2.jpg"
+    "/assets/screenshots/sweep/lobby.jpg",
+    "/assets/screenshots/sweep/providers.jpg",
+    "/assets/screenshots/sweep/banner.jpg",
+    "/assets/screenshots/sweep/lobby-light.jpg",
+    "/assets/screenshots/sweep/tasks-light.jpg",
+    "/assets/screenshots/sweep/wallet-light.jpg",
+    "/assets/screenshots/sweep/admin.jpg",
+    "/assets/screenshots/sweep/admin-2.jpg"
    ],
    "bullets": [
     [
@@ -1468,10 +1493,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/screenshots/sweep/lobby.jpg",
-    "/portfolio-ai-automation/assets/mockups/sweep-mockup.jpg"
+    "/assets/screenshots/sweep/lobby.jpg",
+    "/assets/mockups/sweep-mockup.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/sweep.png"
+   "generatedMockup": "/next/assets/generated-mockups/sweep.png"
   },
   {
    "id": "nugget",
@@ -1503,16 +1528,16 @@ window.VI_DATA = {
    "category": "games",
    "family": "tabletop",
    "style": "realistic",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/nugget.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/nugget.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/nugget.png",
+   "cover": "/next/assets/generated-mockups/nugget.png",
+   "thumb": "/next/assets/generated-mockups/nugget.png",
+   "mockup": "/next/assets/generated-mockups/nugget.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/nugget/nugget-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/nugget/nugget-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/nugget/nugget-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/nugget/nugget-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/nugget/nugget-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/nugget/nugget-6.jpg"
+    "/assets/screenshots/nugget/nugget-1.jpg",
+    "/assets/screenshots/nugget/nugget-2.jpg",
+    "/assets/screenshots/nugget/nugget-3.jpg",
+    "/assets/screenshots/nugget/nugget-4.jpg",
+    "/assets/screenshots/nugget/nugget-5.jpg",
+    "/assets/screenshots/nugget/nugget-6.jpg"
    ],
    "bullets": [
     [
@@ -1530,11 +1555,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/nugget.jpg",
-    "/portfolio-ai-automation/assets/screenshots/nugget/nugget-1.jpg",
-    "/portfolio-ai-automation/assets/mockups/nugget-mockup.jpg"
+    "/assets/covers/nugget.jpg",
+    "/assets/screenshots/nugget/nugget-1.jpg",
+    "/assets/mockups/nugget-mockup.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/nugget.png"
+   "generatedMockup": "/next/assets/generated-mockups/nugget.png"
   },
   {
    "id": "gunbit",
@@ -1566,16 +1591,16 @@ window.VI_DATA = {
    "category": "games",
    "family": "shooter",
    "style": "stylized",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/gunbit.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/gunbit.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/gunbit.png",
+   "cover": "/next/assets/generated-mockups/gunbit.png",
+   "thumb": "/next/assets/generated-mockups/gunbit.png",
+   "mockup": "/next/assets/generated-mockups/gunbit.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/native/gunbit-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/gunbit-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/gunbit-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/gunbit-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/gunbit-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/gunbit-6.jpg"
+    "/assets/screenshots/native/gunbit-1.jpg",
+    "/assets/screenshots/native/gunbit-2.jpg",
+    "/assets/screenshots/native/gunbit-3.jpg",
+    "/assets/screenshots/native/gunbit-4.jpg",
+    "/assets/screenshots/native/gunbit-5.jpg",
+    "/assets/screenshots/native/gunbit-6.jpg"
    ],
    "bullets": [
     [
@@ -1597,10 +1622,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/gunbit.jpg",
-    "/portfolio-ai-automation/assets/mockups/gunbit-mockup.png"
+    "/assets/covers/gunbit.jpg",
+    "/assets/mockups/gunbit-mockup.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/gunbit.png"
+   "generatedMockup": "/next/assets/generated-mockups/gunbit.png"
   },
   {
    "id": "winday",
@@ -1637,14 +1662,14 @@ window.VI_DATA = {
    "category": "web",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/winday.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/winday.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/winday.png",
+   "cover": "/next/assets/generated-mockups/winday.png",
+   "thumb": "/next/assets/generated-mockups/winday.png",
+   "mockup": "/next/assets/generated-mockups/winday.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/web/winday-web-3.png",
-    "/portfolio-ai-automation/assets/screenshots/web/winday-web-1.png",
-    "/portfolio-ai-automation/assets/screenshots/web/winday-web-2.png",
-    "/portfolio-ai-automation/assets/screenshots/web/winday-web-4.png"
+    "/assets/screenshots/web/winday-web-3.png",
+    "/assets/screenshots/web/winday-web-1.png",
+    "/assets/screenshots/web/winday-web-2.png",
+    "/assets/screenshots/web/winday-web-4.png"
    ],
    "bullets": [
     [
@@ -1666,10 +1691,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/projects/winday.png",
-    "/portfolio-ai-automation/assets/mockups/winday-mockup.png"
+    "/assets/projects/winday.png",
+    "/assets/mockups/winday-mockup.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/winday.png"
+   "generatedMockup": "/next/assets/generated-mockups/winday.png"
   },
   {
    "id": "casino24",
@@ -1706,15 +1731,15 @@ window.VI_DATA = {
    "category": "games",
    "family": "tabletop",
    "style": "stylized",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/casino24.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/casino24.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/casino24.png",
+   "cover": "/next/assets/generated-mockups/casino24.png",
+   "thumb": "/next/assets/generated-mockups/casino24.png",
+   "mockup": "/next/assets/generated-mockups/casino24.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/native/casino24-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/casino24-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/casino24-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/casino24-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/casino24-5.jpg"
+    "/assets/screenshots/native/casino24-1.jpg",
+    "/assets/screenshots/native/casino24-2.jpg",
+    "/assets/screenshots/native/casino24-3.jpg",
+    "/assets/screenshots/native/casino24-4.jpg",
+    "/assets/screenshots/native/casino24-5.jpg"
    ],
    "bullets": [
     [
@@ -1732,9 +1757,9 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/mockups/casino24-mockup-2.png"
+    "/assets/mockups/casino24-mockup-2.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/casino24.png"
+   "generatedMockup": "/next/assets/generated-mockups/casino24.png"
   },
   {
    "id": "tantra",
@@ -1771,16 +1796,16 @@ window.VI_DATA = {
    "category": "games",
    "family": "rpg",
    "style": "stylized",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/tantra.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/tantra.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/tantra.png",
+   "cover": "/next/assets/generated-mockups/tantra.png",
+   "thumb": "/next/assets/generated-mockups/tantra.png",
+   "mockup": "/next/assets/generated-mockups/tantra.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/figma/tantra-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/tantra-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/tantra-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/tantra-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/tantra-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/tantra-6.jpg"
+    "/assets/screenshots/figma/tantra-2.jpg",
+    "/assets/screenshots/figma/tantra-3.jpg",
+    "/assets/screenshots/figma/tantra-5.jpg",
+    "/assets/screenshots/figma/tantra-1.jpg",
+    "/assets/screenshots/figma/tantra-4.jpg",
+    "/assets/screenshots/figma/tantra-6.jpg"
    ],
    "bullets": [
     [
@@ -1798,10 +1823,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/projects/tantra.png",
-    "/portfolio-ai-automation/assets/mockups/tantra-mockup-3.png"
+    "/assets/projects/tantra.png",
+    "/assets/mockups/tantra-mockup-3.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/tantra.png"
+   "generatedMockup": "/next/assets/generated-mockups/tantra.png"
   },
   {
    "id": "racer",
@@ -1838,15 +1863,15 @@ window.VI_DATA = {
    "category": "games",
    "family": "racing",
    "style": "cartoon",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/racer.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/racer.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/racer.png",
+   "cover": "/next/assets/generated-mockups/racer.png",
+   "thumb": "/next/assets/generated-mockups/racer.png",
+   "mockup": "/next/assets/generated-mockups/racer.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/native/racer-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/racer-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/racer-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/racer-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/native/racer-5.jpg"
+    "/assets/screenshots/native/racer-1.jpg",
+    "/assets/screenshots/native/racer-2.jpg",
+    "/assets/screenshots/native/racer-3.jpg",
+    "/assets/screenshots/native/racer-4.jpg",
+    "/assets/screenshots/native/racer-5.jpg"
    ],
    "bullets": [
     [
@@ -1864,10 +1889,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/projects/racer-club.png",
-    "/portfolio-ai-automation/assets/mockups/racer-mockup.png"
+    "/assets/projects/racer-club.png",
+    "/assets/mockups/racer-mockup.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/racer.png"
+   "generatedMockup": "/next/assets/generated-mockups/racer.png"
   },
   {
    "id": "evio",
@@ -1904,15 +1929,15 @@ window.VI_DATA = {
    "category": "games",
    "family": "shooter",
    "style": "stylized",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/evio.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/evio.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/evio.png",
+   "cover": "/next/assets/generated-mockups/evio.png",
+   "thumb": "/next/assets/generated-mockups/evio.png",
+   "mockup": "/next/assets/generated-mockups/evio.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/figma/evio-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/evio-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/evio-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/evio-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/evio-4.jpg"
+    "/assets/screenshots/figma/evio-1.jpg",
+    "/assets/screenshots/figma/evio-2.jpg",
+    "/assets/screenshots/figma/evio-3.jpg",
+    "/assets/screenshots/figma/evio-5.jpg",
+    "/assets/screenshots/figma/evio-4.jpg"
    ],
    "bullets": [
     [
@@ -1939,10 +1964,10 @@ window.VI_DATA = {
     ]
    ],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/projects/evio.png",
-    "/portfolio-ai-automation/assets/mockups/evio-mockup-2.png"
+    "/assets/projects/evio.png",
+    "/assets/mockups/evio-mockup-2.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/evio.png"
+   "generatedMockup": "/next/assets/generated-mockups/evio.png"
   },
   {
    "id": "funrun",
@@ -1974,18 +1999,18 @@ window.VI_DATA = {
    "category": "games",
    "family": "casual",
    "style": "cartoon",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/funrun.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/funrun.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/funrun.png",
+   "cover": "/next/assets/generated-mockups/funrun.png",
+   "thumb": "/next/assets/generated-mockups/funrun.png",
+   "mockup": "/next/assets/generated-mockups/funrun.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/figma/funrun-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/funrun-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/funrun-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/funrun-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/figma/funrun-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/funrun/concept-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/funrun/concept-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/funrun/concept-3.jpg"
+    "/assets/screenshots/figma/funrun-1.jpg",
+    "/assets/screenshots/figma/funrun-2.jpg",
+    "/assets/screenshots/figma/funrun-4.jpg",
+    "/assets/screenshots/figma/funrun-3.jpg",
+    "/assets/screenshots/figma/funrun-5.jpg",
+    "/assets/screenshots/funrun/concept-1.jpg",
+    "/assets/screenshots/funrun/concept-2.jpg",
+    "/assets/screenshots/funrun/concept-3.jpg"
    ],
    "bullets": [
     [
@@ -2003,10 +2028,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/screenshots/figma/funrun-1.jpg",
-    "/portfolio-ai-automation/assets/mockups/funrun-mockup-2.jpg"
+    "/assets/screenshots/figma/funrun-1.jpg",
+    "/assets/mockups/funrun-mockup-2.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/funrun.png"
+   "generatedMockup": "/next/assets/generated-mockups/funrun.png"
   },
   {
    "id": "domblk",
@@ -2038,16 +2063,16 @@ window.VI_DATA = {
    "category": "games",
    "family": "tabletop",
    "style": "stylized",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/domblk.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/domblk.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/domblk.png",
+   "cover": "/next/assets/generated-mockups/domblk.png",
+   "thumb": "/next/assets/generated-mockups/domblk.png",
+   "mockup": "/next/assets/generated-mockups/domblk.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/domino/domino-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/domino/domino-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/domino/domino-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/domino/domino-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/domino/domino-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/domino/domino-6.jpg"
+    "/assets/screenshots/domino/domino-1.jpg",
+    "/assets/screenshots/domino/domino-2.jpg",
+    "/assets/screenshots/domino/domino-3.jpg",
+    "/assets/screenshots/domino/domino-4.jpg",
+    "/assets/screenshots/domino/domino-5.jpg",
+    "/assets/screenshots/domino/domino-6.jpg"
    ],
    "bullets": [
     [
@@ -2069,11 +2094,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/domblk.jpg",
-    "/portfolio-ai-automation/assets/screenshots/domino/domino-1.jpg",
-    "/portfolio-ai-automation/assets/mockups/domblk-mockup-2.jpg"
+    "/assets/covers/domblk.jpg",
+    "/assets/screenshots/domino/domino-1.jpg",
+    "/assets/mockups/domblk-mockup-2.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/domblk.png"
+   "generatedMockup": "/next/assets/generated-mockups/domblk.png"
   },
   {
    "id": "nftisls",
@@ -2110,14 +2135,14 @@ window.VI_DATA = {
    "category": "games",
    "family": "web3",
    "style": "cartoon",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/nftisls.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/nftisls.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/nftisls.png",
+   "cover": "/next/assets/generated-mockups/nftisls.png",
+   "thumb": "/next/assets/generated-mockups/nftisls.png",
+   "mockup": "/next/assets/generated-mockups/nftisls.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/web/nftisls-web-1.png",
-    "/portfolio-ai-automation/assets/screenshots/web/nftisls-web-2.png",
-    "/portfolio-ai-automation/assets/screenshots/web/nftisls-web-3.png",
-    "/portfolio-ai-automation/assets/screenshots/web/nftisls-web-4.png"
+    "/assets/screenshots/web/nftisls-web-1.png",
+    "/assets/screenshots/web/nftisls-web-2.png",
+    "/assets/screenshots/web/nftisls-web-3.png",
+    "/assets/screenshots/web/nftisls-web-4.png"
    ],
    "bullets": [
     [
@@ -2131,10 +2156,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/projects/nft-islands.png",
-    "/portfolio-ai-automation/assets/mockups/nftisls-mockup.png"
+    "/assets/projects/nft-islands.png",
+    "/assets/mockups/nftisls-mockup.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/nftisls.png"
+   "generatedMockup": "/next/assets/generated-mockups/nftisls.png"
   },
   {
    "id": "room8p",
@@ -2216,13 +2241,13 @@ window.VI_DATA = {
    "category": "web",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/thinks.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/thinks.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/thinks.png",
+   "cover": "/next/assets/generated-mockups/thinks.png",
+   "thumb": "/next/assets/generated-mockups/thinks.png",
+   "mockup": "/next/assets/generated-mockups/thinks.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/thinks/thinks-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/thinks/thinks-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/thinks/thinks-3.jpg"
+    "/assets/screenshots/thinks/thinks-1.jpg",
+    "/assets/screenshots/thinks/thinks-2.jpg",
+    "/assets/screenshots/thinks/thinks-3.jpg"
    ],
    "bullets": [
     [
@@ -2240,10 +2265,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/screenshots/thinks/thinks-1.jpg",
-    "/portfolio-ai-automation/assets/mockups/thinks-mockup.jpg"
+    "/assets/screenshots/thinks/thinks-1.jpg",
+    "/assets/mockups/thinks-mockup.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/thinks.png"
+   "generatedMockup": "/next/assets/generated-mockups/thinks.png"
   },
   {
    "id": "trademule",
@@ -2275,13 +2300,13 @@ window.VI_DATA = {
    "category": "web",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/trademule.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/trademule.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/trademule.png",
+   "cover": "/next/assets/generated-mockups/trademule.png",
+   "thumb": "/next/assets/generated-mockups/trademule.png",
+   "mockup": "/next/assets/generated-mockups/trademule.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/trademule/trademule-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/trademule/trademule-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/trademule/trademule-3.jpg"
+    "/assets/screenshots/trademule/trademule-1.jpg",
+    "/assets/screenshots/trademule/trademule-2.jpg",
+    "/assets/screenshots/trademule/trademule-3.jpg"
    ],
    "bullets": [
     [
@@ -2299,17 +2324,17 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/screenshots/trademule/trademule-1.jpg",
-    "/portfolio-ai-automation/assets/mockups/trademule-mockup.jpg"
+    "/assets/screenshots/trademule/trademule-1.jpg",
+    "/assets/mockups/trademule-mockup.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/trademule.png"
+   "generatedMockup": "/next/assets/generated-mockups/trademule.png"
   },
   {
    "id": "halfgod",
    "co": "freelance",
    "s": [
-    2026,
-    1
+    2025,
+    10
    ],
    "e": [
     2026,
@@ -2334,26 +2359,26 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/halfgod.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/halfgod.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/halfgod.png",
+   "cover": "/next/assets/generated-mockups/halfgod.png",
+   "thumb": "/next/assets/generated-mockups/halfgod.png",
+   "mockup": "/next/assets/generated-mockups/halfgod.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-logo.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-marks.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-mark.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-palette.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-type.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-pattern.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-9.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-10.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-7.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-8.jpg"
+    "/assets/screenshots/halfgod/halfgod-logo.jpg",
+    "/assets/screenshots/halfgod/halfgod-marks.jpg",
+    "/assets/screenshots/halfgod/halfgod-mark.jpg",
+    "/assets/screenshots/halfgod/halfgod-palette.jpg",
+    "/assets/screenshots/halfgod/halfgod-type.jpg",
+    "/assets/screenshots/halfgod/halfgod-pattern.jpg",
+    "/assets/screenshots/halfgod/halfgod-1.jpg",
+    "/assets/screenshots/halfgod/halfgod-9.jpg",
+    "/assets/screenshots/halfgod/halfgod-3.jpg",
+    "/assets/screenshots/halfgod/halfgod-4.jpg",
+    "/assets/screenshots/halfgod/halfgod-10.jpg",
+    "/assets/screenshots/halfgod/halfgod-2.jpg",
+    "/assets/screenshots/halfgod/halfgod-5.jpg",
+    "/assets/screenshots/halfgod/halfgod-6.jpg",
+    "/assets/screenshots/halfgod/halfgod-7.jpg",
+    "/assets/screenshots/halfgod/halfgod-8.jpg"
    ],
    "bullets": [
     [
@@ -2379,11 +2404,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/halfgod.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-logo.jpg",
-    "/portfolio-ai-automation/assets/screenshots/halfgod/halfgod-logo.jpg"
+    "/assets/covers/halfgod.jpg",
+    "/assets/screenshots/halfgod/halfgod-logo.jpg",
+    "/assets/screenshots/halfgod/halfgod-logo.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/halfgod.png"
+   "generatedMockup": "/next/assets/generated-mockups/halfgod.png"
   },
   {
    "id": "myrazom",
@@ -2415,25 +2440,25 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/myrazom.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/myrazom.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/myrazom.png",
+   "cover": "/next/assets/generated-mockups/myrazom.png",
+   "thumb": "/next/assets/generated-mockups/myrazom.png",
+   "mockup": "/next/assets/generated-mockups/myrazom.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-logo.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-mark.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-palette.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-elements.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-social.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-citylight.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-van.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-print.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-lettering.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-hoodie.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-tshirt.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-tote.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-badge.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-wristband.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-socks.jpg"
+    "/assets/screenshots/myrazom/myrazom-logo.jpg",
+    "/assets/screenshots/myrazom/myrazom-mark.jpg",
+    "/assets/screenshots/myrazom/myrazom-palette.jpg",
+    "/assets/screenshots/myrazom/myrazom-elements.jpg",
+    "/assets/screenshots/myrazom/myrazom-social.jpg",
+    "/assets/screenshots/myrazom/myrazom-citylight.jpg",
+    "/assets/screenshots/myrazom/myrazom-van.jpg",
+    "/assets/screenshots/myrazom/myrazom-print.jpg",
+    "/assets/screenshots/myrazom/myrazom-lettering.jpg",
+    "/assets/screenshots/myrazom/myrazom-hoodie.jpg",
+    "/assets/screenshots/myrazom/myrazom-tshirt.jpg",
+    "/assets/screenshots/myrazom/myrazom-tote.jpg",
+    "/assets/screenshots/myrazom/myrazom-badge.jpg",
+    "/assets/screenshots/myrazom/myrazom-wristband.jpg",
+    "/assets/screenshots/myrazom/myrazom-socks.jpg"
    ],
    "bullets": [
     [
@@ -2463,11 +2488,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/myrazom.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-logo.jpg",
-    "/portfolio-ai-automation/assets/screenshots/myrazom/myrazom-logo.jpg"
+    "/assets/covers/myrazom.jpg",
+    "/assets/screenshots/myrazom/myrazom-logo.jpg",
+    "/assets/screenshots/myrazom/myrazom-logo.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/myrazom.png"
+   "generatedMockup": "/next/assets/generated-mockups/myrazom.png"
   },
   {
    "id": "voznesensk",
@@ -2504,20 +2529,20 @@ window.VI_DATA = {
    "category": "branding",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/voznesensk.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/voznesensk.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/voznesensk.png",
+   "cover": "/next/assets/generated-mockups/voznesensk.png",
+   "thumb": "/next/assets/generated-mockups/voznesensk.png",
+   "mockup": "/next/assets/generated-mockups/voznesensk.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-logo.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-construction.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-palette.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-type.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-slogan.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-elements.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-totes.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-merch.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-explore.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-concepts.jpg"
+    "/assets/screenshots/voznesensk/voznesensk-logo.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-construction.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-palette.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-type.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-slogan.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-elements.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-totes.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-merch.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-explore.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-concepts.jpg"
    ],
    "bullets": [
     [
@@ -2547,11 +2572,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/voznesensk.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-logo.jpg",
-    "/portfolio-ai-automation/assets/screenshots/voznesensk/voznesensk-logo.jpg"
+    "/assets/covers/voznesensk.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-logo.jpg",
+    "/assets/screenshots/voznesensk/voznesensk-logo.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/voznesensk.png"
+   "generatedMockup": "/next/assets/generated-mockups/voznesensk.png"
   },
   {
    "id": "hyperian",
@@ -2583,25 +2608,25 @@ window.VI_DATA = {
    "category": "web",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/hyperian.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/hyperian.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/hyperian.png",
+   "cover": "/next/assets/generated-mockups/hyperian.png",
+   "thumb": "/next/assets/generated-mockups/hyperian.png",
+   "mockup": "/next/assets/generated-mockups/hyperian.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-logo.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-horizontal.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-vertical.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-palette.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-access.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-usage.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-type.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-typeuse.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-app-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-app-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-app-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-app-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-app-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-app-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-app-7.jpg"
+    "/assets/screenshots/hyperian/hyperian-logo.jpg",
+    "/assets/screenshots/hyperian/hyperian-horizontal.jpg",
+    "/assets/screenshots/hyperian/hyperian-vertical.jpg",
+    "/assets/screenshots/hyperian/hyperian-palette.jpg",
+    "/assets/screenshots/hyperian/hyperian-access.jpg",
+    "/assets/screenshots/hyperian/hyperian-usage.jpg",
+    "/assets/screenshots/hyperian/hyperian-type.jpg",
+    "/assets/screenshots/hyperian/hyperian-typeuse.jpg",
+    "/assets/screenshots/hyperian/hyperian-app-1.jpg",
+    "/assets/screenshots/hyperian/hyperian-app-2.jpg",
+    "/assets/screenshots/hyperian/hyperian-app-3.jpg",
+    "/assets/screenshots/hyperian/hyperian-app-4.jpg",
+    "/assets/screenshots/hyperian/hyperian-app-5.jpg",
+    "/assets/screenshots/hyperian/hyperian-app-6.jpg",
+    "/assets/screenshots/hyperian/hyperian-app-7.jpg"
    ],
    "bullets": [
     [
@@ -2627,11 +2652,11 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/hyperian.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-logo.jpg",
-    "/portfolio-ai-automation/assets/screenshots/hyperian/hyperian-logo.jpg"
+    "/assets/covers/hyperian.jpg",
+    "/assets/screenshots/hyperian/hyperian-logo.jpg",
+    "/assets/screenshots/hyperian/hyperian-logo.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/hyperian.png"
+   "generatedMockup": "/next/assets/generated-mockups/hyperian.png"
   },
   {
    "id": "montage",
@@ -2663,23 +2688,23 @@ window.VI_DATA = {
    "category": "web",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/montage.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/montage.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/montage.png",
+   "cover": "/next/assets/generated-mockups/montage.png",
+   "thumb": "/next/assets/generated-mockups/montage.png",
+   "mockup": "/next/assets/generated-mockups/montage.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-7.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-8.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-9.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-10.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-11.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-12.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-14.jpg"
+    "/assets/screenshots/montage/montage-3.jpg",
+    "/assets/screenshots/montage/montage-1.jpg",
+    "/assets/screenshots/montage/montage-2.jpg",
+    "/assets/screenshots/montage/montage-4.jpg",
+    "/assets/screenshots/montage/montage-5.jpg",
+    "/assets/screenshots/montage/montage-6.jpg",
+    "/assets/screenshots/montage/montage-7.jpg",
+    "/assets/screenshots/montage/montage-8.jpg",
+    "/assets/screenshots/montage/montage-9.jpg",
+    "/assets/screenshots/montage/montage-10.jpg",
+    "/assets/screenshots/montage/montage-11.jpg",
+    "/assets/screenshots/montage/montage-12.jpg",
+    "/assets/screenshots/montage/montage-14.jpg"
    ],
    "bullets": [
     [
@@ -2705,10 +2730,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/montage.jpg",
-    "/portfolio-ai-automation/assets/screenshots/montage/montage-3.jpg"
+    "/assets/covers/montage.jpg",
+    "/assets/screenshots/montage/montage-3.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/montage.png"
+   "generatedMockup": "/next/assets/generated-mockups/montage.png"
   },
   {
    "id": "onlyriffs",
@@ -2719,7 +2744,7 @@ window.VI_DATA = {
    ],
    "e": [
     2023,
-    1
+    3
    ],
    "ongoing": false,
    "name": [
@@ -2740,21 +2765,21 @@ window.VI_DATA = {
    "category": "web",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/onlyriffs.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/onlyriffs.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/onlyriffs.png",
+   "cover": "/next/assets/generated-mockups/onlyriffs.png",
+   "thumb": "/next/assets/generated-mockups/onlyriffs.png",
+   "mockup": "/next/assets/generated-mockups/onlyriffs.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-5.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-6.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-7.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-8.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-9.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-10.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-11.jpg"
+    "/assets/screenshots/onlyriffs/onlyriffs-1.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-2.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-3.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-4.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-5.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-6.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-7.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-8.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-9.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-10.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-11.jpg"
    ],
    "bullets": [
     [
@@ -2780,10 +2805,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/covers/onlyriffs.jpg",
-    "/portfolio-ai-automation/assets/screenshots/onlyriffs/onlyriffs-1.jpg"
+    "/assets/covers/onlyriffs.jpg",
+    "/assets/screenshots/onlyriffs/onlyriffs-1.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/onlyriffs.png"
+   "generatedMockup": "/next/assets/generated-mockups/onlyriffs.png"
   },
   {
    "id": "simgate",
@@ -2815,15 +2840,15 @@ window.VI_DATA = {
    "category": "web",
    "family": "saas",
    "style": "cleanui",
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/simgate.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/simgate.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/simgate.png",
+   "cover": "/next/assets/generated-mockups/simgate.png",
+   "thumb": "/next/assets/generated-mockups/simgate.png",
+   "mockup": "/next/assets/generated-mockups/simgate.png",
    "screens": [
-    "/portfolio-ai-automation/assets/screenshots/simgate/simgate-1.jpg",
-    "/portfolio-ai-automation/assets/screenshots/simgate/simgate-2.jpg",
-    "/portfolio-ai-automation/assets/screenshots/simgate/simgate-3.jpg",
-    "/portfolio-ai-automation/assets/screenshots/simgate/simgate-4.jpg",
-    "/portfolio-ai-automation/assets/screenshots/simgate/simgate-5.jpg"
+    "/assets/screenshots/simgate/simgate-1.jpg",
+    "/assets/screenshots/simgate/simgate-2.jpg",
+    "/assets/screenshots/simgate/simgate-3.jpg",
+    "/assets/screenshots/simgate/simgate-4.jpg",
+    "/assets/screenshots/simgate/simgate-5.jpg"
    ],
    "bullets": [
     [
@@ -2841,10 +2866,10 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "sourceArtwork": [
-    "/portfolio-ai-automation/assets/screenshots/simgate/simgate-1.jpg",
-    "/portfolio-ai-automation/assets/mockups/simgate-mockup.jpg"
+    "/assets/screenshots/simgate/simgate-1.jpg",
+    "/assets/mockups/simgate-mockup.jpg"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/simgate.png"
+   "generatedMockup": "/next/assets/generated-mockups/simgate.png"
   },
   {
    "id": "diaapp",
@@ -2873,13 +2898,13 @@ window.VI_DATA = {
    "family": null,
    "style": null,
    "links": [],
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/diaapp.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/diaapp.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/diaapp.png",
+   "cover": "/next/assets/generated-mockups/diaapp.png",
+   "thumb": "/next/assets/generated-mockups/diaapp.png",
+   "mockup": "/next/assets/generated-mockups/diaapp.png",
    "screens": [
-    "/portfolio-ai-automation/next/assets/projects/diaapp/current.png",
-    "/portfolio-ai-automation/next/assets/projects/diaapp/high.png",
-    "/portfolio-ai-automation/next/assets/projects/diaapp/low.png"
+    "/next/assets/projects/diaapp/current.png",
+    "/next/assets/projects/diaapp/high.png",
+    "/next/assets/projects/diaapp/low.png"
    ],
    "desc": [
     "A child-friendly glucose display: a large reading, trend arrow and puppy character make changes easier to recognise without navigating a sensor app.",
@@ -2889,21 +2914,21 @@ window.VI_DATA = {
    "highlights": [],
    "original": false,
    "sourceArtwork": [
-    "/portfolio-ai-automation/next/assets/projects/diaapp/overview.png",
-    "/portfolio-ai-automation/next/assets/projects/diaapp/overview.png"
+    "/next/assets/projects/diaapp/overview.png",
+    "/next/assets/projects/diaapp/overview.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/diaapp.png"
+   "generatedMockup": "/next/assets/generated-mockups/diaapp.png"
   },
   {
    "id": "lacetti-link",
    "co": "personal",
    "s": [
     2026,
-    9
+    8
    ],
    "e": [
     2026,
-    9
+    10
    ],
    "endInclusive": true,
    "ongoing": false,
@@ -2921,23 +2946,23 @@ window.VI_DATA = {
    "family": null,
    "style": null,
    "links": [],
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/lacetti-link.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/lacetti-link.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/lacetti-link.png",
+   "cover": "/next/assets/generated-mockups/lacetti-link.png",
+   "thumb": "/next/assets/generated-mockups/lacetti-link.png",
+   "mockup": "/next/assets/generated-mockups/lacetti-link.png",
    "screens": [
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/mockups/01-dashboard-final.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/mockups/02-fuel-final.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/mockups/03-trips-final.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/native/01-dashboard-cruise.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/native/02-dashboard-city.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/native/03-music.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/native/04-trips-month.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/native/05-trips-day.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/native/06-trip-detail.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/native/07-trip-charts.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/native/08-fuel-overview.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/native/09-fuel-calibration.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/native/10-oil-service.png"
+    "/next/assets/projects/lacetti-link/mockups/01-dashboard-final.png",
+    "/next/assets/projects/lacetti-link/mockups/02-fuel-final.png",
+    "/next/assets/projects/lacetti-link/mockups/03-trips-final.png",
+    "/next/assets/projects/lacetti-link/native/01-dashboard-cruise.png",
+    "/next/assets/projects/lacetti-link/native/02-dashboard-city.png",
+    "/next/assets/projects/lacetti-link/native/03-music.png",
+    "/next/assets/projects/lacetti-link/native/04-trips-month.png",
+    "/next/assets/projects/lacetti-link/native/05-trips-day.png",
+    "/next/assets/projects/lacetti-link/native/06-trip-detail.png",
+    "/next/assets/projects/lacetti-link/native/07-trip-charts.png",
+    "/next/assets/projects/lacetti-link/native/08-fuel-overview.png",
+    "/next/assets/projects/lacetti-link/native/09-fuel-calibration.png",
+    "/next/assets/projects/lacetti-link/native/10-oil-service.png"
    ],
    "desc": [
     "An Android head-unit interface for Chevrolet Lacetti: instruments, music, trip history and separate LPG, petrol and oil tracking.",
@@ -2960,14 +2985,14 @@ window.VI_DATA = {
    "highlights": [],
    "original": false,
    "sourceArtwork": [
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/mockups/01-dashboard-final.png",
-    "/portfolio-ai-automation/next/assets/projects/lacetti-link/mockups/01-dashboard-final.png"
+    "/next/assets/projects/lacetti-link/mockups/01-dashboard-final.png",
+    "/next/assets/projects/lacetti-link/mockups/01-dashboard-final.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/lacetti-link.png"
+   "generatedMockup": "/next/assets/generated-mockups/lacetti-link.png"
   },
   {
    "id": "diamirror",
-   "brandMark": "/portfolio-ai-automation/next/assets/projects/diamirror/logo-mark.png",
+   "brandMark": "/next/assets/projects/diamirror/logo-mark.png",
    "co": "personal",
    "s": [
     2026,
@@ -2993,13 +3018,13 @@ window.VI_DATA = {
    "family": null,
    "style": null,
    "links": [],
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/diamirror.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/diamirror.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/diamirror.png",
+   "cover": "/next/assets/generated-mockups/diamirror.png",
+   "thumb": "/next/assets/generated-mockups/diamirror.png",
+   "mockup": "/next/assets/generated-mockups/diamirror.png",
    "screens": [
-    "/portfolio-ai-automation/next/assets/projects/diamirror/phone-current.png",
-    "/portfolio-ai-automation/next/assets/projects/diamirror/phone-history.png",
-    "/portfolio-ai-automation/next/assets/projects/diamirror/phone-stale.png"
+    "/next/assets/projects/diamirror/phone-current.png",
+    "/next/assets/projects/diamirror/phone-history.png",
+    "/next/assets/projects/diamirror/phone-stale.png"
    ],
    "desc": [
     "DiaMirror takes glucose readings from the native apps of different sensors and brings them into one web and mobile interface. Access can be shared with any number of people.",
@@ -3009,10 +3034,10 @@ window.VI_DATA = {
    "highlights": [],
    "original": false,
    "sourceArtwork": [
-    "/portfolio-ai-automation/next/assets/projects/diamirror/overview.png",
-    "/portfolio-ai-automation/next/assets/projects/diamirror/overview.png"
+    "/next/assets/projects/diamirror/overview.png",
+    "/next/assets/projects/diamirror/overview.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/diamirror.png"
+   "generatedMockup": "/next/assets/generated-mockups/diamirror.png"
   },
   {
    "id": "fluger-kids",
@@ -3041,14 +3066,14 @@ window.VI_DATA = {
    "family": null,
    "style": null,
    "links": [],
-   "cover": "/portfolio-ai-automation/next/assets/generated-mockups/fluger-kids.png",
-   "thumb": "/portfolio-ai-automation/next/assets/generated-mockups/fluger-kids.png",
-   "mockup": "/portfolio-ai-automation/next/assets/generated-mockups/fluger-kids.png",
+   "cover": "/next/assets/generated-mockups/fluger-kids.png",
+   "thumb": "/next/assets/generated-mockups/fluger-kids.png",
+   "mockup": "/next/assets/generated-mockups/fluger-kids.png",
    "screens": [
-    "/portfolio-ai-automation/next/assets/projects/fluger-kids/radar-green.png",
-    "/portfolio-ai-automation/next/assets/projects/fluger-kids/radar-amber.png",
-    "/portfolio-ai-automation/next/assets/projects/fluger-kids/radar-grey.png",
-    "/portfolio-ai-automation/next/assets/projects/fluger-kids/radar-red.png"
+    "/next/assets/projects/fluger-kids/radar-green.png",
+    "/next/assets/projects/fluger-kids/radar-amber.png",
+    "/next/assets/projects/fluger-kids/radar-grey.png",
+    "/next/assets/projects/fluger-kids/radar-red.png"
    ],
    "desc": [
     "A child-friendly radar with calm, alert, danger and no-data states. The demo shows moving threats, sweep highlights and fading trails.",
@@ -3071,10 +3096,10 @@ window.VI_DATA = {
    "highlights": [],
    "original": false,
    "sourceArtwork": [
-    "/portfolio-ai-automation/next/assets/projects/fluger-kids/overview.png",
-    "/portfolio-ai-automation/next/assets/projects/fluger-kids/overview.png"
+    "/next/assets/projects/fluger-kids/overview.png",
+    "/next/assets/projects/fluger-kids/overview.png"
    ],
-   "generatedMockup": "/portfolio-ai-automation/next/assets/generated-mockups/fluger-kids.png"
+   "generatedMockup": "/next/assets/generated-mockups/fluger-kids.png"
   },
   {
    "id": "budmarket-lux",
@@ -3116,15 +3141,15 @@ window.VI_DATA = {
      "url": "https://vossapov.github.io/lux/review/"
     }
    ],
-   "cover": "/portfolio-ai-automation/next/assets/projects/budmarket-lux/mockups/desktop-catalog.png",
+   "cover": "/next/assets/projects/budmarket-lux/mockups/desktop-catalog.png",
    "thumb": null,
-   "mockup": "/portfolio-ai-automation/next/assets/projects/budmarket-lux/mockups/desktop-catalog.png",
+   "mockup": "/next/assets/projects/budmarket-lux/mockups/desktop-catalog.png",
    "screens": [
-    "/portfolio-ai-automation/next/assets/projects/budmarket-lux/mockups/desktop-catalog.png",
-    "/portfolio-ai-automation/next/assets/projects/budmarket-lux/mockups/desktop-marketing.png",
-    "/portfolio-ai-automation/next/assets/projects/budmarket-lux/mockups/mobile-search.png",
-    "/portfolio-ai-automation/next/assets/projects/budmarket-lux/mockups/mobile-campaign.png",
-    "/portfolio-ai-automation/next/assets/projects/budmarket-lux/mockups/landing.png"
+    "/next/assets/projects/budmarket-lux/mockups/desktop-catalog.png",
+    "/next/assets/projects/budmarket-lux/mockups/desktop-marketing.png",
+    "/next/assets/projects/budmarket-lux/mockups/mobile-search.png",
+    "/next/assets/projects/budmarket-lux/mockups/mobile-campaign.png",
+    "/next/assets/projects/budmarket-lux/mockups/landing.png"
    ],
    "desc": [
     "A responsive retail assistant that connects product search, in-store location and campaign creation. Desk research, UX/UI, a working prototype and a presentation landing page.",
@@ -3146,6 +3171,157 @@ window.VI_DATA = {
    ],
    "highlights": [],
    "original": false
+  },
+  {
+   "id": "diaguide",
+   "co": "freelance",
+   "s": [
+    2026,
+    6
+   ],
+   "e": [
+    2026,
+    8
+   ],
+   "endInclusive": true,
+   "ongoing": false,
+   "name": [
+    "Type 2 Diabetes Handbook",
+    "Посібник «Діабет 2 типу»"
+   ],
+   "genre": [
+    "Editorial design — print handbook",
+    "Редакційний дизайн — друкований посібник"
+   ],
+   "platform": "Print",
+   "engine": null,
+   "category": "branding",
+   "family": null,
+   "style": null,
+   "links": [],
+   "cover": "/next/assets/generated-mockups/diaguide.png",
+   "thumb": "/next/assets/generated-mockups/diaguide.png",
+   "mockup": "/next/assets/generated-mockups/diaguide.png",
+   "screens": [
+    "/next/assets/projects/diaguide/cover.png",
+    "/next/assets/projects/diaguide/page-insulin.png",
+    "/next/assets/projects/diaguide/page-graphs.png",
+    "/next/assets/projects/diaguide/page-hba1c.png"
+   ],
+   "desc": [
+    "A 156-page printed handbook on type 2 diabetes for a general audience: layout, typographic system and explanatory infographics that turn dense medical material into calm, readable pages.",
+    "Друкований посібник про діабет 2 типу на 156 сторінок для широкої аудиторії: верстка, типографічна система та пояснювальна інфографіка, що перетворюють щільний медичний матеріал на спокійні, читабельні сторінки."
+   ],
+   "bullets": [],
+   "highlights": [],
+   "original": false,
+   "sourceArtwork": [
+    "/next/assets/projects/diaguide/cover.png",
+    "/next/assets/projects/diaguide/cover.png"
+   ],
+   "generatedMockup": "/next/assets/generated-mockups/diaguide.png"
+  },
+  {
+   "id": "ust-system",
+   "co": "ust",
+   "s": [
+    2025,
+    12
+   ],
+   "e": [
+    2026,
+    2
+   ],
+   "endInclusive": true,
+   "ongoing": false,
+   "name": [
+    "NGO digital system",
+    "Цифрова система ГО"
+   ],
+   "genre": [
+    "Website, team vision, signing & membership",
+    "Сайт, бачення команди, підписання й членство"
+   ],
+   "platform": "Web",
+   "engine": null,
+   "category": "web",
+   "family": null,
+   "style": null,
+   "links": [],
+   "cover": "/next/assets/generated-mockups/ust-system.png",
+   "thumb": "/next/assets/generated-mockups/ust-system.png",
+   "mockup": "/next/assets/generated-mockups/ust-system.png",
+   "screens": [
+    "/next/assets/projects/ust-system/home.png",
+    "/next/assets/projects/ust-system/vision.png",
+    "/next/assets/projects/ust-system/documents.png",
+    "/next/assets/projects/ust-system/sign-m.png",
+    "/next/assets/projects/ust-system/membership-m.png",
+    "/next/assets/projects/ust-system/documents-m.png"
+   ],
+   "desc": [
+    "The core digital system of a young NGO: the organisation's website, a vision page for every team member, an admin area, online signature collection for meeting documents and a membership application flow.",
+    "Основна цифрова система молодої ГО: сайт організації, сторінка бачення кожного з команди, адміністрування, онлайн-збір підписів під документами засідань і подання заяви на вступ."
+   ],
+   "bullets": [],
+   "highlights": [],
+   "original": false,
+   "sourceArtwork": [
+    "/next/assets/projects/ust-system/home.png",
+    "/next/assets/projects/ust-system/home.png"
+   ],
+   "generatedMockup": "/next/assets/generated-mockups/ust-system.png"
+  },
+  {
+   "id": "ust-drone-school",
+   "co": "ust",
+   "s": [
+    2026,
+    3
+   ],
+   "e": [
+    2026,
+    4
+   ],
+   "endInclusive": true,
+   "ongoing": false,
+   "name": [
+    "Drone School",
+    "Школа дронів"
+   ],
+   "genre": [
+    "Landing pages for parents, communities and teens",
+    "Сторінки для батьків, громад і підлітків"
+   ],
+   "platform": "Web",
+   "engine": null,
+   "category": "web",
+   "family": null,
+   "style": null,
+   "links": [],
+   "cover": "/next/assets/generated-mockups/ust-drone-school.png",
+   "thumb": "/next/assets/generated-mockups/ust-drone-school.png",
+   "mockup": "/next/assets/generated-mockups/ust-drone-school.png",
+   "screens": [
+    "/next/assets/projects/ust-drone-school/parents.png",
+    "/next/assets/projects/ust-drone-school/communities.png",
+    "/next/assets/projects/ust-drone-school/teens.png",
+    "/next/assets/projects/ust-drone-school/hub.png",
+    "/next/assets/projects/ust-drone-school/teens-m.png",
+    "/next/assets/projects/ust-drone-school/communities-m.png"
+   ],
+   "desc": [
+    "Three pages for the NGO's engineering drone school, one per audience: parents who need trust and safety, communities who need a turnkey format, and teens who need a reason to build.",
+    "Три сторінки інженерної школи дронів ГО — для кожної аудиторії окремо: батькам потрібні довіра й безпека, громадам — формат під ключ, підліткам — причина збирати власний дрон."
+   ],
+   "bullets": [],
+   "highlights": [],
+   "original": false,
+   "sourceArtwork": [
+    "/next/assets/projects/ust-drone-school/parents.png",
+    "/next/assets/projects/ust-drone-school/parents.png"
+   ],
+   "generatedMockup": "/next/assets/generated-mockups/ust-drone-school.png"
   }
  ]
 };

@@ -34,7 +34,7 @@
   }
   function ageWordDe(age) { return age === 1 ? 'Jahr alt' : 'Jahre alt'; }
   function illustration(age, gender) {
-    return '/portfolio-ai-automation/ai/nonprofit/demo/posters/assets/child_' + ageBucket(age) + '_' + (gender === 'm' ? 'm' : 'f') + '.webp';
+    return '/ai/nonprofit/demo/posters/assets/child_' + ageBucket(age) + '_' + (gender === 'm' ? 'm' : 'f') + '.webp';
   }
 
   /* neutral demo mark: a rounded tile with a small hill and a heart, no words */

@@ -1,24 +1,24 @@
-/* Copy for the business-assistants page (/portfolio-ai-automation/ai/erp/): how it works, two cases from the Lux store demo.
+/* Copy for the business-assistants page (/ai/erp/): how it works, two cases from the Lux store demo.
    Rendered by next/ai/ngo/ngo.js (same sections as the non-profit page) through window.VIPageExtra.erp.
-   Demos open framed on the demo stage (/portfolio-ai-automation/ai/erp/demo/lux/, same stage as the non-profit demos); videos open
+   Demos open framed on the demo stage (/ai/erp/demo/lux/, same stage as the non-profit demos); videos open
    the Lux review page in a new tab. Case screenshots: next/tools/capture-biz-shots.py from the live /lux/ demo; the campaign phone frame
    is the poster of lux/review/media/campaign.mp4 (real mobile UI capture). */
 window.VI_AI_BIZ = {
   demos: {
-    luxSearch: '/portfolio-ai-automation/ai/erp/demo/lux/?from=case#search',
-    luxSearchVideo: '/portfolio-ai-automation/lux/review/#search',
-    luxMarketing: '/portfolio-ai-automation/ai/erp/demo/lux/?from=case#marketing',
-    luxCampaignVideo: '/portfolio-ai-automation/lux/review/#campaign'
+    luxSearch: '/ai/erp/demo/lux/?from=case#search',
+    luxSearchVideo: '/lux/review/#search',
+    luxMarketing: '/ai/erp/demo/lux/?from=case#marketing',
+    luxCampaignVideo: '/lux/review/#campaign'
   },
   shots: {
-    luxSearch: '/portfolio-ai-automation/next/assets/ai/biz/lux-search.webp',
-    luxProduct: '/portfolio-ai-automation/next/assets/ai/biz/lux-product.webp',
-    luxMarketing: '/portfolio-ai-automation/next/assets/ai/biz/lux-marketing.webp',
-    luxCampaignPhone: '/portfolio-ai-automation/next/assets/ai/biz/lux-campaign-phone.webp'
+    luxSearch: '/next/assets/ai/biz/lux-search.webp',
+    luxProduct: '/next/assets/ai/biz/lux-product.webp',
+    luxMarketing: '/next/assets/ai/biz/lux-marketing.webp',
+    luxCampaignPhone: '/next/assets/ai/biz/lux-campaign-phone.webp'
   },
   /* the same four step illustrations as the non-profit page: the principle is the same */
   how: {
-    steps: ['/portfolio-ai-automation/next/assets/ai/ngo/how-card-1.webp', '/portfolio-ai-automation/next/assets/ai/ngo/how-card-2.webp', '/portfolio-ai-automation/next/assets/ai/ngo/how-card-3.webp', '/portfolio-ai-automation/next/assets/ai/ngo/how-card-4.webp']
+    steps: ['/next/assets/ai/ngo/how-card-1.webp', '/next/assets/ai/ngo/how-card-2.webp', '/next/assets/ai/ngo/how-card-3.webp', '/next/assets/ai/ngo/how-card-4.webp']
   },
   ua: {
     how: {

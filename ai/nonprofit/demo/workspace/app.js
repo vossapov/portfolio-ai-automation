@@ -17,11 +17,11 @@
   var Stage = window.NGOStage || { state: function () {}, action: function () {} };
 
   var EXISTING = [
-    { title: 'Заява на вступ з одного телефона', purpose: 'Людина заповнює заяву й фотографує документи на телефоні, підпис ставить пальцем.', href: '/portfolio-ai-automation/ai/nonprofit/demo/membership/?from=workspace', tone: 'coral', spot: 'membership' },
-    { title: 'Постер для кожної дитини', purpose: 'Оператор заповнює чотири кроки — постер A4, сторіз і пости готові.', href: '/portfolio-ai-automation/ai/nonprofit/demo/posters/?from=workspace', tone: 'pink', spot: 'posters' },
-    { title: 'Мікрогранти для мікробізнесу', purpose: 'Кабінет учасника: етапи конкурсу, бізнес-ідея й кошторис з перевірками.', href: '/portfolio-ai-automation/ai/nonprofit/demo/microgrants/?from=workspace#cabinet', tone: 'teal', spot: 'microgrants' }
+    { title: 'Заява на вступ з одного телефона', purpose: 'Людина заповнює заяву й фотографує документи на телефоні, підпис ставить пальцем.', href: '/ai/nonprofit/demo/membership/?from=workspace', tone: 'coral', spot: 'membership' },
+    { title: 'Постер для кожної дитини', purpose: 'Оператор заповнює чотири кроки — постер A4, сторіз і пости готові.', href: '/ai/nonprofit/demo/posters/?from=workspace', tone: 'pink', spot: 'posters' },
+    { title: 'Мікрогранти для мікробізнесу', purpose: 'Кабінет учасника: етапи конкурсу, бізнес-ідея й кошторис з перевірками.', href: '/ai/nonprofit/demo/microgrants/?from=workspace#cabinet', tone: 'teal', spot: 'microgrants' }
   ];
-  function spotSrc(name) { return '/portfolio-ai-automation/next/assets/ai/ngo/spot-' + name + '.webp'; }
+  function spotSrc(name) { return '/next/assets/ai/ngo/spot-' + name + '.webp'; }
 
   /* ───────────── state ───────────── */
   var S = (function () {

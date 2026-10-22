@@ -35,7 +35,7 @@
     var m = /^https?:\/\/([^\/?#\s]+\.[^\/?#\s]+)(\/[^\s]*)?$/i.exec(String(link).trim());
     if (!m) return 'invalid';
     var path = (m[2] || '').replace(/[?#].*$/, '');
-    if (path === '' || path === '/portfolio-ai-automation/') return 'domain';
+    if (path === '' || path === '/') return 'domain';
     return '';
   }
 

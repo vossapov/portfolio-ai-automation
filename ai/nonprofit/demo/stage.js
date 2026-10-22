@@ -9,7 +9,7 @@
   'use strict';
 
   var CASE = { membership: 'case-membership', posters: 'case-posters', microgrants: 'case-microgrants', workspace: 'case-microgrants' };
-  var WORKSPACE = '/portfolio-ai-automation/ai/nonprofit/demo/workspace/';
+  var WORKSPACE = '/ai/nonprofit/demo/workspace/';
   var KINDS = {
     what: ['Що відбувається', '<path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/>'],
     how: ['Як це працює', '<circle cx="12" cy="12" r="3"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M5.5 18.5l2.1-2.1M16.4 7.6l2.1-2.1"/>'],
@@ -57,7 +57,7 @@
     if (origin.from === 'workspace') return { href: WORKSPACE, label: 'Назад до робочого простору' };
     var lang = origin.lang || siteLang() || 'ua';
     /* other pages (business assistants) pass their own case page and anchor */
-    var page = cfg.casePage || '/portfolio-ai-automation/ai/nonprofit/', anchor = cfg.caseAnchor || CASE[cfg.id] || 'case-membership';
+    var page = cfg.casePage || '/ai/nonprofit/', anchor = cfg.caseAnchor || CASE[cfg.id] || 'case-membership';
     return { href: page + '?lang=' + (lang === 'en' ? 'en' : 'ua') + '#' + anchor, label: 'Назад до кейсу' };
   }
 

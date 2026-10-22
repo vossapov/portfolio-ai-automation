@@ -1,4 +1,4 @@
-/* Microgrants demo — an existing project of the workspace (/portfolio-ai-automation/ai/nonprofit/demo/workspace/), two views
+/* Microgrants demo — an existing project of the workspace (/ai/nonprofit/demo/workspace/), two views
    over one browser-only state:
    #cabinet   the applicant's single link (mobile-first): stages, guided form, live checks, files
    #dashboard the organiser's table, reminders, receipts, FAQ over the instruction text — kept working
@@ -8,7 +8,7 @@
 (function () {
   'use strict';
 
-  var WORKSPACE = '/portfolio-ai-automation/ai/nonprofit/demo/workspace/';
+  var WORKSPACE = '/ai/nonprofit/demo/workspace/';
   if (window.location.hash === '#builder') { window.location.replace(WORKSPACE); return; }
 
   var D = window.NGODemo, C = window.MGChecks, DATA = window.MGData, OUT = window.MGOutputs, CORPUS = window.MGCorpus;

@@ -1,12 +1,12 @@
-/* Shared light chrome for the three non-profit demos (/portfolio-ai-automation/ai/nonprofit/demo/*).
+/* Shared light chrome for the three non-profit demos (/ai/nonprofit/demo/*).
    Same ground, ink and type as the AI branch; each demo adds its own file on top. */
 
-@font-face { font-family: "Fixel Text"; src: url("/portfolio-ai-automation/next/assets/fonts/FixelText-Light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
-@font-face { font-family: "Fixel Text"; src: url("/portfolio-ai-automation/next/assets/fonts/FixelText-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Fixel Text"; src: url("/portfolio-ai-automation/next/assets/fonts/FixelText-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
-@font-face { font-family: "Fixel Text"; src: url("/portfolio-ai-automation/next/assets/fonts/FixelText-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
-@font-face { font-family: "Fixel Text"; src: url("/portfolio-ai-automation/next/assets/fonts/FixelText-ExtraBold.woff2") format("woff2"); font-weight: 800; font-display: swap; }
-@font-face { font-family: "Fixel Text"; src: url("/portfolio-ai-automation/next/assets/fonts/FixelText-Black.woff2") format("woff2"); font-weight: 900; font-display: swap; }
+@font-face { font-family: "Fixel Text"; src: url("/next/assets/fonts/FixelText-Light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Fixel Text"; src: url("/next/assets/fonts/FixelText-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Fixel Text"; src: url("/next/assets/fonts/FixelText-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Fixel Text"; src: url("/next/assets/fonts/FixelText-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Fixel Text"; src: url("/next/assets/fonts/FixelText-ExtraBold.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Fixel Text"; src: url("/next/assets/fonts/FixelText-Black.woff2") format("woff2"); font-weight: 900; font-display: swap; }
 
 :root {
   --d-ground: #f6f5fb;

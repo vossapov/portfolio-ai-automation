@@ -24,6 +24,10 @@
     '<path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.5 4.5v4h-4"/></svg>';
 
   function initAI() {
+    /* The "AI in my process" section (#ai-work) is hidden for now on the owner's request — we will
+       rework it later. Skip building the section and its header/footer entry links entirely. */
+    return;
+    /* eslint-disable no-unreachable */
     var COPY = window.VI_AI_COPY;
     var contact = doc.getElementById('contact');
     if (!COPY || !COPY.en || !contact || doc.getElementById('ai-work')) return;
@@ -156,7 +160,7 @@
           return ((c.phases || [])[k - 1] || base.phases[k - 1]).title;
         }).join(', '));
         var a = li.querySelector('.vi-proof-link');
-        a.href = '/portfolio-ai-automation/next/case.html?id=' + encodeURIComponent(p.case) + '&lang=' + lang();
+        a.href = '/next/case.html?id=' + encodeURIComponent(p.case) + '&lang=' + lang();
         setText(a, p.link || '');
         a.setAttribute('aria-label', (p.link || '') + ': ' + p.title);
       });

@@ -14,7 +14,7 @@
 (function () {
   'use strict';
 
-  var BASE = '/portfolio-ai-automation/next/ai/figures/';
+  var BASE = '/next/ai/figures/';
   var VERSION = 'anatomy-6';
   var COPY = window.VI_AI;
   var htmlCache = {};

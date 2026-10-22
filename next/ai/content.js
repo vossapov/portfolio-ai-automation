@@ -4,6 +4,9 @@
    `figure.caption` is the drawing's accessible description (svg aria-label); nothing is shown
    around the drawings — benefits live in the copy. */
 window.VI_AI = {
+  /* the automation site lives on its own domain; the UI/UX portfolio stays on vossapov.github.io.
+     Locally (127.0.0.1 / localhost) both are served from one checkout, so links stay relative. */
+  sites: { portfolio: 'https://vossapov.github.io', ai: 'https://sab-ai.com.ua' },
   contacts: {
     telegram: 'https://t.me/vossapov',
     email: 'mailto:vossapov@gmail.com',
@@ -13,21 +16,56 @@ window.VI_AI = {
   audiences: ['erp', 'nonprofit', 'personal', 'it'],
   /* audiences illustrated by an Anatomy figure (next/ai/figures/<id>/): a plain id is a static
      drawing (embed-static.html); { id, live: true } is an animated one (embed.html + live.js).
-     'it.qa' is the QA subsection of the IT page (its copy lives in aud.it.qa). */
+     'it' is now the design/art-team assistant: the assembly workshop (one interface screen built in
+     layers and checked) fits it; the engineering night-shift loop (it-nightshift) is no longer shown. */
   figures: { erp: { id: 'erp-orders', live: true }, nonprofit: { id: 'nonprofit-intake', live: true }, personal: { id: 'personal-assistant', live: true }, it: { id: 'it-assembly', live: true } },
+  /* the overview on /?b=ai: which evidence each audience shows (see next/ai/home.js).
+     cases → real case cards from VI_AI_BIZ / VI_AI_NGO (title, organisation, first screenshot);
+     figure → the audience's live drawing; design → real projects from VI_AI_COPY (next/ai-content.js). */
+  proof: {
+    erp: { cases: ['lux-search', 'lux-campaign'] },
+    nonprofit: { cases: ['membership', 'posters', 'microgrants'] },
+    personal: { figure: true },
+    it: { design: ['blastjam', 'tilesort', 'sweep'] }
+  },
   art: {
-    introMe: '/portfolio-ai-automation/next/assets/ai/intro-me', introAbstract: '/portfolio-ai-automation/next/assets/ai/intro-abstract',
-    design: '/portfolio-ai-automation/next/assets/ai/fork-design-v2', ai: '/portfolio-ai-automation/next/assets/ai/fork-ai-v2', contact: '/portfolio-ai-automation/next/assets/ai/contact',
-    erp: '/portfolio-ai-automation/next/assets/ai/aud-erp',
-    nonprofit: '/portfolio-ai-automation/next/assets/ai/aud-nonprofit', personal: '/portfolio-ai-automation/next/assets/ai/aud-personal'
+    introMe: '/next/assets/ai/intro-me', introAbstract: '/next/assets/ai/intro-abstract',
+    design: '/next/assets/ai/fork-design-v2', ai: '/next/assets/ai/fork-ai-v2', contact: '/next/assets/ai/contact',
+    erp: '/next/assets/ai/aud-erp',
+    nonprofit: '/next/assets/ai/aud-nonprofit', personal: '/next/assets/ai/aud-personal'
   },
   ua: {
     name: 'Валентин Ігнатов',
-    intro: 'Проєктую інтерфейси для ігор і застосунків. Будую AI-системи, що беруть рутину на себе.',
+    intro: 'Проєктую інтерфейси для ігор і застосунків. Будую ШІ-помічників, що беруть рутину на себе.',
     introAlt: 'Валентин з собакою, іграшкова 3D-фігурка',
     choose: 'Що вас цікавить?',
     design: { kicker: '01 — Дизайн', title: 'UI/UX дизайн', line: 'Ігри, застосунки, веб' },
-    ai: { kicker: '02 — Автоматизація', title: 'AI-автоматизація', line: 'Для бізнесу, НКО і вас особисто' },
+    ai: { kicker: '02 — Автоматизація', title: 'ШІ-автоматизація', line: 'Для бізнесу, НКО, дизайн-команд і вас особисто' },
+    ov: {
+      hero: 'ШІ-помічник, який *знає ваш контекст*',
+      lead: 'Я проєктую простий і зрозумілий інтерфейс до помічника, який знає ваші документи, правила й дані. Ви описуєте задачу звичайними словами — він виконує і щоденну роботу, і нестандартні задачі, а рішення лишається за вами.',
+      cta: 'Обговорити задачу',
+      forLead: 'Чотири напрями, один принцип. Оберіть свій — нижче задачі, які бере помічник, і що вже зроблено.',
+      how: {
+        title: 'Як це *працює*',
+        lead: 'Однаково для кожного напряму: від вашого контексту до помічника, яким користуються щодня.',
+        steps: [
+          { t: 'Ваш контекст', p: 'Документи, правила, дані й попередні проєкти — в одному місці. Помічник спирається на них, а не на загальні знання.' },
+          { t: 'Задача словами', p: 'Ви описуєте задачу звичайними словами або обираєте з готових варіантів. Не треба вчити промпти.' },
+          { t: 'Зручний інтерфейс', p: 'Форма, пошук, кабінет чи генератор — інструмент, спроєктований під ваших людей і їхні пристрої.' },
+          { t: 'Рішення за вами', p: 'Помічник виконує й показує результат на перевірку. Що лишається і що йде далі — вирішуєте ви.' }
+        ]
+      },
+      of: 'з',
+      tasks: 'Що бере на себе',
+      proof: 'Що вже зроблено',
+      proofDemo: 'Публічні демо на умовних даних — їх можна відкрити й спробувати.',
+      proofFigure: 'Як це виглядає',
+      proofDesign: 'Мій власний процес на реальних проєктах',
+      proofDesignNote: 'Цифри — кількість реальних фреймів і компонентів, а не метрики ефективності.',
+      more: 'Детальніше про напрям',
+      openCase: 'Відкрити кейс'
+    },
     forWhom: 'Для кого це',
     how: 'Як це працює',
     benefits: 'Що ви отримуєте',
@@ -75,30 +113,24 @@ window.VI_AI = {
         figure: { title: 'Особистий робот', caption: 'Ізометричний робот на одній рейці по черзі веде облік чеків, шукає несправність у побутовому приладі й поливає квіти.' }
       },
       it: {
-        btn: 'Дизайн- і арт-відділам',
-        title: 'ШІ-помічник для дизайн- і арт-відділів айті-компаній',
-        hero: 'Дизайнери вирішують, *агенти готують.*',
-        lead: 'Помічник знає бренд, дизайн-систему, правила й попередні проєкти вашої команди, тож працює з вашим контекстом, а не із загальними порадами. Він збирає референси й дослідження, готує варіанти екранів, станів і компонентів та бере на себе рутину навколо макетів.',
+        btn: 'ШІ помічник для дизайн і арт відділів айті компаній',
+        title: 'ШІ помічник для дизайн і арт відділів айті компаній',
+        kicker: true,
+        hero: 'Помічник, який *знає ваші правила дизайну.*',
+        lead: 'Помічник знає ваш бренд, дизайн-систему, гайди й попередні проєкти. Він бере на себе підготовчу й повторювану роботу дизайн- і арт-відділу, а напрям, відбір і фінальне рішення лишаються за вашими арт-лідами.',
         bullets: [
-          'Тримає брендбук, дизайн-систему й правила команди в одному контексті.',
-          'Збирає референси, конкурентів і висновки досліджень у робочу теку.',
-          'Готує варіанти екранів, станів і компонентів на основі ваших макетів.',
-          'Перевіряє консистентність і збирає специфікації для розробки — фінальне рішення лишається за дизайнером.'
+          'Тримає контекст: бренд, гайди, дизайн-систему й правила неймінгу.',
+          'Розбирає брифи й ресерч, збирає референси й асети в робочі добірки.',
+          'Накидає вайрфрейми, стани інтерфейсу й варіанти для вибору.',
+          'Перевіряє макети на відповідність правилам і готує файли до передачі.'
         ],
-        figure: { title: 'Складальний цех', caption: 'Ізометричний складальний цех: плотер креслить макет, маніпулятор ставить блоки, друкувальна балка наносить текст, а контрольна вежа перевіряє — четверо агентів разом збирають один екран застосунку.' }
+        figure: { title: 'Складальний цех', caption: 'Ізометричний складальний цех: плотер креслить макет, маніпулятор ставить блоки, друкувальна балка наносить текст, а контрольна вежа перевіряє — четверо агентів разом збирають один екран інтерфейсу.' }
       }
     },
-    aiTitle: 'Інтерфейс, через який ШІ *працює на вас.*',
-    aiLead: 'Проєктую не «чат із моделлю», а робочі екрани: помічник бачить ваші документи, правила й дані, виконує задачу та показує результат, який можна перевірити. Нижче — чотири напрями з кейсами й демо.',
-    howTitle: 'Як це працює',
-    howLead: 'Один принцип для всіх напрямів: спершу контекст, потім інтерфейс, потім робота.',
-    howSteps: [
-      { t: 'Контекст', p: 'Підключаємо документи, правила, каталоги й минулі проєкти — те, з чим має працювати модель.' },
-      { t: 'Інтерфейс', p: 'Проєктую екран, у якому людина ставить задачу й перевіряє результат без технічних знань.' },
-      { t: 'Робота', p: 'Помічник виконує задачу, людина затверджує. Рішення завжди лишається за вами.' }
-    ],
     contact: { title: 'Розкажіть, що забирає ваш час', cta: 'Обговорити задачу', email: 'Пошта' },
-    pageTitle: 'Валентин Ігнатов — UI/UX дизайн і AI-автоматизація',
+    pageTitle: 'Валентин Ігнатов — UI/UX дизайн і ШІ-автоматизація',
+    siteTitle: 'ШІ-помічники — Валентин Ігнатов',
+    portfolio: 'UI/UX портфоліо',
     lang: 'Мова'
   },
   en: {
@@ -107,7 +139,32 @@ window.VI_AI = {
     introAlt: 'Valentyn with his dog, a 3D toy figure',
     choose: 'What are you here for?',
     design: { kicker: '01 — Design', title: 'UI/UX design', line: 'Games, apps, web' },
-    ai: { kicker: '02 — Automation', title: 'AI automation', line: 'For business, non-profits and you' },
+    ai: { kicker: '02 — Automation', title: 'AI automation', line: 'For business, non-profits, design teams and you' },
+    ov: {
+      hero: 'An AI assistant that *knows your context*',
+      lead: 'I design a simple, clear interface to an assistant that knows your documents, rules and data. You describe a task in plain words — it handles both everyday work and unusual tasks, and the decision stays with you.',
+      cta: 'Discuss your task',
+      forLead: 'Four directions, one principle. Pick yours — below are the tasks the assistant takes on and what has already been built.',
+      how: {
+        title: 'How it *works*',
+        lead: 'The same for every direction: from your context to an assistant people use every day.',
+        steps: [
+          { t: 'Your context', p: 'Documents, rules, data and past projects in one place. The assistant works from them, not from general knowledge.' },
+          { t: 'A task in plain words', p: 'You describe the task in your own words or pick from ready options. No prompt-writing to learn.' },
+          { t: 'An easy interface', p: 'A form, a search, a portal or a generator — a tool designed around your people and their devices.' },
+          { t: 'You decide', p: 'The assistant does the work and shows the result for review. What stays and what goes further is your call.' }
+        ]
+      },
+      of: 'of',
+      tasks: 'What it takes on',
+      proof: 'What has been built',
+      proofDemo: 'Public demos on sample data — open them and try.',
+      proofFigure: 'What it looks like',
+      proofDesign: 'My own process on real projects',
+      proofDesignNote: 'Numbers are counts of real frames and components, not efficiency metrics.',
+      more: 'More about this direction',
+      openCase: 'Open the case'
+    },
     forWhom: 'Who it’s for',
     how: 'How it works',
     benefits: 'What you get',
@@ -155,30 +212,38 @@ window.VI_AI = {
         figure: { title: 'Personal robot', caption: 'Isometric robot on one rail takes turns: it keeps the receipts in the ledger, finds the fault in a household appliance and waters the plants.' }
       },
       it: {
-        btn: 'Design & art teams',
-        title: 'AI assistant for design and art departments at IT companies',
-        hero: 'Designers decide, *agents prepare.*',
-        lead: 'The assistant knows your brand, design system, rules and previous projects, so it works from your context rather than generic advice. It gathers references and research, drafts screens, states and components, and takes the routine around the mock-ups.',
+        btn: 'AI assistant for design and art teams in IT companies',
+        title: 'AI assistant for design and art teams in IT companies',
+        kicker: true,
+        hero: 'An assistant that *knows your design rules.*',
+        lead: 'The assistant knows your brand, design system, guidelines and past projects. It takes on the preparation and repetitive work of a design or art team, while direction, selection and final approval stay with your art leads.',
         bullets: [
-          'Keeps the brand guide, design system and team rules in one context.',
-          'Collects references, competitors and research findings into a working folder.',
-          'Drafts screens, states and components based on your own mock-ups.',
-          'Checks consistency and assembles specs for development — the final call stays with the designer.'
+          'Holds the context: brand, guidelines, design system and naming rules.',
+          'Breaks down briefs and research, gathers references and assets into working boards.',
+          'Drafts wireframes, interface states and variants to choose from.',
+          'Checks layouts against the rules and prepares files for handoff.'
         ],
-        figure: { title: 'Assembly workshop', caption: 'Isometric assembly workshop: a plotter draws the layout, an arm places the blocks, a print bar adds the text and an inspection tower checks it — four agents build one app screen together.' }
+        figure: { title: 'Assembly workshop', caption: 'Isometric assembly workshop: a plotter draws the layout, an arm places the blocks, a print bar adds the text and an inspection tower checks it — four agents build one interface screen together.' }
       }
     },
-    aiTitle: 'An interface where AI *works for you.*',
-    aiLead: 'Not a chat with a model, but working screens: the assistant sees your documents, rules and data, does the task and shows a result you can check. Below — four directions with cases and demos.',
-    howTitle: 'How it works',
-    howLead: 'One principle for every direction: context first, then the interface, then the work.',
-    howSteps: [
-      { t: 'Context', p: 'We connect the documents, rules, catalogues and past projects the model has to work from.' },
-      { t: 'Interface', p: 'I design the screen where a person sets the task and checks the result without technical knowledge.' },
-      { t: 'Work', p: 'The assistant does the task and the person approves. The decision always stays with you.' }
-    ],
     contact: { title: 'Tell me what’s eating your time', cta: 'Discuss your task', email: 'Email' },
     pageTitle: 'Valentyn Ihnatov — UI/UX design and AI automation',
+    siteTitle: 'AI assistants — Valentyn Ihnatov',
+    portfolio: 'UI/UX portfolio',
     lang: 'Language'
   }
 };
+
+/* cross-site links: VI_SITES.ai('/ai/erp/'), VI_SITES.portfolio('/next/case.html?id=x'), VI_SITES.aiHome() */
+window.VI_SITES = (function () {
+  var S = window.VI_AI.sites;
+  var host = window.location.hostname;
+  var local = host === '127.0.0.1' || host === 'localhost' || host === '';
+  var onAi = !local && S.ai.indexOf('//' + host) > -1;
+  var onPortfolio = !local && S.portfolio.indexOf('//' + host) > -1;
+  return {
+    aiHome: function () { return local ? '/ai/' : (onAi ? '/' : S.ai + '/'); },
+    ai: function (path) { return local || onAi ? path : S.ai + path; },
+    portfolio: function (path) { return local || onPortfolio ? path : S.portfolio + path; }
+  };
+})();

@@ -2,7 +2,7 @@
    violet for the primary action and the selection, project colours on the project cards, the sunflower
    highlighter only on the one key word of a question. One question per screen, big tap targets. */
 
-@font-face { font-family: "Fixel Display"; src: url("/portfolio-ai-automation/next/assets/fonts/FixelDisplay-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Fixel Display"; src: url("/next/assets/fonts/FixelDisplay-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
 
 :root {
   --ws-display: "Fixel Display", var(--d-font);

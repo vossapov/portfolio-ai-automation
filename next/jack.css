@@ -7,12 +7,12 @@
 
 @font-face {
   font-family: "Fixel Text";
-  src: url("/portfolio-ai-automation/next/assets/fonts/FixelText-Black.woff2") format("woff2"), url("/portfolio-ai-automation/next/assets/fonts/FixelText-Black.otf") format("opentype");
+  src: url("/next/assets/fonts/FixelText-Black.woff2") format("woff2"), url("/next/assets/fonts/FixelText-Black.otf") format("opentype");
   font-weight: 900; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: "Fixel Text";
-  src: url("/portfolio-ai-automation/next/assets/fonts/FixelText-ExtraBold.woff2") format("woff2"), url("/portfolio-ai-automation/next/assets/fonts/FixelText-ExtraBold.otf") format("opentype");
+  src: url("/next/assets/fonts/FixelText-ExtraBold.woff2") format("woff2"), url("/next/assets/fonts/FixelText-ExtraBold.otf") format("opentype");
   font-weight: 800; font-style: normal; font-display: swap;
 }
 
@@ -219,3 +219,53 @@ html { scrollbar-color: #2a2d33 var(--bg); }
   .hero-film { transform: none !important; }
   .vh-choice::after, .btn, .contact-list a { transition: none; }
 }
+
+/* ───────── homepage: both fields in the header and hero (UI/UX design + AI automation) ───────── */
+/* the header names both branches; experience.js adds «AI у процесі» (#ai-work) between them and Contact (hidden ≤520px by experience.css) */
+.header-nav a[aria-current="true"] { color: var(--text); background: rgba(215, 226, 234, .07); }
+.hero-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: 100%; max-width: 640px; margin: 2px 0 0; padding: 0; list-style: none; }
+.hero-fields li { display: grid; min-width: 0; }
+.hero-field {
+  position: relative; display: grid; align-content: start; gap: 6px; min-width: 0; padding: 16px 52px 18px 20px; border-radius: 24px;
+  text-decoration: none; transition: transform .25s var(--j-ease), border-color .2s, background .2s;
+}
+.hero-field b { font-size: clamp(17px, 1.4vw, 20px); font-weight: 800; text-transform: uppercase; letter-spacing: -.005em; line-height: 1.05; }
+.hero-field span { font-size: 14px; line-height: 1.45; }
+.hero-field::after {
+  content: ""; position: absolute; right: 16px; top: 16px; width: 26px; height: 26px; border-radius: 50%;
+  background: center / 14px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d7e2ea' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E");
+  box-shadow: inset 0 0 0 1.5px rgba(215, 226, 234, .5); transition: transform .25s var(--j-ease);
+}
+.hero-field--design { border: 2px solid rgba(215, 226, 234, .28); background: radial-gradient(90% 120% at 0% 0%, rgba(118, 33, 176, .22), transparent 70%), #111214; color: var(--text); }
+.hero-field--design span { color: var(--text); opacity: .7; }
+.hero-field--ai { border: 2px solid transparent; background: linear-gradient(160deg, #f3effc 0%, #eef6f3 55%, #fbf0ea 100%); color: var(--vh-ink); }
+.hero-field--ai span { color: var(--vh-ink-2); }
+.hero-field--ai::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231d1b2b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E");
+  box-shadow: inset 0 0 0 1.5px rgba(29, 27, 43, .3); background-color: #fff;
+}
+.hero-field:hover, .hero-field:focus-visible { transform: translateY(-2px); }
+.hero-field--design:hover, .hero-field--design:focus-visible { border-color: var(--text); }
+.hero-field:hover::after, .hero-field:focus-visible::after { transform: translateX(3px); }
+.hero-field:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.hero-field--ai:focus-visible { outline-color: var(--vh-focus); }
+.hero-field[aria-current="true"]::after { transform: rotate(90deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-fields { animation: jUp .7s .42s var(--j-ease) both; --j-y: 20px; }
+}
+@media (max-width: 1100px) and (min-width: 761px) { .hero-fields { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .hero-fields { grid-template-columns: 1fr; gap: 10px; }
+  .hero-field { padding: 14px 50px 16px 16px; border-radius: 20px; }
+}
+/* phones: the header row under the brand holds Design · AI automation · Contact · CV */
+@media (max-width: 520px) {
+  .header-nav { grid-column: 1 / -1; flex-wrap: wrap; row-gap: 0; gap: 0; }
+  .header-nav a { padding: 0 7px; letter-spacing: .03em; font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-field, .hero-field::after { transition: none; } }
+
+/* fork titles: the longest word part («АВТОМАТИЗАЦІЯ», ≈8.1em in Fixel Black) must fit its half, so the title
+   wraps only between words / after the hyphen, never inside a word (it did at 320–900px) */
+.vh-choice-title { font-size: clamp(36px, 4.9vw, 68px); }
+@media (max-width: 760px) { .vh-choice-title { font-size: min(44px, calc((100vw - 48px) / 8.5)); } }

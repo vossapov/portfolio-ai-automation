@@ -98,7 +98,7 @@
     im.addEventListener('error', function () { im.hidden = true; });
     return im;
   }
-  function pageUrl(slug) { return '/portfolio-ai-automation/ai/' + slug + '/' + (lang() === 'ua' ? '?lang=ua' : ''); }
+  function pageUrl(slug) { return '/ai/' + slug + '/' + (lang() === 'ua' ? '?lang=ua' : ''); }
 
   /* ───────── URL ↔ branch ───────── */
   function branchFrom(search, hash) {
@@ -119,7 +119,7 @@
   /* ───────── branch visibility ───────── */
   function branchStart(branch) {
     if (branch === 'design') return doc.getElementById('work') || doc.getElementById('branch-design');
-    return doc.getElementById('vhForWhom') || doc.getElementById('branch-ai');
+    return doc.getElementById('vhAiTitle') || doc.getElementById('branch-ai');
   }
   function setBranch(branch, opts) {
     opts = opts || {};
@@ -133,9 +133,16 @@
       doc.body.classList.remove('vh-light');
       doc.body.classList.add('vh-dark');
     }
+    /* the two illustrated choices are toggles; header and hero links only mark the open branch */
     $$('[data-branch-pick]').forEach(function (c) {
-      c.setAttribute('aria-pressed', String(c.getAttribute('data-branch-pick') === branch));
+      var on = c.getAttribute('data-branch-pick') === branch;
+      if (c.classList.contains('vh-choice')) c.setAttribute('aria-pressed', String(on));
+      else if (on) c.setAttribute('aria-current', 'true');
+      else c.removeAttribute('aria-current');
     });
+    /* one contact link in the header: the open branch's own contact block */
+    var contact = $('[data-nav-contact]');
+    if (contact) contact.setAttribute('href', branch === 'ai' ? '#ai-contact' : '#contact');
     syncTitle();
     if (branch === 'design' && !designShown) {
       designShown = true;
@@ -164,12 +171,82 @@
   }
 
   /* ───────── AI branch markup ───────── */
+  if (!window.VIRich) window.VIRich = setRich; /* ngo.js highlights through it */
+  function plain(s) { return String(s || '').replace(/\*/g, ''); }
+  function pill(href, label, cls, key, external) {
+    var a = h('a', 'vh-pill' + (cls ? ' ' + cls : ''), { href: href, 'data-key': key });
+    if (external) { a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener'); }
+    var sp = h('span');
+    setText(sp, label);
+    a.appendChild(sp);
+    a.appendChild(arrowRight());
+    return a;
+  }
+  function richOf(slug) {
+    var N = { erp: window.VI_AI_BIZ, nonprofit: window.VI_AI_NGO }[slug];
+    return N ? { N: N, T: N[lang()] || N.en } : null;
+  }
+  /* a real case from the business / non-profit content: framed first screenshot, organisation, title, result */
+  function caseCard(slug, id, ov) {
+    var R = richOf(slug);
+    if (!R) return null;
+    var c = null;
+    (R.T.cases || []).forEach(function (x) { if (x.id === id) c = x; });
+    if (!c && R.T.micro && R.T.micro.id === id) c = R.T.micro;
+    if (!c || !c.shots || !c.shots.length) return null;
+    var s0 = c.shots[0];
+    var a = h('a', 'vh-ov-case vh-ov-case--' + s0.frame, { href: pageUrl(slug) + '#case-' + id, 'data-key': 'case:' + id });
+    var fig = h('span', 'vh-ov-case-shot ngo-shot ngo-shot--' + s0.frame);
+    var im = h('img', null, { src: R.N.shots[s0.key], alt: '', loading: 'lazy', decoding: 'async' });
+    if (s0.frame === 'phone') { im.setAttribute('width', '390'); im.setAttribute('height', '844'); }
+    else { im.setAttribute('width', '1440'); im.setAttribute('height', '900'); }
+    im.addEventListener('error', function () { fig.hidden = true; });
+    fig.appendChild(im);
+    a.appendChild(fig);
+    var body = h('span', 'vh-ov-case-body');
+    var org = h('span', 'vh-ov-case-org'); setText(org, c.tag); body.appendChild(org);
+    var title = h('span', 'vh-ov-case-title'); setText(title, plain(c.title)); body.appendChild(title);
+    var res = h('span', 'vh-ov-case-text'); setText(res, c.result || c.note); body.appendChild(res);
+    var go = h('span', 'vh-ov-case-go'); setText(go, ov.openCase); go.appendChild(arrowRight()); body.appendChild(go);
+    a.appendChild(body);
+    return a;
+  }
+  /* a real design project from "AI in my process" (next/ai-content.js): image, the counted figure, case link */
+  function designCard(key, ov) {
+    var D = window.VI_AI_COPY && (window.VI_AI_COPY[lang()] || window.VI_AI_COPY.en);
+    var p = null;
+    (D && D.proof || []).forEach(function (x) { if (x.key === key) p = x; });
+    if (!p) return null;
+    var caseHref = '/next/case.html?id=' + encodeURIComponent(p.case) + '&lang=' + lang();
+    var a = h('a', 'vh-ov-case vh-ov-case--project', { href: window.VI_SITES ? window.VI_SITES.portfolio(caseHref) : caseHref, 'data-key': 'project:' + key });
+    var fig = h('span', 'vh-ov-case-shot vh-ov-project-shot' + (p.fit === 'contain' ? ' is-contain' : ''));
+    /* the web-sized WebP from next/webp-map.js, not the multi-MB master (same rule as experience.js) */
+    var webp = window.VI_WEBP && window.VI_WEBP[p.img];
+    var im = h('img', null, { src: webp && webp[0] || p.img, alt: '', loading: 'lazy', decoding: 'async' });
+    im.addEventListener('error', function () { fig.hidden = true; });
+    fig.appendChild(im);
+    a.appendChild(fig);
+    var body = h('span', 'vh-ov-case-body');
+    var org = h('span', 'vh-ov-case-org'); setText(org, p.meta); body.appendChild(org);
+    var title = h('span', 'vh-ov-case-title'); setText(title, p.title); body.appendChild(title);
+    if (p.figure) {
+      var num = h('span', 'vh-ov-case-figure');
+      var b = h('b'); setText(b, p.figure.value); num.appendChild(b);
+      var l = h('span'); setText(l, p.figure.label); num.appendChild(l);
+      body.appendChild(num);
+    }
+    var go = h('span', 'vh-ov-case-go'); setText(go, ov.openCase); go.appendChild(arrowRight()); body.appendChild(go);
+    a.appendChild(body);
+    return a;
+  }
+
   function renderAi() {
     var box = doc.getElementById('branch-ai');
     var t = T();
     if (!box || !t || !COPY.art) return;
-    var A = COPY.art, C = COPY.contacts || {};
+    var C = COPY.contacts || {};
     var AUD = COPY.audiences || [];
+    var ov = t.ov || {};
 
     /* keep focus if the visitor is switching language while tabbed into the branch */
     var active = doc.activeElement, key = null;
@@ -177,88 +254,93 @@
 
     box.innerHTML = '';
 
-    /* 0 — what this branch is: one promise, then the three shared steps */
-    if (t.aiTitle) {
-      var introSec = h('section', 'vh-ai-head', { 'aria-labelledby': 'vhAiTitle' });
-      var introWrap = h('div', 'vh-wrap');
-      var introHead = h('h2', null, { id: 'vhAiTitle', tabindex: '-1' });
-      setRich(introHead, t.aiTitle);
-      introWrap.appendChild(introHead);
-      if (t.aiLead) {
-        var introLead = h('p', 'vh-ai-lead');
-        setText(introLead, t.aiLead);
-        introWrap.appendChild(introLead);
-      }
-      introSec.appendChild(introWrap);
-      box.appendChild(introSec);
-
-      if (t.howSteps && t.howSteps.length) {
-        var howSec = h('section', 'vh-how', { 'aria-labelledby': 'vhHowTitle' });
-        var howWrap = h('div', 'vh-wrap');
-        var howHead = h('h2', 'vh-how-title', { id: 'vhHowTitle', tabindex: '-1' });
-        setText(howHead, t.howTitle || t.how);
-        howWrap.appendChild(howHead);
-        if (t.howLead) {
-          var howLead = h('p', 'vh-how-lead');
-          setText(howLead, t.howLead);
-          howWrap.appendChild(howLead);
-        }
-        var howList = h('ol', 'vh-how-steps');
-        t.howSteps.forEach(function (step, i) {
-          var li = h('li', 'vh-how-step');
-          var num = h('span', 'vh-how-num', { 'aria-hidden': 'true' });
-          setText(num, String(i + 1));
-          li.appendChild(num);
-          var body = h('div');
-          var st = h('h3');
-          setText(st, step.t);
-          var sp = h('p');
-          setText(sp, step.p);
-          body.appendChild(st); body.appendChild(sp); li.appendChild(body);
-          howList.appendChild(li);
-        });
-        howWrap.appendChild(howList);
-        howSec.appendChild(howWrap);
-        box.appendChild(howSec);
-      }
+    /* 1 — the shared proposition: one promise, one paragraph, the next action */
+    var top = h('section', 'vh-ov-hero', { 'aria-labelledby': 'vhAiTitle' });
+    var topWrap = h('div', 'vh-wrap');
+    var topHead = h('h2', 'ngo-h2 vh-ov-title', { id: 'vhAiTitle', tabindex: '-1' });
+    setRich(topHead, ov.hero);
+    topWrap.appendChild(topHead);
+    var topLead = h('p', 'ngo-lead vh-ov-lead');
+    setText(topLead, ov.lead);
+    topWrap.appendChild(topLead);
+    if (C.telegram && ov.cta) {
+      var topCta = h('div', 'ai-hero-cta');
+      topCta.appendChild(pill(C.telegram, ov.cta, 'ngo-pill--primary', 'top:cta', true));
+      topWrap.appendChild(topCta);
     }
+    top.appendChild(topWrap);
+    box.appendChild(top);
 
+    /* 2 — four audiences, each its own colour (same tones as the case fields on the rich pages) */
     var forSec = h('section', 'vh-for', { 'aria-labelledby': 'vhForWhom' });
     var forWrap = h('div', 'vh-wrap');
-    var forHead = h('h2', null, { id: 'vhForWhom', tabindex: '-1' });
+    var forHead = h('h2', 'ngo-h2 vh-ov-h2', { id: 'vhForWhom', tabindex: '-1' });
     setText(forHead, t.forWhom);
     forWrap.appendChild(forHead);
-    var grid = h('div', 'vh-for-grid');
+    if (ov.forLead) {
+      var forLead = h('p', 'ngo-lead');
+      setText(forLead, ov.forLead);
+      forWrap.appendChild(forLead);
+    }
+    var grid = h('ol', 'vh-for-grid vh-ov-nav');
     AUD.forEach(function (slug) {
       var aud = t.aud && t.aud[slug];
       if (!aud) return;
-      var a = h('a', 'vh-for-btn vh-for-btn--' + slug, { href: '#aud-' + slug, 'data-key': 'for:' + slug });
+      var li = h('li', 'vh-ov-tone--' + slug);
+      var a = h('a', 'vh-for-btn', { href: '#aud-' + slug, 'data-key': 'for:' + slug });
       var label = h('span', 'vh-for-label');
       setText(label, aud.btn);
       a.appendChild(label);
-      grid.appendChild(a);
+      li.appendChild(a);
+      grid.appendChild(li);
     });
     forWrap.appendChild(grid);
     forSec.appendChild(forWrap);
     box.appendChild(forSec);
 
-    AUD.forEach(function (slug) {
+    /* 3 — how it works, the same principle for every audience (shared band from next/ai/ngo/ngo.js) */
+    var art = window.VI_AI_BIZ && window.VI_AI_BIZ.how;
+    if (ov.how && window.VIPageParts && window.VIPageParts.how) {
+      var howSec = window.VIPageParts.how({ how: art }, { how: ov.how });
+      howSec.classList.add('vh-ov-how');
+      box.appendChild(howSec);
+    }
+
+    /* 4 — per audience: a clean half/half field — the drawing on one side, all the copy on the
+       other. Sides alternate down the page. The drawing fades in once and blends with the tint. */
+    var fadeEls = [];
+    AUD.forEach(function (slug, idx) {
       var aud = t.aud && t.aud[slug];
       if (!aud) return;
-      var sec = h('section', 'vh-aud vh-aud--' + slug, { id: 'aud-' + slug, 'aria-labelledby': 'aud-' + slug + '-title' });
-      var wrap = h('div', 'vh-wrap vh-aud-grid');
+      var sec = h('section', 'vh-aud vh-ov-aud vh-ov-tone--' + slug + ' vh-aud--' + slug, { id: 'aud-' + slug, 'aria-labelledby': 'aud-' + slug + '-title', 'data-ov-idx': String(idx) });
+      var panel = h('div', 'vh-wrap vh-ov-panel');
+
+      var row = h('div', 'vh-aud-grid vh-ov-grid');
       var figId = COPY.figures && COPY.figures[slug];
-      var fig = h('figure', 'vh-aud-art' + (figId && window.VIAnatomy ? ' vh-aud-art--figure' : ''));
+      var fig = h('figure', 'vh-aud-art vh-ov-art' + (figId && window.VIAnatomy ? ' vh-aud-art--figure' : ''));
       if (figId && window.VIAnatomy) window.VIAnatomy.mount(fig, slug);
-      wrap.appendChild(fig);
-      var copy = h('div', 'vh-aud-copy');
-      var h3 = h('h3', null, { id: 'aud-' + slug + '-title', tabindex: '-1' });
-      setRich(h3, aud.title);
+      row.appendChild(fig);
+      fadeEls.push(fig);
+
+      var copy = h('div', 'vh-aud-copy vh-ov-copy');
+      var meta = h('p', 'ngo-case-meta');
+      var count = h('span', 'ngo-case-count');
+      setText(count, (idx + 1) + ' ' + (ov.of || '/') + ' ' + AUD.length);
+      meta.appendChild(count);
+      copy.appendChild(meta);
+      var h3 = h('h3', 'ngo-h2 vh-ov-aud-title', { id: 'aud-' + slug + '-title', tabindex: '-1' });
+      setText(h3, aud.title);
       copy.appendChild(h3);
+      var promise = h('p', 'vh-ov-promise');
+      setRich(promise, aud.hero);
+      copy.appendChild(promise);
       var lead = h('p', 'vh-aud-lead');
       setText(lead, aud.lead || aud.line);
       copy.appendChild(lead);
       if (aud.bullets && aud.bullets.length) {
+        var tl = h('h4', 'vh-ov-label');
+        setText(tl, ov.tasks);
+        copy.appendChild(tl);
         var ul = h('ul', 'vh-points');
         aud.bullets.forEach(function (point) {
           var li = h('li');
@@ -267,16 +349,27 @@
         });
         copy.appendChild(ul);
       }
-      var pill = h('a', 'vh-pill', { href: pageUrl(slug), 'data-key': 'pill:' + slug });
-      var plabel = h('span');
-      setText(plabel, t.how);
-      pill.appendChild(plabel);
-      pill.appendChild(arrowRight());
-      copy.appendChild(pill);
-      wrap.appendChild(copy);
-      sec.appendChild(wrap);
+      copy.appendChild(pill(pageUrl(slug), ov.more || t.how, 'ngo-pill--primary vh-ov-more', 'pill:' + slug));
+      row.appendChild(copy);
+      panel.appendChild(row);
+
+      sec.appendChild(panel);
       box.appendChild(sec);
     });
+
+    /* fade the drawings in as they enter the viewport (once each); respect reduced motion */
+    if (fadeEls.length) {
+      if (reduce || !window.IntersectionObserver) {
+        fadeEls.forEach(function (el) { el.classList.add('is-in'); });
+      } else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+        fadeEls.forEach(function (el) { io.observe(el); });
+      }
+    }
 
     var c = t.contact;
     if (c) {
@@ -336,7 +429,7 @@
   }
   function syncBrand() {
     var brand = $('.brand');
-    if (brand) brand.setAttribute('href', lang() === 'ua' ? '/portfolio-ai-automation/?lang=ua' : '/portfolio-ai-automation/');
+    if (brand) brand.setAttribute('href', lang() === 'ua' ? '/?lang=ua' : '/');
   }
   function syncTitle() {
     if (state.branch === 'design') return; /* the design branch keeps app.js's title */
@@ -345,9 +438,58 @@
   }
 
   /* ───────── wiring ───────── */
+  /* standalone automation home (/ai/ locally, / on sab-ai.com.ua): no fork, no design branch,
+     the page owns language switching (app.js is not loaded there) */
+  function standaloneLang() {
+    var p = pickParam(searchOf(openedUrl()), 'lang');
+    if (p === 'ua' || p === 'en') return p;
+    try { return window.localStorage.getItem('vi-next-lang') === 'ua' ? 'ua' : 'en'; } catch (e) { return 'en'; }
+  }
+  function applyStandaloneLang(l) {
+    root.lang = l === 'ua' ? 'uk' : 'en';
+    root.setAttribute('data-lang', l);
+    $$('[data-set-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === l)); });
+    var t = T();
+    if (t && t.siteTitle) doc.title = t.siteTitle;
+    var seg = $('.lang-seg');
+    if (t && t.lang && seg) seg.setAttribute('aria-label', t.lang);
+    $$('[data-portfolio-link]').forEach(function (a) {
+      a.setAttribute('href', (window.VI_SITES ? window.VI_SITES.portfolio('/') : '/') + (l === 'ua' ? '?lang=ua' : ''));
+      if (t && t.portfolio) setText(a.querySelector('span') || a, t.portfolio);
+    });
+    var brand = $('.brand');
+    if (brand) brand.setAttribute('href', (window.VI_SITES ? window.VI_SITES.aiHome() : '/ai/') + (l === 'ua' ? '?lang=ua' : ''));
+  }
+  function initStandalone(box) {
+    var l = standaloneLang();
+    applyStandaloneLang(l);
+    renderAi();
+    box.hidden = false;
+    var bootHash = hashOf(openedUrl()) || window.location.hash;
+    if (bootHash.length > 1) {
+      var target = doc.getElementById(bootHash.slice(1));
+      if (target && box.contains(target)) requestAnimationFrame(function () { target.scrollIntoView({ block: 'start' }); });
+    }
+    doc.addEventListener('click', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest('[data-set-lang]') : null;
+      if (!btn) return;
+      var v = btn.getAttribute('data-set-lang');
+      if ((v !== 'ua' && v !== 'en') || v === lang()) return;
+      try { window.localStorage.setItem('vi-next-lang', v); } catch (err) { /* unavailable */ }
+      var u = params();
+      if (v === 'ua') u.set('lang', 'ua'); else u.delete('lang');
+      var qs = u.toString();
+      try { window.history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash); } catch (err) { /* sandboxed */ }
+      applyStandaloneLang(v);
+      renderAi();
+    });
+    return true;
+  }
+
   function init() {
     var box = doc.getElementById('branch-ai');
     if (!box || !doc.body || !COPY) return false;
+    if (doc.body.hasAttribute('data-ai-home')) return initStandalone(box);
 
     var opened = openedUrl();
     state.branch = branchFrom(searchOf(opened) || window.location.search, hashOf(opened) || window.location.hash);

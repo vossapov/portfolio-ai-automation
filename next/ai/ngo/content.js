@@ -1,34 +1,34 @@
-/* DRAFT copy for the non-profit page sections below the hero (/portfolio-ai-automation/ai/nonprofit/): how it works,
+/* DRAFT copy for the non-profit page sections below the hero (/ai/nonprofit/): how it works,
    two cases and the new microgrants project (UA/EN). The owner will edit it.
    Rules: problem-led, no invented numbers, clients, savings or percentages; screenshots are real
    captures of the demos (next/assets/ai/ngo/), shown without captions. */
 window.VI_AI_NGO = {
   /* ?from=case: the demo starts afresh and its back button returns to this case */
   demos: {
-    membership: '/portfolio-ai-automation/ai/nonprofit/demo/membership/?from=case',
-    posters: '/portfolio-ai-automation/ai/nonprofit/demo/posters/?from=case',
-    workspace: '/portfolio-ai-automation/ai/nonprofit/demo/workspace/?from=case',
-    cabinet: '/portfolio-ai-automation/ai/nonprofit/demo/microgrants/?from=case#cabinet'
+    membership: '/ai/nonprofit/demo/membership/?from=case',
+    posters: '/ai/nonprofit/demo/posters/?from=case',
+    workspace: '/ai/nonprofit/demo/workspace/?from=case',
+    cabinet: '/ai/nonprofit/demo/microgrants/?from=case#cabinet'
   },
   /* spot drawings (Codex image_gen, isometric line style of the figures): next/assets/ai/ngo/spot-*.webp */
   spots: {
-    membership: '/portfolio-ai-automation/next/assets/ai/ngo/spot-membership.webp',
-    posters: '/portfolio-ai-automation/next/assets/ai/ngo/spot-posters.webp',
-    microgrants: '/portfolio-ai-automation/next/assets/ai/ngo/spot-microgrants.webp',
-    context: '/portfolio-ai-automation/next/assets/ai/ngo/spot-context.webp'
+    membership: '/next/assets/ai/ngo/spot-membership.webp',
+    posters: '/next/assets/ai/ngo/spot-posters.webp',
+    microgrants: '/next/assets/ai/ngo/spot-microgrants.webp',
+    context: '/next/assets/ai/ngo/spot-context.webp'
   },
   shots: {
-    membershipSign: '/portfolio-ai-automation/next/assets/ai/ngo/membership-sign.webp',
-    membershipDocs: '/portfolio-ai-automation/next/assets/ai/ngo/membership-docs.webp',
-    postersEditor: '/portfolio-ai-automation/next/assets/ai/ngo/posters-editor.webp',
-    postersStory: '/portfolio-ai-automation/next/assets/ai/ngo/posters-story.webp',
-    mgCabinet: '/portfolio-ai-automation/next/assets/ai/ngo/microgrants-cabinet.webp',
-    mgDashboard: '/portfolio-ai-automation/next/assets/ai/ngo/microgrants-dashboard.webp',
-    wsBuilder: '/portfolio-ai-automation/next/assets/ai/ngo/workspace-builder.webp'
+    membershipSign: '/next/assets/ai/ngo/membership-sign.webp',
+    membershipDocs: '/next/assets/ai/ngo/membership-docs.webp',
+    postersEditor: '/next/assets/ai/ngo/posters-editor.webp',
+    postersStory: '/next/assets/ai/ngo/posters-story.webp',
+    mgCabinet: '/next/assets/ai/ngo/microgrants-cabinet.webp',
+    mgDashboard: '/next/assets/ai/ngo/microgrants-dashboard.webp',
+    wsBuilder: '/next/assets/ai/ngo/workspace-builder.webp'
   },
   /* Independent step illustrations; raw outputs and prompts in assets/ai/ngo/raw/. */
   how: {
-    steps: ['/portfolio-ai-automation/next/assets/ai/ngo/how-card-1.webp', '/portfolio-ai-automation/next/assets/ai/ngo/how-card-2.webp', '/portfolio-ai-automation/next/assets/ai/ngo/how-card-3.webp', '/portfolio-ai-automation/next/assets/ai/ngo/how-card-4.webp']
+    steps: ['/next/assets/ai/ngo/how-card-1.webp', '/next/assets/ai/ngo/how-card-2.webp', '/next/assets/ai/ngo/how-card-3.webp', '/next/assets/ai/ngo/how-card-4.webp']
   },
   ua: {
     how: {

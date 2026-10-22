@@ -212,6 +212,8 @@
     return out;
   }
   window.VIPageExtra = window.VIPageExtra || {};
+  /* the "how it works" band is shared with the AI overview on / and the design-team page /ai/it/ */
+  window.VIPageParts = { how: how };
   window.VIPageExtra.nonprofit = function (lang) { return sections(window.VI_AI_NGO, lang); };
   window.VIPageExtra.erp = function (lang) { return sections(window.VI_AI_BIZ, lang); };
 })();

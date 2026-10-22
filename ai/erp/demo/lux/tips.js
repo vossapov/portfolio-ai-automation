@@ -1,4 +1,4 @@
-/* Tips for the Lux store assistant demo (/portfolio-ai-automation/ai/erp/demo/lux/): bubbles outside the frame, keyed by the
+/* Tips for the Lux store assistant demo (/ai/erp/demo/lux/): bubbles outside the frame, keyed by the
    screen the framed app shows (embed.js reports it: its hash route, or an open dialog). */
 (function () {
   'use strict';
@@ -8,7 +8,7 @@
     id: 'lux',
     storage: ['lux-campaign-brief-v1', 'lux-smm-posts-v1', 'lux-campaigns-v1'],
     first: window.location.hash || '#search',
-    casePage: '/portfolio-ai-automation/ai/erp/',
+    casePage: '/ai/erp/',
     caseAnchor: start === 'marketing' ? 'case-lux-campaign' : 'case-lux-search',
     columnMin: 1400,
     noFloat: true,

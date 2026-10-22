@@ -72,8 +72,11 @@
     return store.get() === 'ua' ? 'ua' : 'en';
   }
   function T() { return COPY[state.lang] || COPY.en; }
-  function pageUrl(s) { return '/portfolio-ai-automation/ai/' + s + '/' + (state.lang === 'ua' ? '?lang=ua' : ''); }
-  function branchUrl() { return '/portfolio-ai-automation/?b=ai' + (state.lang === 'ua' ? '&lang=ua' : ''); }
+  function pageUrl(s) { return '/ai/' + s + '/' + (state.lang === 'ua' ? '?lang=ua' : ''); }
+  function branchUrl() {
+    var home = window.VI_SITES ? window.VI_SITES.aiHome() : '/ai/';
+    return home + (state.lang === 'ua' ? '?lang=ua' : '');
+  }
 
   /* ───────── blocks ───────── */
   function contactBlock() {
@@ -136,14 +139,20 @@
     if (useFigure) window.VIAnatomy.mount(art, slug);
     grid.appendChild(art);
     var copy = h('div', 'ai-hero-copy');
+    /* a page whose promise does not name its audience shows the audience title above it (design teams) */
+    if (aud.kicker) {
+      var kicker = h('p', 'ai-kicker');
+      setText(kicker, aud.title);
+      copy.appendChild(kicker);
+    }
     var h1 = h('h1', null, { id: 'aiTitle', tabindex: '-1' });
     setRich(h1, aud.hero);
     copy.appendChild(h1);
     var lead = h('p', 'ai-hero-lead');
     setText(lead, aud.lead || aud.line);
     copy.appendChild(lead);
-    /* pages with cases and demos (non-profit, business assistants): content object per slug */
-    var RICH = { nonprofit: window.VI_AI_NGO, erp: window.VI_AI_BIZ }[slug];
+    /* pages with cases and demos (non-profit, business assistants) or project proof (design teams): content object per slug */
+    var RICH = { nonprofit: window.VI_AI_NGO, erp: window.VI_AI_BIZ, it: window.VI_AI_IT }[slug];
     var ngoT = RICH && (RICH[state.lang] || RICH.en);
     if (ngoT && ngoT.labels && ngoT.labels.heroCta) {
       var cta = h('div', 'ai-hero-cta');
