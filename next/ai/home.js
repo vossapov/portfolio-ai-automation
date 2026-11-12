@@ -240,6 +240,56 @@
     return a;
   }
 
+  var disposeHeroMotion = function () {};
+  function heroMotion(hero, image) {
+    var permission = window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+    var x = 0, y = 0, tx = 0, ty = 0, frame = 0, previous = 0, listening = false;
+    function tick(time) {
+      var ease = 1 - Math.exp(-Math.min(previous ? time - previous : 16, 64) / 110);
+      previous = time;
+      x += (tx - x) * ease; y += (ty - y) * ease;
+      if (Math.abs(tx - x) + Math.abs(ty - y) < 0.015) {
+        x = tx; y = ty; frame = 0; previous = 0;
+      } else frame = requestAnimationFrame(tick);
+      image.style.translate = x.toFixed(3) + 'px ' + y.toFixed(3) + 'px';
+    }
+    function start() { if (!frame) frame = requestAnimationFrame(tick); }
+    function move(event) {
+      if (event.pointerType === 'touch') return;
+      var bounds = hero.getBoundingClientRect();
+      if (!bounds.width || !bounds.height) return;
+      tx = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1)) * 5;
+      ty = Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1)) * 5;
+      start();
+    }
+    function reset() { tx = ty = 0; start(); }
+    function stop() {
+      hero.removeEventListener('pointermove', move);
+      hero.removeEventListener('pointerleave', reset);
+      window.removeEventListener('blur', reset);
+      if (frame) cancelAnimationFrame(frame);
+      x = y = tx = ty = frame = previous = 0;
+      image.style.removeProperty('translate'); listening = false;
+    }
+    function sync() {
+      stop();
+      if (permission.matches) {
+        hero.addEventListener('pointermove', move, { passive: true });
+        hero.addEventListener('pointerleave', reset);
+        window.addEventListener('blur', reset);
+        listening = true;
+      }
+    }
+    function visibility() { if (doc.hidden && listening) stop(); else sync(); }
+    permission.addEventListener('change', sync);
+    doc.addEventListener('visibilitychange', visibility);
+    sync();
+    return function () {
+      stop(); permission.removeEventListener('change', sync);
+      doc.removeEventListener('visibilitychange', visibility);
+    };
+  }
+
   function renderAi() {
     var box = doc.getElementById('branch-ai');
     var t = T();
@@ -252,51 +302,44 @@
     var active = doc.activeElement, key = null;
     if (active && box.contains(active)) key = active.id || active.getAttribute('data-key');
 
+    disposeHeroMotion();
     box.innerHTML = '';
 
     /* 1 — the shared proposition: one promise, one paragraph, the next action */
     var top = h('section', 'vh-ov-hero', { 'aria-labelledby': 'vhAiTitle' });
     var topWrap = h('div', 'vh-wrap');
-    var topHead = h('h2', 'ngo-h2 vh-ov-title', { id: 'vhAiTitle', tabindex: '-1' });
-    setRich(topHead, ov.hero);
-    topWrap.appendChild(topHead);
+    var topCopy = h('div', 'vh-ov-hero-copy');
+    var topHead = h(doc.body.hasAttribute('data-ai-home') ? 'h1' : 'h2', 'ngo-h2 vh-ov-title', { id: 'vhAiTitle', tabindex: '-1' });
+    String(ov.hero).split('*').forEach(function (part, i) {
+      if (!part) return;
+      var line = h('span', 'vh-ov-title-line');
+      if (i % 2) setRich(line, '*' + part + '*');
+      else setText(line, part);
+      topHead.appendChild(line);
+    });
+    topCopy.appendChild(topHead);
     var topLead = h('p', 'ngo-lead vh-ov-lead');
     setText(topLead, ov.lead);
-    topWrap.appendChild(topLead);
+    topCopy.appendChild(topLead);
     if (C.telegram && ov.cta) {
       var topCta = h('div', 'ai-hero-cta');
-      topCta.appendChild(pill(C.telegram, ov.cta, 'ngo-pill--primary', 'top:cta', true));
-      topWrap.appendChild(topCta);
+      var primary = h('a', 'vh-pill ngo-pill--primary', { href: C.telegram, target: '_blank', rel: 'noopener', 'data-key': 'top:cta' });
+      setText(primary, ov.cta);
+      topCta.appendChild(primary);
+      var secondary = h('a', 'vh-pill', { href: '#ngoHowTitle', 'data-key': 'top:how' });
+      setText(secondary, ov.secondary);
+      topCta.appendChild(secondary);
+      topCopy.appendChild(topCta);
     }
+    topWrap.appendChild(topCopy);
+    /* A single static media slot: keep the full scene and its original as fallback. */
+    var media = h('figure', 'vh-ov-hero-media');
+    var heroWebp = window.VI_WEBP && window.VI_WEBP[COPY.art.hero];
+    media.appendChild(h('img', null, { src: heroWebp && heroWebp[0] || COPY.art.hero, width: '1672', height: '941', alt: ov.heroAlt, fetchpriority: 'high' }));
+    topWrap.appendChild(media);
     top.appendChild(topWrap);
     box.appendChild(top);
-
-    /* 2 — four audiences, each its own colour (same tones as the case fields on the rich pages) */
-    var forSec = h('section', 'vh-for', { 'aria-labelledby': 'vhForWhom' });
-    var forWrap = h('div', 'vh-wrap');
-    var forHead = h('h2', 'ngo-h2 vh-ov-h2', { id: 'vhForWhom', tabindex: '-1' });
-    setText(forHead, t.forWhom);
-    forWrap.appendChild(forHead);
-    if (ov.forLead) {
-      var forLead = h('p', 'ngo-lead');
-      setText(forLead, ov.forLead);
-      forWrap.appendChild(forLead);
-    }
-    var grid = h('ol', 'vh-for-grid vh-ov-nav');
-    AUD.forEach(function (slug) {
-      var aud = t.aud && t.aud[slug];
-      if (!aud) return;
-      var li = h('li', 'vh-ov-tone--' + slug);
-      var a = h('a', 'vh-for-btn', { href: '#aud-' + slug, 'data-key': 'for:' + slug });
-      var label = h('span', 'vh-for-label');
-      setText(label, aud.btn);
-      a.appendChild(label);
-      li.appendChild(a);
-      grid.appendChild(li);
-    });
-    forWrap.appendChild(grid);
-    forSec.appendChild(forWrap);
-    box.appendChild(forSec);
+    disposeHeroMotion = heroMotion(top, media.querySelector('img'));
 
     /* 3 — how it works, the same principle for every audience (shared band from next/ai/ngo/ngo.js) */
     var art = window.VI_AI_BIZ && window.VI_AI_BIZ.how;

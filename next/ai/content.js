@@ -29,6 +29,7 @@ window.VI_AI = {
     it: { design: ['blastjam', 'tilesort', 'sweep'] }
   },
   art: {
+    hero: '/next/assets/ai/sab-hero/illustration.png',
     introMe: '/next/assets/ai/intro-me', introAbstract: '/next/assets/ai/intro-abstract',
     design: '/next/assets/ai/fork-design-v2', ai: '/next/assets/ai/fork-ai-v2', contact: '/next/assets/ai/contact',
     erp: '/next/assets/ai/aud-erp',
@@ -42,9 +43,12 @@ window.VI_AI = {
     design: { kicker: '01 — Дизайн', title: 'UI/UX дизайн', line: 'Ігри, застосунки, веб' },
     ai: { kicker: '02 — Автоматизація', title: 'ШІ-автоматизація', line: 'Для бізнесу, НКО, дизайн-команд і вас особисто' },
     ov: {
-      hero: 'ШІ-помічник, який *знає ваш контекст*',
-      lead: 'Я проєктую простий і зрозумілий інтерфейс до помічника, який знає ваші документи, правила й дані. Ви описуєте задачу звичайними словами — він виконує і щоденну роботу, і нестандартні задачі, а рішення лишається за вами.',
-      cta: 'Обговорити задачу',
+      hero: 'Менше ручної роботи. *Більше результату.*',
+      lead: 'Будую програмні комплекси під конкретні задачі бізнесу й організацій. Система підлаштовується під ваші вимоги й росте разом із ними. ШІ в ній — помічник на окремих кроках, а не нагляд за всією інформацією.',
+      cta: 'Обговорити задачу →',
+      secondary: 'Як це працює',
+      heroAlt: 'Жінка за робочим столом і чоловік, який складає систему з модулів; поруч лотки із задачами й готовими результатами.',
+      benefits: ['Більше часу', 'Менше рутини', 'Нижчі витрати', 'Кращий результат'],
       forLead: 'Чотири напрями, один принцип. Оберіть свій — нижче задачі, які бере помічник, і що вже зроблено.',
       how: {
         title: 'Як це *працює*',
@@ -141,9 +145,12 @@ window.VI_AI = {
     design: { kicker: '01 — Design', title: 'UI/UX design', line: 'Games, apps, web' },
     ai: { kicker: '02 — Automation', title: 'AI automation', line: 'For business, non-profits, design teams and you' },
     ov: {
-      hero: 'An AI assistant that *knows your context*',
-      lead: 'I design a simple, clear interface to an assistant that knows your documents, rules and data. You describe a task in plain words — it handles both everyday work and unusual tasks, and the decision stays with you.',
-      cta: 'Discuss your task',
+      hero: 'Less manual work. *Better results.*',
+      lead: 'I build software systems for the specific needs of businesses and organisations. The system adapts to your requirements and grows with them. AI helps at individual steps — it does not oversee all your information.',
+      cta: 'Discuss your task →',
+      secondary: 'How it works',
+      heroAlt: 'A woman at a desk and a man assembling a modular system, with trays of tasks and completed results beside them.',
+      benefits: ['More time', 'Less routine work', 'Lower costs', 'Better results'],
       forLead: 'Four directions, one principle. Pick yours — below are the tasks the assistant takes on and what has already been built.',
       how: {
         title: 'How it *works*',

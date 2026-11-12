@@ -11,18 +11,56 @@
 .ai-page--rich .vh-ov-tone--it { --tone: var(--ngo-pink); --tone-ink: var(--ngo-pink-ink); --tone-50: var(--ngo-pink-50); }
 
 /* ───────── 1. the shared proposition ───────── */
-#branch-ai .vh-ov-hero {
-  position: relative; isolation: isolate; padding-block: clamp(72px, 10vw, 140px) clamp(24px, 4vw, 48px);
-  background:
-    radial-gradient(520px 360px at 10% 30%, rgba(107, 76, 230, .10), transparent 70%),
-    radial-gradient(420px 300px at 92% 80%, rgba(255, 107, 74, .10), transparent 70%),
-    var(--vh-ground);
+@font-face {
+  font-family: "SAB Fixel Text";
+  src: url("/next/assets/fonts/FixelText-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
 }
-#branch-ai .vh-ov-hero .vh-wrap { display: grid; justify-items: start; gap: clamp(16px, 2vw, 24px); }
-#branch-ai .vh-ov-title { font-size: clamp(40px, 6vw, 88px); line-height: .98; max-width: 16ch; }
+#branch-ai .vh-ov-hero {
+  position: relative; isolation: isolate; padding-block: clamp(48px, 6vw, 88px);
+  background: #f2e7fc;
+}
+#branch-ai .vh-ov-hero .vh-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: 16px; }
+#branch-ai .vh-ov-hero-copy { min-width: 0; display: grid; gap: 26px; }
+#branch-ai .vh-ov-title { font-size: clamp(32px, 3.15vw, 46px); line-height: 1.16; max-width: none; text-wrap: initial; }
+#branch-ai .vh-ov-title-line { display: block; }
 #branch-ai .vh-ov-title:focus { outline: none; }
 #branch-ai .vh-ov-title mark.hl { --hl: var(--ngo-sun); }
-#branch-ai .vh-ov-lead { max-width: 58ch; }
+#branch-ai .vh-ov-lead { max-width: 48ch; font-family: "SAB Fixel Text", var(--vh-font); font-size: 18px; line-height: 1.6; }
+#branch-ai .vh-ov-hero-media { min-width: 0; margin: 0; }
+@media (min-width: 1001px) {
+  #branch-ai .vh-ov-hero-media { width: 118%; margin-left: -3%; }
+  #branch-ai .vh-ov-hero { overflow: clip; }
+}
+#branch-ai .vh-ov-hero-media img {
+  width: 100%; height: auto; object-fit: contain;
+  /* Fade only the empty outer background; no crop or border around the scene. */
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent), linear-gradient(to bottom, transparent, #000 3%, #000 96%, transparent);
+  mask-composite: intersect;
+}
+#branch-ai .vh-ov-hero .vh-pill { font-family: "SAB Fixel Text", var(--vh-font); font-size: 16px; font-weight: 400; transition: none; }
+#branch-ai .vh-ov-hero .vh-pill:not(:first-child) { background: transparent; border-color: var(--ngo-violet); color: var(--ngo-violet-ink); }
+#branch-ai .vh-ov-benefits { background: #fcfaff; border-bottom: 1px solid var(--vh-line); }
+#branch-ai .vh-ov-benefits ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; padding-block: 26px; }
+#branch-ai .vh-ov-benefits li { font-family: var(--ngo-display); font-weight: 600; font-size: 18px; line-height: 1.4; text-align: center; }
+#branch-ai #ngoHowTitle { scroll-margin-top: calc(var(--vh-hdr) + 24px); }
+@media (max-width: 1000px) {
+  #branch-ai .vh-ov-hero .vh-wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  #branch-ai .vh-ov-title { font-size: clamp(32px, 5vw, 46px); }
+  #branch-ai .vh-ov-title-line { display: inline; }
+  #branch-ai .vh-ov-hero-media { width: min(100%, 720px); justify-self: center; }
+  #branch-ai .vh-ov-lead { max-width: 62ch; }
+}
+@media (max-width: 520px) {
+  #branch-ai #ngoHowTitle { scroll-margin-top: 144px; }
+  #branch-ai .vh-ov-hero { padding-block: 36px 20px; }
+  #branch-ai .vh-ov-hero-copy { gap: 22px; }
+  #branch-ai .vh-ov-lead { font-size: 17px; }
+  #branch-ai .vh-ov-hero .ai-hero-cta { display: grid; }
+  #branch-ai .vh-ov-hero .vh-pill { justify-content: center; }
+  #branch-ai .vh-ov-benefits ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; padding-block: 22px; }
+  #branch-ai .vh-ov-benefits li { font-size: 16px; }
+}
 
 /* ───────── 2. four audiences: tinted, numbered entry cards ───────── */
 #branch-ai .vh-for { padding-block: clamp(24px, 4vw, 48px) 0; }
